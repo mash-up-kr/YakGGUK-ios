@@ -12,6 +12,10 @@
 		BE84E70D21A954BD00A507FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE84E70B21A954BD00A507FB /* Main.storyboard */; };
 		BE84E70F21A954BF00A507FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE84E70E21A954BF00A507FB /* Assets.xcassets */; };
 		BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE84E71021A954BF00A507FB /* LaunchScreen.storyboard */; };
+		BEE70E8421A983A3003EA767 /* AlarmListNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE70E8321A983A3003EA767 /* AlarmListNavigationController.storyboard */; };
+		BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */; };
+		BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8821A98650003EA767 /* AlarmViewController.swift */; };
+		BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */; };
 		D59F73E321A97E7900D275A0 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E221A97E7900D275A0 /* Member.swift */; };
 		D59F73E521A97EBC00D275A0 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E421A97EBC00D275A0 /* AlarmListViewController.swift */; };
 		D59F73E721A97EE400D275A0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E621A97EE400D275A0 /* TutorialViewController.swift */; };
@@ -34,6 +38,10 @@
 		BE84E70E21A954BF00A507FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE84E71121A954BF00A507FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE84E71321A954BF00A507FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEE70E8321A983A3003EA767 /* AlarmListNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmListNavigationController.storyboard; sourceTree = "<group>"; };
+		BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListNavigationController.swift; sourceTree = "<group>"; };
+		BEE70E8821A98650003EA767 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmViewController.storyboard; sourceTree = "<group>"; };
 		D59F73E221A97E7900D275A0 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		D59F73E421A97EBC00D275A0 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
 		D59F73E621A97EE400D275A0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
@@ -87,6 +95,7 @@
 		BE84E70621A954BD00A507FB /* YakGGUK */ = {
 			isa = PBXGroup;
 			children = (
+				BEE70E8121A98338003EA767 /* views */,
 				D59F73E021A97E6400D275A0 /* Network */,
 				D59F73DF21A97E5800D275A0 /* Controller */,
 				BE84E70721A954BD00A507FB /* AppDelegate.swift */,
@@ -97,6 +106,33 @@
 				BE84E71321A954BF00A507FB /* Info.plist */,
 			);
 			path = YakGGUK;
+			sourceTree = "<group>";
+		};
+		BEE70E8121A98338003EA767 /* views */ = {
+			isa = PBXGroup;
+			children = (
+				BEE70E8221A9835D003EA767 /* alarmlist */,
+			);
+			path = views;
+			sourceTree = "<group>";
+		};
+		BEE70E8221A9835D003EA767 /* alarmlist */ = {
+			isa = PBXGroup;
+			children = (
+				BEE70E8721A98633003EA767 /* alarms */,
+				BEE70E8321A983A3003EA767 /* AlarmListNavigationController.storyboard */,
+				BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */,
+			);
+			path = alarmlist;
+			sourceTree = "<group>";
+		};
+		BEE70E8721A98633003EA767 /* alarms */ = {
+			isa = PBXGroup;
+			children = (
+				BEE70E8821A98650003EA767 /* AlarmViewController.swift */,
+				BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */,
+			);
+			path = alarms;
 			sourceTree = "<group>";
 		};
 		D59F73DF21A97E5800D275A0 /* Controller */ = {
@@ -200,8 +236,10 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BEE70E8421A983A3003EA767 /* AlarmListNavigationController.storyboard in Resources */,
 				BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */,
 				BE84E70F21A954BF00A507FB /* Assets.xcassets in Resources */,
+				BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */,
 				BE84E70D21A954BD00A507FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -285,9 +323,11 @@
 			buildActionMask = 2147483647;
 			files = (
 				D59F73F121A97F9400D275A0 /* AlarmViewController.swift in Sources */,
+				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
 				D59F73E921A97F0600D275A0 /* ScanBarcodeViewController.swift in Sources */,
 				D59F73E521A97EBC00D275A0 /* AlarmListViewController.swift in Sources */,
 				D59F73EB21A97F1E00D275A0 /* CreateAlarmViewController.swift in Sources */,
+				BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */,
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
 				D59F73F321A9814800D275A0 /* MedicineDetailViewController.swift in Sources */,
