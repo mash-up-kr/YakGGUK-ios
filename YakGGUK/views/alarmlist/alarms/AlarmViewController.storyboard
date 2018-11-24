@@ -25,11 +25,11 @@
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="alarmcell" rowHeight="82" id="ijP-ie-CHa" customClass="AlarmCell" customModule="YakGGUK" customModuleProvider="target">
                                         <rect key="frame" x="0.0" y="28" width="375" height="82"/>
                                         <autoresizingMask key="autoresizingMask"/>
-                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ijP-ie-CHa" id="vpd-64-hB7" customClass="AlarmCell" customModule="YakGGUK" customModuleProvider="target">
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ijP-ie-CHa" id="vpd-64-hB7">
                                             <rect key="frame" x="0.0" y="0.0" width="375" height="81.5"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
-                                                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLg-Fi-Y19">
+                                                <view autoresizesSubviews="NO" clipsSubviews="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="hLg-Fi-Y19">
                                                     <rect key="frame" x="15" y="10" width="345" height="61.5"/>
                                                     <subviews>
                                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="기상" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pRl-3E-1p7">
@@ -38,43 +38,48 @@
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
-                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07 : 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hkw-18-Vuy">
+                                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="07 : 00" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumScaleFactor="0.5" translatesAutoresizingMaskIntoConstraints="NO" id="hkw-18-Vuy">
                                                             <rect key="frame" x="132.5" y="16.5" width="80" height="29"/>
                                                             <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
                                                             <nil key="textColor"/>
                                                             <nil key="highlightedColor"/>
                                                         </label>
                                                         <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GGf-B1-v9M">
-                                                            <rect key="frame" x="292" y="16" width="39" height="30"/>
+                                                            <rect key="frame" x="291" y="16" width="40" height="30"/>
+                                                            <constraints>
+                                                                <constraint firstAttribute="height" constant="30" id="01n-Eo-O8P"/>
+                                                                <constraint firstAttribute="width" constant="40" id="avf-bg-nZK"/>
+                                                            </constraints>
                                                             <state key="normal" title="펼치기"/>
                                                             <connections>
-                                                                <action selector="collapseAction:" destination="ijP-ie-CHa" eventType="touchUpInside" id="8KY-es-b4D"/>
+                                                                <action selector="collapseAction:" destination="ijP-ie-CHa" eventType="touchUpInside" id="hDR-j0-8XM"/>
                                                             </connections>
                                                         </button>
                                                     </subviews>
-                                                    <color key="backgroundColor" cocoaTouchSystemColor="tableCellGroupedBackgroundColor"/>
+                                                    <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <constraints>
-                                                        <constraint firstItem="pRl-3E-1p7" firstAttribute="leading" secondItem="hLg-Fi-Y19" secondAttribute="leading" constant="18" id="35K-UH-t2O"/>
-                                                        <constraint firstItem="hkw-18-Vuy" firstAttribute="centerY" secondItem="hLg-Fi-Y19" secondAttribute="centerY" id="6kR-lj-cIt"/>
-                                                        <constraint firstAttribute="trailing" secondItem="GGf-B1-v9M" secondAttribute="trailing" constant="14" id="RGm-ra-ELz"/>
-                                                        <constraint firstItem="GGf-B1-v9M" firstAttribute="centerY" secondItem="hLg-Fi-Y19" secondAttribute="centerY" id="XYl-Kw-K8s"/>
-                                                        <constraint firstItem="pRl-3E-1p7" firstAttribute="centerY" secondItem="hLg-Fi-Y19" secondAttribute="centerY" id="fBA-0Q-5mJ"/>
-                                                        <constraint firstItem="hkw-18-Vuy" firstAttribute="centerX" secondItem="hLg-Fi-Y19" secondAttribute="centerX" id="oXl-wi-Ue1"/>
+                                                        <constraint firstItem="pRl-3E-1p7" firstAttribute="centerY" secondItem="hLg-Fi-Y19" secondAttribute="centerY" id="40i-4y-Caq"/>
+                                                        <constraint firstItem="pRl-3E-1p7" firstAttribute="leading" secondItem="hLg-Fi-Y19" secondAttribute="leading" constant="18" id="W8Q-gg-bXw"/>
+                                                        <constraint firstItem="hkw-18-Vuy" firstAttribute="centerY" secondItem="hLg-Fi-Y19" secondAttribute="centerY" id="g8j-kG-5Vo"/>
+                                                        <constraint firstItem="hkw-18-Vuy" firstAttribute="centerX" secondItem="hLg-Fi-Y19" secondAttribute="centerX" id="nGM-fw-cyj"/>
                                                     </constraints>
                                                 </view>
                                             </subviews>
                                             <constraints>
-                                                <constraint firstItem="hLg-Fi-Y19" firstAttribute="top" secondItem="vpd-64-hB7" secondAttribute="top" constant="10" id="Soi-By-T3m"/>
-                                                <constraint firstAttribute="bottom" secondItem="hLg-Fi-Y19" secondAttribute="bottom" constant="10" id="gQa-bl-3HG"/>
-                                                <constraint firstAttribute="trailing" secondItem="hLg-Fi-Y19" secondAttribute="trailing" constant="15" id="roT-wD-E1o"/>
-                                                <constraint firstItem="hLg-Fi-Y19" firstAttribute="leading" secondItem="vpd-64-hB7" secondAttribute="leading" constant="15" id="wf6-v5-7yT"/>
+                                                <constraint firstItem="hLg-Fi-Y19" firstAttribute="leading" secondItem="vpd-64-hB7" secondAttribute="leading" constant="15" id="3ne-cw-jcG"/>
+                                                <constraint firstAttribute="trailing" secondItem="GGf-B1-v9M" secondAttribute="trailing" constant="29" id="Bfs-Oz-vTZ"/>
+                                                <constraint firstAttribute="bottom" secondItem="hLg-Fi-Y19" secondAttribute="bottom" constant="10" id="Kio-Kv-2Ow"/>
+                                                <constraint firstAttribute="trailing" secondItem="hLg-Fi-Y19" secondAttribute="trailing" constant="15" id="hEm-Lu-VuY"/>
+                                                <constraint firstItem="GGf-B1-v9M" firstAttribute="centerY" secondItem="vpd-64-hB7" secondAttribute="centerY" id="kmb-A2-tXe"/>
+                                                <constraint firstItem="hLg-Fi-Y19" firstAttribute="top" secondItem="vpd-64-hB7" secondAttribute="top" constant="10" id="sw4-Wn-bp9"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         <connections>
-                                            <outlet property="collapseButton" destination="GGf-B1-v9M" id="Kj6-vI-dX0"/>
-                                            <outlet property="innerView" destination="hLg-Fi-Y19" id="tfc-Im-R3b"/>
-                                            <outlet property="timeLabel" destination="hkw-18-Vuy" id="CSV-vz-ruo"/>
-                                            <outlet property="whenLabel" destination="pRl-3E-1p7" id="R2V-70-ZSM"/>
+                                            <outlet property="collapseButton" destination="GGf-B1-v9M" id="rvB-VH-4N5"/>
+                                            <outlet property="innerView" destination="hLg-Fi-Y19" id="9Vy-sr-wuh"/>
+                                            <outlet property="timeLabel" destination="hkw-18-Vuy" id="pOj-VW-KaR"/>
+                                            <outlet property="whenLabel" destination="pRl-3E-1p7" id="dWS-MR-c0W"/>
                                         </connections>
                                     </tableViewCell>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="detailalarmcell" rowHeight="120" id="Dfc-5f-7gQ" customClass="AlarmDetailCell" customModule="YakGGUK" customModuleProvider="target">

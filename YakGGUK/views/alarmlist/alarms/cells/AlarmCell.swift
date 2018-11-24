@@ -5,7 +5,7 @@ protocol AlarmButtonDelegate: class {
 }
 
 class AlarmCell: UITableViewCell {
-
+    
     @IBOutlet weak var innerView: UIView!
     @IBOutlet weak var whenLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -28,25 +28,25 @@ class AlarmCell: UITableViewCell {
     func setWhen(_ when: enumWhen) {
         whenLabel.text? = when.description()
     }
-    
+
     func setTime(_ time: String) {
         timeLabel.text? = time
     }
-    
+
     func setExpand() {
-        collapseButton.titleLabel?.text = "닫기"
+        collapseButton.setTitle("접기", for: .normal)
         isExpand = true
     }
-    
+
     func setCollapse() {
-        collapseButton.titleLabel?.text = "펼치기"
+        collapseButton.setTitle("펼치기", for: .normal)
         isExpand = false
     }
-    
+
     func setDelegate(_ delegate: AlarmButtonDelegate) {
         self.delegate = delegate
     }
-    
+
     @IBAction func collapseAction(_ sender: Any) {
         delegate?.buttonPressed(self)
     }
