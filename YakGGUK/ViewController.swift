@@ -16,10 +16,9 @@ class ViewController: UIViewController {
     }
 
     @IBAction func searchMedicine(_ sender: UIButton) {
-        guard let nextVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "search_by_name") as? SearchMedicineViewController else {
+        guard let nextVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "barcode_scan") as? BarcodeScanViewController else {
             return
         }
-        nextVC.title = "약 검색하기"
         self.present(UINavigationController(rootViewController: nextVC), animated: false, completion: nil)
     }
     
