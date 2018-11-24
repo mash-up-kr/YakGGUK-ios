@@ -16,6 +16,7 @@
 		BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */; };
 		BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8821A98650003EA767 /* AlarmViewController.swift */; };
 		BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */; };
+		D56A6E0A21A9F02D003B7FAE /* BarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */; };
 		D59F73E321A97E7900D275A0 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E221A97E7900D275A0 /* Member.swift */; };
 		D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */; };
 		D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59F73F921A9886E00D275A0 /* Search.storyboard */; };
@@ -43,6 +44,7 @@
 		BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListNavigationController.swift; sourceTree = "<group>"; };
 		BEE70E8821A98650003EA767 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmViewController.storyboard; sourceTree = "<group>"; };
+		D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewController.swift; sourceTree = "<group>"; };
 		D59F73E221A97E7900D275A0 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMedicineViewController.swift; sourceTree = "<group>"; };
 		D59F73F921A9886E00D275A0 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -163,6 +165,7 @@
 				D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */,
 				D59F73F921A9886E00D275A0 /* Search.storyboard */,
 				D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */,
+				D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -352,6 +355,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */,
+				D56A6E0A21A9F02D003B7FAE /* BarcodeScanViewController.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
 				D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */,
 				BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */,
