@@ -24,6 +24,8 @@
 		D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */; };
 		D5DA8BD521A9C7AB00F963B0 /* CheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */; };
 		D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */; };
+		D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD821A9D72000F963B0 /* Alarm.swift */; };
+		D5DA8BDC21A9D86F00F963B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BDB21A9D86F00F963B0 /* extensions.swift */; };
 		EA7889502714CD4DD2D45BEB /* Pods_YakGGUK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9019A93A8CD30B152FF684 /* Pods_YakGGUK.framework */; };
 /* End PBXBuildFile section */
 
@@ -49,6 +51,8 @@
 		D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAlarmViewController.swift; sourceTree = "<group>"; };
 		D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxButton.xib; sourceTree = "<group>"; };
 		D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
+		D5DA8BD821A9D72000F963B0 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
+		D5DA8BDB21A9D86F00F963B0 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
 		E67BFB6931EAD8D2F54086A1 /* Pods-YakGGUK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YakGGUK.release.xcconfig"; path = "Pods/Target Support Files/Pods-YakGGUK/Pods-YakGGUK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -93,6 +97,7 @@
 		BE84E70621A954BD00A507FB /* YakGGUK */ = {
 			isa = PBXGroup;
 			children = (
+				D5DA8BDA21A9D86500F963B0 /* utils */,
 				BEE70E8121A98338003EA767 /* views */,
 				D59F73E021A97E6400D275A0 /* Network */,
 				BE84E70721A954BD00A507FB /* AppDelegate.swift */,
@@ -145,6 +150,7 @@
 			isa = PBXGroup;
 			children = (
 				D59F73E221A97E7900D275A0 /* Member.swift */,
+				D5DA8BD821A9D72000F963B0 /* Alarm.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -177,6 +183,14 @@
 				D5DA8BCF21A9BA9600F963B0 /* CheckBoxButton.swift */,
 			);
 			path = view;
+			sourceTree = "<group>";
+		};
+		D5DA8BDA21A9D86500F963B0 /* utils */ = {
+			isa = PBXGroup;
+			children = (
+				D5DA8BDB21A9D86F00F963B0 /* extensions.swift */,
+			);
+			path = utils;
 			sourceTree = "<group>";
 		};
 		D9463A841448C99BA47C01A0 /* Pods */ = {
@@ -347,6 +361,8 @@
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
+				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
+				D5DA8BDC21A9D86F00F963B0 /* extensions.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

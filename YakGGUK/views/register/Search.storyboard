@@ -104,8 +104,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" allowsSelection="NO" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-i6-8Sr">
-                                <rect key="frame" x="0.0" y="20" width="375" height="647"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="100" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Sf2-i6-8Sr">
+                                <rect key="frame" x="0.0" y="20" width="375" height="607"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <view key="tableHeaderView" contentMode="scaleToFill" id="59R-R8-hwj">
                                     <rect key="frame" x="0.0" y="0.0" width="375" height="175"/>
@@ -247,6 +247,11 @@
                                                 <constraint firstItem="hRA-hy-bD9" firstAttribute="top" secondItem="Cef-SF-VdQ" secondAttribute="top" constant="8" id="smt-sO-zc1"/>
                                             </constraints>
                                         </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="dayNightLabel" destination="lug-BO-XAN" id="4Sn-ey-Xw9"/>
+                                            <outlet property="timeLabel" destination="xWA-e4-9yS" id="f9N-St-05N"/>
+                                            <outlet property="titleLabel" destination="f6q-TC-REa" id="KdU-g2-pP6"/>
+                                        </connections>
                                     </tableViewCell>
                                 </prototypes>
                                 <connections>
@@ -254,12 +259,84 @@
                                     <outlet property="delegate" destination="nM4-42-EaT" id="dqI-9b-Eso"/>
                                 </connections>
                             </tableView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1g8-s2-SZx">
+                                <rect key="frame" x="0.0" y="627" width="375" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="ZS5-CK-ETq"/>
+                                </constraints>
+                                <state key="normal" title="등록">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="registerAlarm:" destination="nM4-42-EaT" eventType="touchUpInside" id="Dt1-xH-lf0"/>
+                                </connections>
+                            </button>
+                            <view hidden="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyH-9C-FT0" userLabel="timePicker">
+                                <rect key="frame" x="0.0" y="-20" width="375" height="647"/>
+                                <subviews>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jOm-0s-Dwr" userLabel="GrayBg">
+                                        <rect key="frame" x="0.0" y="0.0" width="375" height="387"/>
+                                        <color key="backgroundColor" red="0.0" green="0.0" blue="0.0" alpha="0.59999999999999998" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <gestureRecognizers/>
+                                        <connections>
+                                            <outletCollection property="gestureRecognizers" destination="urb-Vm-PHS" appends="YES" id="cIp-GB-leP"/>
+                                        </connections>
+                                    </view>
+                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HcY-nO-Nl8" userLabel="WhiteBG">
+                                        <rect key="frame" x="67" y="259" width="240" height="128"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                    </view>
+                                    <toolbar opaque="NO" clearsContextBeforeDrawing="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gaf-Rm-mFc">
+                                        <rect key="frame" x="0.0" y="387" width="375" height="44"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <items>
+                                            <barButtonItem title="완료" id="k2G-x1-ClP">
+                                                <connections>
+                                                    <action selector="changeAlarmTime:" destination="nM4-42-EaT" id="WTs-VH-fMg"/>
+                                                </connections>
+                                            </barButtonItem>
+                                        </items>
+                                    </toolbar>
+                                    <datePicker contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" datePickerMode="time" minuteInterval="1" translatesAutoresizingMaskIntoConstraints="NO" id="L7K-fs-ihz">
+                                        <rect key="frame" x="0.0" y="431" width="375" height="216"/>
+                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <date key="date" timeIntervalSinceReferenceDate="564779752.58801603">
+                                            <!--2018-11-24 19:15:52 +0000-->
+                                        </date>
+                                    </datePicker>
+                                </subviews>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="trailing" secondItem="L7K-fs-ihz" secondAttribute="trailing" id="0MH-il-Dhc"/>
+                                    <constraint firstItem="Gaf-Rm-mFc" firstAttribute="leading" secondItem="uyH-9C-FT0" secondAttribute="leading" id="0Mv-7l-kxt"/>
+                                    <constraint firstItem="HcY-nO-Nl8" firstAttribute="top" secondItem="Gaf-Rm-mFc" secondAttribute="top" id="9wa-Jk-jQ2"/>
+                                    <constraint firstItem="L7K-fs-ihz" firstAttribute="leading" secondItem="uyH-9C-FT0" secondAttribute="leading" id="Fjs-Yh-Rpk"/>
+                                    <constraint firstAttribute="trailing" secondItem="Gaf-Rm-mFc" secondAttribute="trailing" id="Fz8-Vn-hhg"/>
+                                    <constraint firstAttribute="trailing" secondItem="HcY-nO-Nl8" secondAttribute="trailing" id="JFL-xI-Z7h"/>
+                                    <constraint firstItem="Gaf-Rm-mFc" firstAttribute="top" secondItem="jOm-0s-Dwr" secondAttribute="bottom" id="Kgd-zz-MTb"/>
+                                    <constraint firstItem="L7K-fs-ihz" firstAttribute="top" secondItem="Gaf-Rm-mFc" secondAttribute="bottom" id="KhJ-cH-Zik"/>
+                                    <constraint firstItem="jOm-0s-Dwr" firstAttribute="leading" secondItem="uyH-9C-FT0" secondAttribute="leading" id="Lib-Ve-YPL"/>
+                                    <constraint firstItem="HcY-nO-Nl8" firstAttribute="bottom" secondItem="L7K-fs-ihz" secondAttribute="bottom" id="SQV-YH-c5P"/>
+                                    <constraint firstAttribute="bottom" secondItem="L7K-fs-ihz" secondAttribute="bottom" id="TC9-2y-5MB"/>
+                                    <constraint firstItem="jOm-0s-Dwr" firstAttribute="top" secondItem="uyH-9C-FT0" secondAttribute="top" id="sE4-pv-7Ei"/>
+                                    <constraint firstAttribute="trailing" secondItem="jOm-0s-Dwr" secondAttribute="trailing" id="yan-8d-StJ"/>
+                                    <constraint firstItem="HcY-nO-Nl8" firstAttribute="leading" secondItem="uyH-9C-FT0" secondAttribute="leading" id="zwI-Mk-iWd"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstItem="HOX-ZQ-USy" firstAttribute="bottom" secondItem="Sf2-i6-8Sr" secondAttribute="bottom" id="CwF-es-jeP"/>
+                            <constraint firstItem="1g8-s2-SZx" firstAttribute="top" secondItem="Sf2-i6-8Sr" secondAttribute="bottom" id="CwF-es-jeP"/>
+                            <constraint firstItem="uyH-9C-FT0" firstAttribute="leading" secondItem="HOX-ZQ-USy" secondAttribute="leading" id="PZI-FJ-1gO"/>
+                            <constraint firstItem="1g8-s2-SZx" firstAttribute="leading" secondItem="HOX-ZQ-USy" secondAttribute="leading" id="REp-Ry-pFg"/>
                             <constraint firstItem="Sf2-i6-8Sr" firstAttribute="top" secondItem="HOX-ZQ-USy" secondAttribute="top" id="Sqe-0I-va8"/>
                             <constraint firstItem="Sf2-i6-8Sr" firstAttribute="leading" secondItem="HOX-ZQ-USy" secondAttribute="leading" id="WrS-46-V1P"/>
+                            <constraint firstItem="HOX-ZQ-USy" firstAttribute="trailing" secondItem="uyH-9C-FT0" secondAttribute="trailing" id="YgQ-LE-wzf"/>
+                            <constraint firstAttribute="top" secondItem="uyH-9C-FT0" secondAttribute="top" id="Z6f-ie-XnY"/>
+                            <constraint firstItem="HOX-ZQ-USy" firstAttribute="bottom" secondItem="1g8-s2-SZx" secondAttribute="bottom" id="fbU-dT-6ih"/>
+                            <constraint firstItem="1g8-s2-SZx" firstAttribute="trailing" secondItem="HOX-ZQ-USy" secondAttribute="trailing" id="h0B-hF-tBI"/>
+                            <constraint firstItem="HOX-ZQ-USy" firstAttribute="bottom" secondItem="uyH-9C-FT0" secondAttribute="bottom" id="ivr-0x-g89"/>
                             <constraint firstItem="HOX-ZQ-USy" firstAttribute="trailing" secondItem="Sf2-i6-8Sr" secondAttribute="trailing" id="kWO-mh-JP6"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HOX-ZQ-USy"/>
@@ -270,9 +347,16 @@
                         <outlet property="bedroonButton" destination="PFP-H3-ykq" id="esa-6g-GIA"/>
                         <outlet property="morningButton" destination="fuT-6K-KTa" id="yGt-d2-WVB"/>
                         <outlet property="nightButton" destination="XW6-jI-YgX" id="JTn-yJ-xOl"/>
+                        <outlet property="pickerView" destination="uyH-9C-FT0" id="j5s-TC-n1G"/>
+                        <outlet property="timePiker" destination="L7K-fs-ihz" id="VHt-LC-aCP"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="eZf-N8-XlJ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <tapGestureRecognizer id="urb-Vm-PHS">
+                    <connections>
+                        <action selector="hideTimer:" destination="nM4-42-EaT" id="vX6-k3-fPL"/>
+                    </connections>
+                </tapGestureRecognizer>
             </objects>
             <point key="canvasLocation" x="1424.8" y="60.719640179910051"/>
         </scene>
