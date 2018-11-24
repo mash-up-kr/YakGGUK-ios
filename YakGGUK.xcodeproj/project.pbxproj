@@ -402,7 +402,7 @@
 				D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */,
 				D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */,
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
-=======
+				BEE70E9521A9976F003EA767 /* AlarmDetailCell.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
 				D59F73E921A97F0600D275A0 /* ScanBarcodeViewController.swift in Sources */,
 				BEE70E8F21A98934003EA767 /* AlarmCell.swift in Sources */,
@@ -417,7 +417,7 @@
 				D59F73F321A9814800D275A0 /* MedicineDetailViewController.swift in Sources */,
 				BEE70E9121A98C16003EA767 /* AlarmModel.swift in Sources */,
 				D59F73E721A97EE400D275A0 /* TutorialViewController.swift in Sources */,
->>>>>>> develop_alarmlist
+				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
 				D5DA8BDC21A9D86F00F963B0 /* extensions.swift in Sources */,
