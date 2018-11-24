@@ -17,14 +17,9 @@
 		BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8821A98650003EA767 /* AlarmViewController.swift */; };
 		BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */; };
 		D59F73E321A97E7900D275A0 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E221A97E7900D275A0 /* Member.swift */; };
-		D59F73E521A97EBC00D275A0 /* AlarmListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E421A97EBC00D275A0 /* AlarmListViewController.swift */; };
-		D59F73E721A97EE400D275A0 /* TutorialViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E621A97EE400D275A0 /* TutorialViewController.swift */; };
-		D59F73E921A97F0600D275A0 /* ScanBarcodeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E821A97F0600D275A0 /* ScanBarcodeViewController.swift */; };
-		D59F73EB21A97F1E00D275A0 /* CreateAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73EA21A97F1E00D275A0 /* CreateAlarmViewController.swift */; };
-		D59F73ED21A97F2E00D275A0 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73EC21A97F2E00D275A0 /* MyPageViewController.swift */; };
 		D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */; };
-		D59F73F121A97F9400D275A0 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73F021A97F9400D275A0 /* AlarmViewController.swift */; };
-		D59F73F321A9814800D275A0 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73F221A9814800D275A0 /* MedicineDetailViewController.swift */; };
+		D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59F73F921A9886E00D275A0 /* Search.storyboard */; };
+		D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73FC21A98D1700D275A0 /* SearchResultTableViewCell.swift */; };
 		EA7889502714CD4DD2D45BEB /* Pods_YakGGUK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9019A93A8CD30B152FF684 /* Pods_YakGGUK.framework */; };
 /* End PBXBuildFile section */
 
@@ -43,14 +38,9 @@
 		BEE70E8821A98650003EA767 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmViewController.storyboard; sourceTree = "<group>"; };
 		D59F73E221A97E7900D275A0 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
-		D59F73E421A97EBC00D275A0 /* AlarmListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListViewController.swift; sourceTree = "<group>"; };
-		D59F73E621A97EE400D275A0 /* TutorialViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TutorialViewController.swift; sourceTree = "<group>"; };
-		D59F73E821A97F0600D275A0 /* ScanBarcodeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScanBarcodeViewController.swift; sourceTree = "<group>"; };
-		D59F73EA21A97F1E00D275A0 /* CreateAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAlarmViewController.swift; sourceTree = "<group>"; };
-		D59F73EC21A97F2E00D275A0 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
 		D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMedicineViewController.swift; sourceTree = "<group>"; };
-		D59F73F021A97F9400D275A0 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
-		D59F73F221A9814800D275A0 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
+		D59F73F921A9886E00D275A0 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
+		D59F73FC21A98D1700D275A0 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		E67BFB6931EAD8D2F54086A1 /* Pods-YakGGUK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YakGGUK.release.xcconfig"; path = "Pods/Target Support Files/Pods-YakGGUK/Pods-YakGGUK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -97,7 +87,6 @@
 			children = (
 				BEE70E8121A98338003EA767 /* views */,
 				D59F73E021A97E6400D275A0 /* Network */,
-				D59F73DF21A97E5800D275A0 /* Controller */,
 				BE84E70721A954BD00A507FB /* AppDelegate.swift */,
 				BE84E70921A954BD00A507FB /* ViewController.swift */,
 				BE84E70B21A954BD00A507FB /* Main.storyboard */,
@@ -111,6 +100,7 @@
 		BEE70E8121A98338003EA767 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				D59F73F821A9885D00D275A0 /* register */,
 				BEE70E8221A9835D003EA767 /* alarmlist */,
 			);
 			path = views;
@@ -135,21 +125,6 @@
 			path = alarms;
 			sourceTree = "<group>";
 		};
-		D59F73DF21A97E5800D275A0 /* Controller */ = {
-			isa = PBXGroup;
-			children = (
-				D59F73E621A97EE400D275A0 /* TutorialViewController.swift */,
-				D59F73E421A97EBC00D275A0 /* AlarmListViewController.swift */,
-				D59F73E821A97F0600D275A0 /* ScanBarcodeViewController.swift */,
-				D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */,
-				D59F73EA21A97F1E00D275A0 /* CreateAlarmViewController.swift */,
-				D59F73EC21A97F2E00D275A0 /* MyPageViewController.swift */,
-				D59F73F021A97F9400D275A0 /* AlarmViewController.swift */,
-				D59F73F221A9814800D275A0 /* MedicineDetailViewController.swift */,
-			);
-			path = Controller;
-			sourceTree = "<group>";
-		};
 		D59F73E021A97E6400D275A0 /* Network */ = {
 			isa = PBXGroup;
 			children = (
@@ -164,6 +139,24 @@
 				D59F73E221A97E7900D275A0 /* Member.swift */,
 			);
 			path = Model;
+			sourceTree = "<group>";
+		};
+		D59F73F821A9885D00D275A0 /* register */ = {
+			isa = PBXGroup;
+			children = (
+				D59F73FB21A98CFD00D275A0 /* tableViewCell */,
+				D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */,
+				D59F73F921A9886E00D275A0 /* Search.storyboard */,
+			);
+			path = register;
+			sourceTree = "<group>";
+		};
+		D59F73FB21A98CFD00D275A0 /* tableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D59F73FC21A98D1700D275A0 /* SearchResultTableViewCell.swift */,
+			);
+			path = tableViewCell;
 			sourceTree = "<group>";
 		};
 		D9463A841448C99BA47C01A0 /* Pods */ = {
@@ -240,6 +233,7 @@
 				BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */,
 				BE84E70F21A954BF00A507FB /* Assets.xcassets in Resources */,
 				BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */,
+				D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */,
 				BE84E70D21A954BD00A507FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -322,19 +316,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D59F73F121A97F9400D275A0 /* AlarmViewController.swift in Sources */,
+				D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
-				D59F73E921A97F0600D275A0 /* ScanBarcodeViewController.swift in Sources */,
-				D59F73E521A97EBC00D275A0 /* AlarmListViewController.swift in Sources */,
-				D59F73EB21A97F1E00D275A0 /* CreateAlarmViewController.swift in Sources */,
 				BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */,
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
-				D59F73F321A9814800D275A0 /* MedicineDetailViewController.swift in Sources */,
-				D59F73E721A97EE400D275A0 /* TutorialViewController.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
-				D59F73ED21A97F2E00D275A0 /* MyPageViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -483,7 +471,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = FPY265UZF4;
-				INFOPLIST_FILE = Secret/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YakGGUK/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -503,7 +491,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Manual;
 				DEVELOPMENT_TEAM = FPY265UZF4;
-				INFOPLIST_FILE = Secret/Info.plist;
+				INFOPLIST_FILE = "$(SRCROOT)/YakGGUK/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
