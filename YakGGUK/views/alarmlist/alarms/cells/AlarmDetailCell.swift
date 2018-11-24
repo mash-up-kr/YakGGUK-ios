@@ -21,6 +21,10 @@ class AlarmDetailCell: UITableViewCell {
         medicineTableView.delegate = self
         medicineTableView.dataSource = self
     }
+    
+    func setDelegate(_ delegate: PresentAlertDelegate) {
+        self.delegate = delegate
+    }
 
     func setMedicines(_ medicines: [MedicineModel]) {
         self.medicines = medicines

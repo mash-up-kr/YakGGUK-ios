@@ -44,21 +44,11 @@ class AlarmViewController: UIViewController {
             self.floaty.close()
         }
         
+        floaty.plusColor = UIColor.white
+        floaty.buttonColor = UIColor.purple
+        
         self.view.addSubview(floaty)
     }
-}
-
-extension AlarmViewController {
-    
-    @IBAction func tapGesutreAction() {
-            let alert = UIAlertController(title: "[알림]", message: "아직 미구현된 기능입니다.", preferredStyle: .alert)
-            let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
-            
-            alert.addAction(okAction)
-            
-            present(alert, animated: true)
-    }
-    
 }
 
 extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
@@ -71,7 +61,7 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
                     return CGFloat(10.0 + Double(alarms[indexPath.row / 2].medicines.count) * 80.0)
                 }
             } else {
-                return 82.0
+                return 100.0
             }
         }
             
@@ -86,26 +76,26 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
         if alarms.count == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "noalarmcell", for: indexPath) as? NoAlarmCell {
 
-                cell.delegate = self
+                cell.setDelegate(self)
 
                 return cell
             }
         } else if (indexPath.row % 2 == 0) {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "alarmcell", for: indexPath) as? AlarmCell {
                 
-                cell.id = indexPath.row / 2
+                cell.setId(indexPath.row / 2)
                 cell.setWhen(alarms[indexPath.row / 2].eWhen)
                 cell.setTime(alarms[indexPath.row / 2].time)
-                
-                cell.delegate = self
+                cell.setDelegate(self)
+                cell.setEditDelegate(self)
                 
                 return cell
             }
         } else {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "detailalarmcell", for: indexPath) as? AlarmDetailCell {
                 
-                cell.medicines = alarms[indexPath.row / 2].medicines
-                cell.delegate = self
+                cell.setMedicines(alarms[indexPath.row / 2].medicines)
+                cell.setDelegate(self)
                 
                 return cell
             }
@@ -114,6 +104,17 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
         return UITableViewCell()
     }
     
+}
+
+extension AlarmViewController: EditButtonDelegate {
+    func editButtonPressed(_ cell: AlarmCell) {
+        let alert = UIAlertController(title: "[알림]", message: "아직 미구현된 기능입니다.", preferredStyle: .alert)
+        let okAction = UIAlertAction(title: "확인", style: .default, handler: nil)
+        
+        alert.addAction(okAction)
+        
+        present(alert, animated: true)
+    }
 }
 
 extension AlarmViewController: AddAlarmButtonDelegate {

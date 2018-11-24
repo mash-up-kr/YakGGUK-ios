@@ -19,7 +19,11 @@ class NoAlarmCell: UITableViewCell {
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
     }
-
+    
+    func setDelegate(_ delegate: AddAlarmButtonDelegate) {
+        self.delegate = delegate
+    }
+    
     @IBAction func buttonPressed(_ sender: Any) {
         delegate?.buttonPressed(self)
     }
