@@ -1,21 +1,20 @@
 //
-//  TutorialViewController.swift
+//  SearchMedicineViewController.swift
 //  YakGGUK
 //
 //  Created by juhee on 2018. 11. 24..
 //  Copyright © 2018년 team1. All rights reserved.
-//  스플래시 화면 다음으로 나타나는 뷰컨
+//  제품명으로 약 검색하기 : 검색어 입력, 검색 결과 출력 및 선택 기능
 
 import UIKit
 
-class TutorialViewController: UIViewController {
-
+class SearchMedicineViewController: UIViewController {
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
     }
-    
 
     /*
     // MARK: - Navigation

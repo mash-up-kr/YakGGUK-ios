@@ -1,41 +1,48 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="sn0-E0-9dh">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Navigation Controller-->
-        <scene sceneID="rV1-Ev-cJ3">
+        <!--Search Medicine View Controller-->
+        <scene sceneID="Kbd-VB-9ZK">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="sn0-E0-9dh" sceneMemberID="viewController">
-                    <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="HVb-9E-nMX">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
-                        <autoresizingMask key="autoresizingMask"/>
-                    </navigationBar>
-                    <nil name="viewControllers"/>
-                    <connections>
-                        <segue destination="WEp-ha-WZk" kind="relationship" relationship="rootViewController" id="0kz-zK-HDG"/>
-                    </connections>
-                </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="05U-a1-JjF" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="0QU-I8-loe" customClass="SearchMedicineViewController" customModule="YakGGUK" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="PPm-Z2-Tvc">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <searchBar contentMode="redraw" translatesAutoresizingMaskIntoConstraints="NO" id="Ja6-uy-IBX">
+                                <rect key="frame" x="0.0" y="20" width="375" height="56"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </searchBar>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="Vrc-3t-PaV">
+                                <rect key="frame" x="0.0" y="76" width="375" height="591"/>
+                                <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="Ja6-uy-IBX" firstAttribute="leading" secondItem="PPm-Z2-Tvc" secondAttribute="leading" id="33k-2z-exw"/>
+                            <constraint firstItem="Jap-wz-zO4" firstAttribute="trailing" secondItem="Ja6-uy-IBX" secondAttribute="trailing" id="N3b-uP-xOC"/>
+                            <constraint firstItem="Jap-wz-zO4" firstAttribute="trailing" secondItem="Vrc-3t-PaV" secondAttribute="trailing" id="Qj7-WO-BoN"/>
+                            <constraint firstItem="Jap-wz-zO4" firstAttribute="bottom" secondItem="Vrc-3t-PaV" secondAttribute="bottom" id="a9G-kA-ytk"/>
+                            <constraint firstItem="Vrc-3t-PaV" firstAttribute="leading" secondItem="Jap-wz-zO4" secondAttribute="leading" id="jwg-da-buf"/>
+                            <constraint firstItem="Vrc-3t-PaV" firstAttribute="top" secondItem="Ja6-uy-IBX" secondAttribute="bottom" id="kXp-Mu-CKA"/>
+                            <constraint firstItem="Ja6-uy-IBX" firstAttribute="top" secondItem="Jap-wz-zO4" secondAttribute="top" id="kZe-Po-Jg5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="Jap-wz-zO4"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="E6D-ja-wpC" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-20" y="133"/>
-        </scene>
-        <!--AlarmViewController-->
-        <scene sceneID="29b-Dz-Q3R">
-            <objects>
-                <viewControllerPlaceholder storyboardName="AlarmViewController" id="WEp-ha-WZk" sceneMemberID="viewController">
-                    <navigationItem key="navigationItem" id="btr-3c-XgO"/>
-                </viewControllerPlaceholder>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="SAR-nU-eFg" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="666" y="132"/>
+            <point key="canvasLocation" x="654" y="-1"/>
         </scene>
     </scenes>
 </document>
