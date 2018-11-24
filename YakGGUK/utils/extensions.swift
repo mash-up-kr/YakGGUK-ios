@@ -18,4 +18,13 @@ extension UINavigationController {
         transition.subtype = CATransitionSubtype.fromBottom
         self.view.layer.add(transition, forKey: nil)
     }
+    func addBottomAppearTransition() {
+        let transition = CATransition()
+        transition.duration = 0.3
+        transition.timingFunction = CAMediaTimingFunction(name: CAMediaTimingFunctionName.easeInEaseOut)
+        transition.type = CATransitionType.moveIn
+        transition.subtype = CATransitionSubtype.fromTop
+        self.view.layer.add(transition, forKey: nil)
+    }
+    
 }

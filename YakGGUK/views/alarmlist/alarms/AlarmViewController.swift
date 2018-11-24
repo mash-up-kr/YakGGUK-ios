@@ -38,9 +38,12 @@ class AlarmViewController: UIViewController {
         tableView.delegate = self
         
         floaty.addItem(title: "추가하기") { _ in
-            let alert = UIAlertController(title: "[알림]", message: "아직 미구현된 기능입니다.", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
-            self.present(alert, animated: true, completion: nil)
+            guard let nextVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "barcode_scan") as? BarcodeScanViewController else {
+                return
+            }
+            let naviVC = UINavigationController(rootViewController: nextVC)
+            naviVC.addBottomAppearTransition()
+            self.present(naviVC, animated: false, completion: nil)
             self.floaty.close()
         }
         

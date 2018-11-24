@@ -133,6 +133,11 @@ class BarcodeScanViewController: UIViewController {
         oldVCs!.append(nextVC)
         self.navigationController?.setViewControllers(oldVCs!, animated: true)
     }
+    @IBAction func dismiss(_ sender: UIBarButtonItem) {
+        self.navigationController?.addBottomDismissTransition()
+        self.navigationController?.dismiss(animated: false, completion: nil)
+    }
+    
 }
 extension BarcodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
     

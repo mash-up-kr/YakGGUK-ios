@@ -33,7 +33,6 @@
 		D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */; };
 		D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD821A9D72000F963B0 /* Alarm.swift */; };
 		D5DA8BDC21A9D86F00F963B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BDB21A9D86F00F963B0 /* extensions.swift */; };
-		D59F73F321A9814800D275A0 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73F221A9814800D275A0 /* MedicineDetailViewController.swift */; };
 		EA7889502714CD4DD2D45BEB /* Pods_YakGGUK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9019A93A8CD30B152FF684 /* Pods_YakGGUK.framework */; };
 /* End PBXBuildFile section */
 

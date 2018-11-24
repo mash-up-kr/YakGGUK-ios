@@ -96,7 +96,7 @@
             </objects>
             <point key="canvasLocation" x="1636" y="63.418290854572717"/>
         </scene>
-        <!--Register Alarm View Controller-->
+        <!--알람 등록-->
         <scene sceneID="Pfb-B1-1vs">
             <objects>
                 <viewController storyboardIdentifier="register_alarm" id="nM4-42-EaT" customClass="RegisterAlarmViewController" customModule="YakGGUK" customModuleProvider="target" sceneMemberID="viewController">
@@ -341,6 +341,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="HOX-ZQ-USy"/>
                     </view>
+                    <navigationItem key="navigationItem" title="알람 등록" id="jwc-lG-i8C"/>
                     <connections>
                         <outlet property="afternoonButton" destination="xRB-IJ-37e" id="Sip-qQ-3QY"/>
                         <outlet property="alarmTableView" destination="Sf2-i6-8Sr" id="Kfn-af-Qhr"/>
@@ -402,7 +403,13 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zD5-Gf-0OR"/>
                     </view>
-                    <navigationItem key="navigationItem" title="바코드 인식" id="eSK-1D-v7t"/>
+                    <navigationItem key="navigationItem" title="바코드 인식" id="eSK-1D-v7t">
+                        <barButtonItem key="leftBarButtonItem" systemItem="stop" id="aFP-RG-hOp">
+                            <connections>
+                                <action selector="dismiss:" destination="WBh-Ah-3in" id="BH3-IA-hXe"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="cameraView" destination="J07-k8-NiE" id="cZX-QJ-cfS"/>
                     </connections>
