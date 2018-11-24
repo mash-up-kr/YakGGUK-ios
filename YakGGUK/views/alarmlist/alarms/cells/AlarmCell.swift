@@ -11,6 +11,7 @@ class AlarmCell: UITableViewCell {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var collapseButton: UIButton!
     
+    var id: Int = 0
     var isExpand: Bool = false
     
     weak var delegate: AlarmButtonDelegate?

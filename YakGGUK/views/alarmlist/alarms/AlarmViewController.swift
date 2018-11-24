@@ -67,13 +67,8 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
             return 268.0
         } else {
             if (indexPath.row % 2 == 1) {
-                if let cell = tableView.cellForRow(at: IndexPath(row: indexPath.row - 1, section: indexPath.section)) as? AlarmCell {
-                    
-                    if cell.isExpand {
-                        if let cell = tableView.cellForRow(at: indexPath) as? AlarmDetailCell {
-                            return CGFloat(10.0 + Double(cell.medicines.count) * 120.0)
-                        }
-                    }
+                if alarms[indexPath.row / 2].isExpand {
+                    return CGFloat(10.0 + Double(alarms[indexPath.row / 2].medicines.count) * 80.0)
                 }
             } else {
                 return 82.0
@@ -88,8 +83,6 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var detailBool: Bool = false
-        
         if alarms.count == 0 {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "noalarmcell", for: indexPath) as? NoAlarmCell {
 
@@ -97,9 +90,10 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
 
                 return cell
             }
-        } else if (alarms.count % 2 == 0) {
+        } else if (indexPath.row % 2 == 0) {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "alarmcell", for: indexPath) as? AlarmCell {
                 
+                cell.id = indexPath.row / 2
                 cell.setWhen(alarms[indexPath.row / 2].eWhen)
                 cell.setTime(alarms[indexPath.row / 2].time)
                 
@@ -137,8 +131,10 @@ extension AlarmViewController: AlarmButtonDelegate {
     func buttonPressed(_ cell: AlarmCell) {
         if !cell.isExpand {
             cell.setExpand()
+            alarms[cell.id].isExpand = true
         } else {
             cell.setCollapse()
+            alarms[cell.id].isExpand = false
         }
         
         tableView.reloadData()

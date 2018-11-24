@@ -51,6 +51,7 @@ class AlarmModel {
     
     var time: String
     var medicines: [MedicineModel]
+    var isExpand: Bool = false
     
     init(eWhen: enumWhen, eWhenType: enumWhenType, time: String, medicines: [MedicineModel]) {
         self.eWhen = eWhen

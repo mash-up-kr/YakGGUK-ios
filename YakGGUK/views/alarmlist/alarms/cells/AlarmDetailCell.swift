@@ -14,6 +14,12 @@ class AlarmDetailCell: UITableViewCell {
     
     override func awakeFromNib() {
         super.awakeFromNib()
+        
+        medicineTableView.separatorStyle = .none
+        medicineTableView.allowsSelection = false
+        
+        medicineTableView.delegate = self
+        medicineTableView.dataSource = self
     }
 
     func setMedicines(_ medicines: [MedicineModel]) {
@@ -39,6 +45,10 @@ extension AlarmDetailCell: DetailButtonDelegate {
 }
 
 extension AlarmDetailCell: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 80.0
+    }
+    
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return medicines.count
     }
