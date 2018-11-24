@@ -15,7 +15,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		BE84E70421A954BD00A507FB /* Secret.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Secret.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE84E70421A954BD00A507FB /* YakGGUK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YakGGUK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE84E70721A954BD00A507FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE84E70921A954BD00A507FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE84E70C21A954BD00A507FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -38,7 +38,7 @@
 		BE84E6FB21A954BD00A507FB = {
 			isa = PBXGroup;
 			children = (
-				BE84E70621A954BD00A507FB /* Secret */,
+				BE84E70621A954BD00A507FB /* YakGGUK */,
 				BE84E70521A954BD00A507FB /* Products */,
 			);
 			sourceTree = "<group>";
@@ -46,12 +46,12 @@
 		BE84E70521A954BD00A507FB /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				BE84E70421A954BD00A507FB /* Secret.app */,
+				BE84E70421A954BD00A507FB /* YakGGUK.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		BE84E70621A954BD00A507FB /* Secret */ = {
+		BE84E70621A954BD00A507FB /* YakGGUK */ = {
 			isa = PBXGroup;
 			children = (
 				BE84E70721A954BD00A507FB /* AppDelegate.swift */,
@@ -61,15 +61,15 @@
 				BE84E71021A954BF00A507FB /* LaunchScreen.storyboard */,
 				BE84E71321A954BF00A507FB /* Info.plist */,
 			);
-			path = Secret;
+			path = YakGGUK;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		BE84E70321A954BD00A507FB /* Secret */ = {
+		BE84E70321A954BD00A507FB /* YakGGUK */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = BE84E71621A954BF00A507FB /* Build configuration list for PBXNativeTarget "Secret" */;
+			buildConfigurationList = BE84E71621A954BF00A507FB /* Build configuration list for PBXNativeTarget "YakGGUK" */;
 			buildPhases = (
 				BE84E70021A954BD00A507FB /* Sources */,
 				BE84E70121A954BD00A507FB /* Frameworks */,
@@ -79,9 +79,9 @@
 			);
 			dependencies = (
 			);
-			name = Secret;
+			name = YakGGUK;
 			productName = Secret;
-			productReference = BE84E70421A954BD00A507FB /* Secret.app */;
+			productReference = BE84E70421A954BD00A507FB /* YakGGUK.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -99,7 +99,7 @@
 					};
 				};
 			};
-			buildConfigurationList = BE84E6FF21A954BD00A507FB /* Build configuration list for PBXProject "Secret" */;
+			buildConfigurationList = BE84E6FF21A954BD00A507FB /* Build configuration list for PBXProject "YakGGUK" */;
 			compatibilityVersion = "Xcode 9.3";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -112,7 +112,7 @@
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				BE84E70321A954BD00A507FB /* Secret */,
+				BE84E70321A954BD00A507FB /* YakGGUK */,
 			);
 		};
 /* End PBXProject section */
@@ -283,6 +283,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Secret/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -300,6 +301,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = Secret/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -315,7 +317,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		BE84E6FF21A954BD00A507FB /* Build configuration list for PBXProject "Secret" */ = {
+		BE84E6FF21A954BD00A507FB /* Build configuration list for PBXProject "YakGGUK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE84E71421A954BF00A507FB /* Debug */,
@@ -324,7 +326,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		BE84E71621A954BF00A507FB /* Build configuration list for PBXNativeTarget "Secret" */ = {
+		BE84E71621A954BF00A507FB /* Build configuration list for PBXNativeTarget "YakGGUK" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				BE84E71721A954BF00A507FB /* Debug */,
