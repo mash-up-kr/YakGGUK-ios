@@ -11,5 +11,6 @@ target 'YakGGUK' do
   pod 'AlamofireImage', '~> 3.4'
   pod 'Moya', '~> 11.0'
   pod 'SwiftLint'
+  pod "Floaty", "~> 4.1.0"
 
 end
