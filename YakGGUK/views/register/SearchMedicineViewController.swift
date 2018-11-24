@@ -59,6 +59,14 @@ extension SearchMedicineViewController : UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
+        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "register_alarm") as? RegisterAlarmViewController else {
+            return
+        }
+        let medicine = filtered[indexPath.row]
+        nextVC.medicineName = medicine
+        nextVC.medicineDescript = "1일 \(indexPath.row)회 식후"
+        
+        self.navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
