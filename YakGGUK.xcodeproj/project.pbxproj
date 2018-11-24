@@ -17,6 +17,12 @@
 		BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8821A98650003EA767 /* AlarmViewController.swift */; };
 		BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */; };
 		D56A6E0A21A9F02D003B7FAE /* BarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */; };
+		BEE70E8F21A98934003EA767 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8E21A98934003EA767 /* AlarmCell.swift */; };
+		BEE70E9121A98C16003EA767 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9021A98C16003EA767 /* AlarmModel.swift */; };
+		BEE70E9321A98DEE003EA767 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9221A98DEE003EA767 /* MedicineModel.swift */; };
+		BEE70E9521A9976F003EA767 /* AlarmDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9421A9976F003EA767 /* AlarmDetailCell.swift */; };
+		BEE70E9721A9977D003EA767 /* NoAlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */; };
+		BEE70E9921A9ACE8003EA767 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9821A9ACE8003EA767 /* MedicineCell.swift */; };
 		D59F73E321A97E7900D275A0 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E221A97E7900D275A0 /* Member.swift */; };
 		D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */; };
 		D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59F73F921A9886E00D275A0 /* Search.storyboard */; };
@@ -27,6 +33,7 @@
 		D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */; };
 		D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD821A9D72000F963B0 /* Alarm.swift */; };
 		D5DA8BDC21A9D86F00F963B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BDB21A9D86F00F963B0 /* extensions.swift */; };
+		D59F73F321A9814800D275A0 /* MedicineDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73F221A9814800D275A0 /* MedicineDetailViewController.swift */; };
 		EA7889502714CD4DD2D45BEB /* Pods_YakGGUK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9019A93A8CD30B152FF684 /* Pods_YakGGUK.framework */; };
 /* End PBXBuildFile section */
 
@@ -45,6 +52,12 @@
 		BEE70E8821A98650003EA767 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmViewController.storyboard; sourceTree = "<group>"; };
 		D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewController.swift; sourceTree = "<group>"; };
+		BEE70E8E21A98934003EA767 /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
+		BEE70E9021A98C16003EA767 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
+		BEE70E9221A98DEE003EA767 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
+		BEE70E9421A9976F003EA767 /* AlarmDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailCell.swift; sourceTree = "<group>"; };
+		BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAlarmCell.swift; sourceTree = "<group>"; };
+		BEE70E9821A9ACE8003EA767 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
 		D59F73E221A97E7900D275A0 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMedicineViewController.swift; sourceTree = "<group>"; };
 		D59F73F921A9886E00D275A0 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -55,6 +68,7 @@
 		D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		D5DA8BD821A9D72000F963B0 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		D5DA8BDB21A9D86F00F963B0 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		D59F73F221A9814800D275A0 /* MedicineDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineDetailViewController.swift; sourceTree = "<group>"; };
 		E67BFB6931EAD8D2F54086A1 /* Pods-YakGGUK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YakGGUK.release.xcconfig"; path = "Pods/Target Support Files/Pods-YakGGUK/Pods-YakGGUK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,10 +148,46 @@
 		BEE70E8721A98633003EA767 /* alarms */ = {
 			isa = PBXGroup;
 			children = (
+				BEE70E8D21A98910003EA767 /* models */,
+				BEE70E8C21A988F9003EA767 /* cells */,
 				BEE70E8821A98650003EA767 /* AlarmViewController.swift */,
 				BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */,
 			);
 			path = alarms;
+			sourceTree = "<group>";
+		};
+		BEE70E8C21A988F9003EA767 /* cells */ = {
+			isa = PBXGroup;
+			children = (
+				BEE70E8E21A98934003EA767 /* AlarmCell.swift */,
+				BEE70E9421A9976F003EA767 /* AlarmDetailCell.swift */,
+				BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */,
+				BEE70E9821A9ACE8003EA767 /* MedicineCell.swift */,
+			);
+			path = cells;
+			sourceTree = "<group>";
+		};
+		BEE70E8D21A98910003EA767 /* models */ = {
+			isa = PBXGroup;
+			children = (
+				BEE70E9021A98C16003EA767 /* AlarmModel.swift */,
+				BEE70E9221A98DEE003EA767 /* MedicineModel.swift */,
+			);
+			path = models;
+			sourceTree = "<group>";
+		};
+		D59F73DF21A97E5800D275A0 /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				D59F73E621A97EE400D275A0 /* TutorialViewController.swift */,
+				D59F73E421A97EBC00D275A0 /* AlarmListViewController.swift */,
+				D59F73E821A97F0600D275A0 /* ScanBarcodeViewController.swift */,
+				D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */,
+				D59F73EA21A97F1E00D275A0 /* CreateAlarmViewController.swift */,
+				D59F73EC21A97F2E00D275A0 /* MyPageViewController.swift */,
+				D59F73F221A9814800D275A0 /* MedicineDetailViewController.swift */,
+			);
+			path = Controller;
 			sourceTree = "<group>";
 		};
 		D59F73E021A97E6400D275A0 /* Network */ = {
@@ -284,15 +334,11 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
 				"${PODS_ROOT}/Manifest.lock",
 			);
 			name = "[CP] Check Pods Manifest.lock";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"$(DERIVED_FILE_DIR)/Pods-YakGGUK-checkManifestLockResult.txt",
 			);
@@ -306,13 +352,9 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 			);
 			name = "Swift Lint";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -324,21 +366,19 @@
 			buildActionMask = 2147483647;
 			files = (
 			);
-			inputFileListPaths = (
-			);
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-YakGGUK/Pods-YakGGUK-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/Alamofire/Alamofire.framework",
 				"${BUILT_PRODUCTS_DIR}/AlamofireImage/AlamofireImage.framework",
+				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
-			outputFileListPaths = (
-			);
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Alamofire.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/AlamofireImage.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
 			);
@@ -358,12 +398,26 @@
 				D56A6E0A21A9F02D003B7FAE /* BarcodeScanViewController.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
 				D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */,
-				BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */,
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
 				D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */,
 				D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */,
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
-				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
+=======
+				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
+				D59F73E921A97F0600D275A0 /* ScanBarcodeViewController.swift in Sources */,
+				BEE70E8F21A98934003EA767 /* AlarmCell.swift in Sources */,
+				D59F73E521A97EBC00D275A0 /* AlarmListViewController.swift in Sources */,
+				BEE70E9921A9ACE8003EA767 /* MedicineCell.swift in Sources */,
+				D59F73EB21A97F1E00D275A0 /* CreateAlarmViewController.swift in Sources */,
+				BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */,
+				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
+				BEE70E9321A98DEE003EA767 /* MedicineModel.swift in Sources */,
+				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
+				BEE70E9721A9977D003EA767 /* NoAlarmCell.swift in Sources */,
+				D59F73F321A9814800D275A0 /* MedicineDetailViewController.swift in Sources */,
+				BEE70E9121A98C16003EA767 /* AlarmModel.swift in Sources */,
+				D59F73E721A97EE400D275A0 /* TutorialViewController.swift in Sources */,
+>>>>>>> develop_alarmlist
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
 				D5DA8BDC21A9D86F00F963B0 /* extensions.swift in Sources */,
