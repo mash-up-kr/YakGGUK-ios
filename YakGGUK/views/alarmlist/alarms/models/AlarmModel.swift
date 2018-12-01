@@ -8,7 +8,7 @@
 
 import Foundation
 
-enum enumWhen: Int {
+enum EnumWhen: Int {
     case WAKEUP         = 0
     case MORNING        = 1
     case LUNCH          = 2
@@ -31,7 +31,7 @@ enum enumWhen: Int {
     }
 }
 
-enum enumWhenType: Int {
+enum EnumWhenType: Int {
     case BEFORE         = 0
     case AFTER          = 1
     
@@ -46,14 +46,14 @@ enum enumWhenType: Int {
 }
 
 class AlarmModel {
-    var eWhen: enumWhen
-    var eWhenType: enumWhenType
+    var eWhen: EnumWhen
+    var eWhenType: EnumWhenType
     
     var time: String
     var medicines: [MedicineModel]
     var isExpand: Bool = false
     
-    init(eWhen: enumWhen, eWhenType: enumWhenType, time: String, medicines: [MedicineModel]) {
+    init(eWhen: EnumWhen, eWhenType: EnumWhenType, time: String, medicines: [MedicineModel]) {
         self.eWhen = eWhen
         self.eWhenType = eWhenType
         self.time = time

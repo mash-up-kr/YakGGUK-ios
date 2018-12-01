@@ -36,7 +36,7 @@ class AlarmCell: UITableViewCell {
         self.id = id
     }
     
-    func setWhen(_ when: enumWhen) {
+    func setWhen(_ when: EnumWhen) {
         whenLabel.text? = when.description()
     }
 

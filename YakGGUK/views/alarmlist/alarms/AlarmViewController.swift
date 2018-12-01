@@ -7,7 +7,7 @@ class AlarmViewController: UIViewController {
     
     var alarms: [AlarmModel] = []
     
-    @IBOutlet weak var MyPageImage: UIImageView!
+    @IBOutlet weak var myPageImage: UIImageView!
     @IBOutlet var gestureMyPage: UITapGestureRecognizer!
     
     let floaty = Floaty()
@@ -56,7 +56,7 @@ class AlarmViewController: UIViewController {
 
 extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        if alarms.count == 0 {
+        if alarms.isEmpty {
             return 268.0
         } else {
             if (indexPath.row % 2 == 1) {
@@ -72,11 +72,11 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alarms.count == 0 ? 1 : alarms.count * 2
+        return alarms.isEmpty ? 1 : alarms.count * 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if alarms.count == 0 {
+        if alarms.isEmpty {
             if let cell = tableView.dequeueReusableCell(withIdentifier: "noalarmcell", for: indexPath) as? NoAlarmCell {
 
                 cell.setDelegate(self)

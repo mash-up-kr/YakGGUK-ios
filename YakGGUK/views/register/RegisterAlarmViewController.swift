@@ -44,7 +44,7 @@ class RegisterAlarmViewController: UIViewController {
 // MARK: - IBActions
 extension RegisterAlarmViewController {
     @IBAction func registerAlarm(_ sender: UIButton) {
-        guard self.alarms.count > 0 else {
+        guard !alarms.isEmpty else {
             let alertVC = UIAlertController(title: "알람을 등록하세요", message: nil, preferredStyle: .alert)
             alertVC.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
             self.present(alertVC, animated: true)
@@ -81,9 +81,6 @@ extension RegisterAlarmViewController : UITableViewDelegate, UITableViewDataSour
         cell.titleLabel.text = alarm.0
         cell.timeLabel.text = timeFormatter.string(from: alarm.1)
         return cell
-    }
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {

@@ -19,7 +19,7 @@ class CheckBoxButton: UIView {
     @IBOutlet weak var titleLabel: UILabel!
     @IBOutlet weak var contentButton: UIButton!
     
-    var buttonDelegate: CheckBoxButtonDeleagate?
+    weak var buttonDelegate: CheckBoxButtonDeleagate?
     
     // Bool property
     var isChecked: Bool = false {
@@ -80,12 +80,12 @@ class CheckBoxButton: UIView {
     
     @objc func buttonClicked(sender: UIButton) {
         if sender == self.contentButton {
-            isChecked = !isChecked
+            isChecked.toggle()
             buttonDelegate?.actionButtonClicked(isChecked, self.title)
         }
     }
 }
 
-protocol CheckBoxButtonDeleagate {
+protocol CheckBoxButtonDeleagate: class {
     func actionButtonClicked(_ checked : Bool, _ title : String)
 }

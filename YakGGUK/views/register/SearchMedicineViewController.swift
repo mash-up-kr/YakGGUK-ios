@@ -18,11 +18,11 @@ class SearchMedicineViewController: UIViewController {
     var searchActive: Bool = false
     var filtered:[String] = []
     let searchController: UISearchController = {
-       let sc = UISearchController(searchResultsController: nil)
-        sc.searchBar.placeholder = "약 이름으로 검색해주세요."
-        sc.obscuresBackgroundDuringPresentation = false
-        sc.hidesNavigationBarDuringPresentation = false
-        return sc
+       let searchController = UISearchController(searchResultsController: nil)
+        searchController.searchBar.placeholder = "약 이름으로 검색해주세요."
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        return searchController
     }()
     
     override func viewDidLoad() {
@@ -59,18 +59,14 @@ extension SearchMedicineViewController : UITableViewDelegate, UITableViewDataSou
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: false)
-        guard let nextVC = self.storyboard?.instantiateViewController(withIdentifier: "register_alarm") as? RegisterAlarmViewController else {
+        guard let nextVC = storyboard?.instantiateViewController(withIdentifier: "register_alarm") as? RegisterAlarmViewController else {
             return
         }
         let medicine = filtered[indexPath.row]
         nextVC.medicineName = medicine
         nextVC.medicineDescript = "1일 \(indexPath.row)회 식후"
         
-        self.navigationController?.pushViewController(nextVC, animated: true)
-    }
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+        navigationController?.pushViewController(nextVC, animated: true)
     }
 }
 
@@ -92,9 +88,9 @@ extension SearchMedicineViewController: UISearchResultsUpdating, UISearchBarDele
     }
     
     func filterAndUpdateTable(inputText: String) {
-        filtered = tempData.filter({ (text) -> Bool in
-            return text.contains(inputText)
-        })
+        filtered = tempData.filter { text in
+            text.contains(inputText)
+        }
         
         resultTableView.reloadData()
     }
