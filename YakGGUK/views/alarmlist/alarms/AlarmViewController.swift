@@ -14,7 +14,7 @@ class AlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        setBackgroundGradientLayer()
         alarms.append(AlarmModel(eWhen: .WAKEUP, eWhenType: .AFTER, time: "07 : 00", medicines: [
             MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
             MedicineModel(name: "홍삼 골드", description: "1회 100ml 섭취")
@@ -42,6 +42,8 @@ class AlarmViewController: UIViewController {
                 return
             }
             let naviVC = UINavigationController(rootViewController: nextVC)
+            naviVC.navigationBar.isTranslucent = true
+            naviVC.view.backgroundColor = UIColor.clear
             naviVC.addBottomAppearTransition()
             self.present(naviVC, animated: false, completion: nil)
             self.floaty.close()

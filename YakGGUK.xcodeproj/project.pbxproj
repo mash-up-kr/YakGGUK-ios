@@ -22,6 +22,9 @@
 		BEE70E9521A9976F003EA767 /* AlarmDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9421A9976F003EA767 /* AlarmDetailCell.swift */; };
 		BEE70E9721A9977D003EA767 /* NoAlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */; };
 		BEE70E9921A9ACE8003EA767 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9821A9ACE8003EA767 /* MedicineCell.swift */; };
+		D50DE0F421B8B01700F8D920 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50DE0F321B8B01700F8D920 /* Color.xcassets */; };
+		D56518E321B8EDB400E8F6C4 /* GradientSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56518E221B8EDB400E8F6C4 /* GradientSearchBar.swift */; };
+		D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */; };
 		D56A6E0A21A9F02D003B7FAE /* BarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */; };
 		D59F73E321A97E7900D275A0 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E221A97E7900D275A0 /* Member.swift */; };
 		D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */; };
@@ -32,7 +35,7 @@
 		D5DA8BD521A9C7AB00F963B0 /* CheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */; };
 		D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */; };
 		D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD821A9D72000F963B0 /* Alarm.swift */; };
-		D5DA8BDC21A9D86F00F963B0 /* extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BDB21A9D86F00F963B0 /* extensions.swift */; };
+		D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */; };
 		EA7889502714CD4DD2D45BEB /* Pods_YakGGUK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9019A93A8CD30B152FF684 /* Pods_YakGGUK.framework */; };
 /* End PBXBuildFile section */
 
@@ -56,6 +59,9 @@
 		BEE70E9421A9976F003EA767 /* AlarmDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailCell.swift; sourceTree = "<group>"; };
 		BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAlarmCell.swift; sourceTree = "<group>"; };
 		BEE70E9821A9ACE8003EA767 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
+		D50DE0F321B8B01700F8D920 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		D56518E221B8EDB400E8F6C4 /* GradientSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSearchBar.swift; sourceTree = "<group>"; };
+		D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Color.swift"; path = "YakGGUK/Assets.xcassets/UIViewController+Color.swift"; sourceTree = SOURCE_ROOT; };
 		D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewController.swift; sourceTree = "<group>"; };
 		D59F73E221A97E7900D275A0 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMedicineViewController.swift; sourceTree = "<group>"; };
@@ -66,7 +72,7 @@
 		D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxButton.xib; sourceTree = "<group>"; };
 		D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		D5DA8BD821A9D72000F963B0 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
-		D5DA8BDB21A9D86F00F963B0 /* extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = extensions.swift; sourceTree = "<group>"; };
+		D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Transition.swift"; sourceTree = "<group>"; };
 		E67BFB6931EAD8D2F54086A1 /* Pods-YakGGUK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YakGGUK.release.xcconfig"; path = "Pods/Target Support Files/Pods-YakGGUK/Pods-YakGGUK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -111,7 +117,7 @@
 		BE84E70621A954BD00A507FB /* YakGGUK */ = {
 			isa = PBXGroup;
 			children = (
-				D5DA8BDA21A9D86500F963B0 /* utils */,
+				D5DA8BDA21A9D86500F963B0 /* Extensions */,
 				BEE70E8121A98338003EA767 /* views */,
 				D59F73E021A97E6400D275A0 /* Network */,
 				BE84E70721A954BD00A507FB /* AppDelegate.swift */,
@@ -120,6 +126,7 @@
 				BE84E70E21A954BF00A507FB /* Assets.xcassets */,
 				BE84E71021A954BF00A507FB /* LaunchScreen.storyboard */,
 				BE84E71321A954BF00A507FB /* Info.plist */,
+				D50DE0F321B8B01700F8D920 /* Color.xcassets */,
 			);
 			path = YakGGUK;
 			sourceTree = "<group>";
@@ -218,16 +225,18 @@
 			children = (
 				D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */,
 				D5DA8BCF21A9BA9600F963B0 /* CheckBoxButton.swift */,
+				D56518E221B8EDB400E8F6C4 /* GradientSearchBar.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
 		};
-		D5DA8BDA21A9D86500F963B0 /* utils */ = {
+		D5DA8BDA21A9D86500F963B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
-				D5DA8BDB21A9D86F00F963B0 /* extensions.swift */,
+				D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */,
+				D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */,
 			);
-			path = utils;
+			path = Extensions;
 			sourceTree = "<group>";
 		};
 		D9463A841448C99BA47C01A0 /* Pods */ = {
@@ -302,6 +311,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BEE70E8421A983A3003EA767 /* AlarmListNavigationController.storyboard in Resources */,
+				D50DE0F421B8B01700F8D920 /* Color.xcassets in Resources */,
 				BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */,
 				BE84E70F21A954BF00A507FB /* Assets.xcassets in Resources */,
 				BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */,
@@ -406,6 +416,7 @@
 				D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */,
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
 				BEE70E9521A9976F003EA767 /* AlarmDetailCell.swift in Sources */,
+				D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
 				BEE70E8F21A98934003EA767 /* AlarmCell.swift in Sources */,
 				BEE70E9921A9ACE8003EA767 /* MedicineCell.swift in Sources */,
@@ -416,9 +427,10 @@
 				BEE70E9721A9977D003EA767 /* NoAlarmCell.swift in Sources */,
 				BEE70E9121A98C16003EA767 /* AlarmModel.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
+				D56518E321B8EDB400E8F6C4 /* GradientSearchBar.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
-				D5DA8BDC21A9D86F00F963B0 /* extensions.swift in Sources */,
+				D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

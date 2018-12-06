@@ -112,14 +112,14 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="RRs-ci-Zmf">
-                                                    <rect key="frame" x="0.0" y="0.0" width="375" height="109.5"/>
+                                                    <rect key="frame" x="0.0" y="0.0" width="335" height="109.5"/>
                                                     <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                                     <prototypes>
                                                         <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="medicine" rowHeight="80" id="5HI-ec-rom" customClass="MedicineCell" customModule="YakGGUK" customModuleProvider="target">
-                                                            <rect key="frame" x="0.0" y="28" width="375" height="80"/>
+                                                            <rect key="frame" x="0.0" y="28" width="335" height="80"/>
                                                             <autoresizingMask key="autoresizingMask"/>
                                                             <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="5HI-ec-rom" id="sl2-Fj-O1g">
-                                                                <rect key="frame" x="0.0" y="0.0" width="375" height="79.5"/>
+                                                                <rect key="frame" x="0.0" y="0.0" width="335" height="79.5"/>
                                                                 <autoresizingMask key="autoresizingMask"/>
                                                                 <subviews>
                                                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tC3-Vb-wO2">
@@ -201,20 +201,20 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="noalarm" translatesAutoresizingMaskIntoConstraints="NO" id="xfn-36-Cdi">
-                                                    <rect key="frame" x="127.5" y="24" width="120" height="120"/>
+                                                    <rect key="frame" x="107.5" y="24" width="120" height="120"/>
                                                     <constraints>
                                                         <constraint firstAttribute="width" constant="120" id="CmY-ac-6Lf"/>
                                                         <constraint firstAttribute="height" constant="120" id="MP6-ff-aSs"/>
                                                     </constraints>
                                                 </imageView>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="알람 없음" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="86d-pE-wFG">
-                                                    <rect key="frame" x="128.5" y="161" width="118" height="39"/>
+                                                    <rect key="frame" x="108.5" y="161" width="118" height="39"/>
                                                     <fontDescription key="fontDescription" type="system" pointSize="32"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rrP-Yj-qPC">
-                                                    <rect key="frame" x="161.5" y="215" width="52" height="30"/>
+                                                    <rect key="frame" x="141.5" y="215" width="52" height="30"/>
                                                     <state key="normal" title="추가하기"/>
                                                     <connections>
                                                         <action selector="buttonPressed:" destination="jP7-pK-DmW" eventType="touchUpInside" id="WST-de-xdI"/>
@@ -247,7 +247,7 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                 </subviews>
-                                <color key="backgroundColor" red="0.95332328680203049" green="0.95332328680203049" blue="0.95332328680203049" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <gestureRecognizers/>
                                 <constraints>
                                     <constraint firstAttribute="bottom" secondItem="eKI-YC-JZW" secondAttribute="bottom" constant="12" id="70X-ox-ybs"/>

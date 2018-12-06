@@ -39,17 +39,21 @@ class BarcodeScanViewController: UIViewController {
             permissionGranted = true
         default:
             permissionGranted = false
-            AVCaptureDevice.requestAccess(for: AVMediaType.video) { didAllow in
-                self.permissionGranted = didAllow
+            AVCaptureDevice.requestAccess(for: AVMediaType.video) { [weak self] didAllow in
+                self?.permissionGranted = didAllow
             }
         }
-        overlayFrameView = UIView()
-        if let overlayFrameView = overlayFrameView {
-            overlayFrameView.layer.borderColor = UIColor.green.cgColor
-            overlayFrameView.layer.borderWidth = 2
-            view.addSubview(overlayFrameView)
-            view.bringSubviewToFront(overlayFrameView)
+        if overlayFrameView == nil {
+            overlayFrameView = UIView()
+            if let overlayFrameView = overlayFrameView {
+                overlayFrameView.layer.borderColor = UIColor.green.cgColor
+                overlayFrameView.layer.borderWidth = 2
+                view.addSubview(overlayFrameView)
+                view.bringSubviewToFront(overlayFrameView)
+            }
         }
+        navigationController?.setToolbarHidden(true, animated: false)
+        setBackgroundGradientLayer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,7 +66,7 @@ class BarcodeScanViewController: UIViewController {
                     UIApplication.shared.open(url!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                 })
             )
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
         } else {
             startCamera()
         }
@@ -104,7 +108,7 @@ class BarcodeScanViewController: UIViewController {
                     UIApplication.shared.open(url!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
                 })
             )
-            self.present(alert, animated: true, completion: nil)
+            present(alert, animated: true, completion: nil)
             return
         }
         
@@ -120,22 +124,28 @@ class BarcodeScanViewController: UIViewController {
     }
 
     @IBAction func moveToSearchByName(_ sender: UIButton) {
-         self.navigateSearchVC()
+         navigateSearchVC()
     }
     
     private func navigateSearchVC() {
-        guard let nextVC: SearchMedicineViewController = self.storyboard?.instantiateViewController(withIdentifier: "search_by_name") as? SearchMedicineViewController else {
+        guard let nextVC: SearchMedicineViewController = storyboard?.instantiateViewController(withIdentifier: "search_by_name") as? SearchMedicineViewController else {
             return
         }
         
-        var oldVCs = self.navigationController?.viewControllers
-        oldVCs!.removeLast()
-        oldVCs!.append(nextVC)
-        self.navigationController?.setViewControllers(oldVCs!, animated: true)
+//        present(nextVC, animated: true, completion: nil)
+//        var oldVCs = navigationController?.viewControllers
+//        oldVCs!.removeLast()
+//        oldVCs!.append(nextVC)
+
+        navigationController?.setToolbarHidden(true, animated: false)
+//        navigationController?.setViewControllers(oldVCs!, animated: true)
+        
+        navigationController?.pushViewController(nextVC, animated: true)
+        
     }
     @IBAction func dismiss(_ sender: UIBarButtonItem) {
-        self.navigationController?.addBottomDismissTransition()
-        self.navigationController?.dismiss(animated: false, completion: nil)
+        navigationController?.addBottomDismissTransition()
+        navigationController?.dismiss(animated: false, completion: nil)
     }
     
 }
@@ -143,11 +153,13 @@ extension BarcodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
     
     func metadataOutput(_ output: AVCaptureMetadataOutput, didOutput metadataObjects: [AVMetadataObject], from connection: AVCaptureConnection) {
         if metadataObjects.isEmpty {
-            self.overlayFrameView?.frame = CGRect.zero
+            overlayFrameView?.frame = CGRect.zero
             return
         }
         
-        let metadataObj = metadataObjects[0] as! AVMetadataMachineReadableCodeObject
+        guard let metadataObj = metadataObjects[0] as? AVMetadataMachineReadableCodeObject else {
+            return
+        }
         
         if supportedCodeTypes.contains(metadataObj.type) {
             let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
@@ -156,12 +168,12 @@ extension BarcodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
             if metadataObj.stringValue != nil {
                 // TODO : 바코드 검색 기능
                 let alertVC = UIAlertController(title: "검색 결과 없음", message: "바코드 검색 결과가 없습니다. 이름 검색 화면으로 이동합니다.", preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "확인", style: .cancel, handler: { _ in
-                    self.navigateSearchVC()
+                alertVC.addAction(UIAlertAction(title: "확인", style: .cancel, handler: { [weak self] _ in
+                    self?.navigateSearchVC()
                 }))
                 
-                self.present(alertVC, animated: true) {
-                    self.captureSession.stopRunning()
+                present(alertVC, animated: true) { [weak self] in
+                    self?.captureSession.stopRunning()
                 }
             }
         }

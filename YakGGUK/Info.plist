@@ -20,8 +20,10 @@
 	<string>1</string>
 	<key>LSRequiresIPhoneOS</key>
 	<true/>
+	<key>NSCameraUsageDescription</key>
+	<string>Barcode 스캔을 위해 카메라 권한이 필요합니다.</string>
 	<key>UILaunchStoryboardName</key>
-	<string>AlarmListNavigationController</string>
+	<string>LaunchScreen</string>
 	<key>UIMainStoryboardFile</key>
 	<string>AlarmViewController</string>
 	<key>UIRequiredDeviceCapabilities</key>
@@ -41,7 +43,5 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
-	<key>NSCameraUsageDescription</key>
-	<string>Barcode 스캔을 위해 카메라 권한이 필요합니다.</string>
 </dict>
 </plist>

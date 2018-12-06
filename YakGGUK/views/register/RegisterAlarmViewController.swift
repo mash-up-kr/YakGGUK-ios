@@ -9,9 +9,8 @@
 import UIKit
 
 class RegisterAlarmViewController: UIViewController {
-    
     var medicineName: String!
-    var medicineDescript: String!
+    var medicneDescription: String!
     var alarms: [(String, Date)] = []
     var indexForChange: Int = 0
     
@@ -22,6 +21,8 @@ class RegisterAlarmViewController: UIViewController {
         return format
     }()
     
+    @IBOutlet weak var nameLabel: UILabel!
+    @IBOutlet weak var descriptLabel: UILabel!
     @IBOutlet weak var alarmTableView: UITableView!
     @IBOutlet weak var pickerView: UIView!
     @IBOutlet weak var timePiker: UIDatePicker!
@@ -29,14 +30,23 @@ class RegisterAlarmViewController: UIViewController {
     @IBOutlet weak var morningButton: CheckBoxButton!
     @IBOutlet weak var afternoonButton: CheckBoxButton!
     @IBOutlet weak var nightButton: CheckBoxButton!
-    @IBOutlet weak var bedroonButton: CheckBoxButton!
+    @IBOutlet weak var bedroomButton: CheckBoxButton!
+    @IBOutlet weak var registerButton: UIButton!
+    
+    internal static func instantiate(name medicineName: String, desc medicineDescription: String) -> RegisterAlarmViewController {
+        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "register_alarm") as? RegisterAlarmViewController else {
+            fatalError()
+        }
+        return viewController
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         morningButton.buttonDelegate = self
         afternoonButton.buttonDelegate = self
         nightButton.buttonDelegate = self
-        bedroonButton.buttonDelegate = self
+        bedroomButton.buttonDelegate = self
+        registerButton.backgroundColor = gradientColor(frame: registerButton.frame)
     }
     
 }
