@@ -13,10 +13,15 @@ class SearchMedicineViewController: UIViewController {
     @IBOutlet weak var resultTableView: UITableView!
     @IBOutlet weak var medicindeSearch: UISearchBar!
     
-    var results: [String] = []
-    let tempData: [String] = ["비타민", "비타오백", "비타천", "비타백만개", "비타뿌뿌뿜"]
+    let tempData: [MedicineModel] = [
+        MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
+        MedicineModel(name: "홍삼 골드", description: "1회 100ml 섭취"),
+        MedicineModel(name: "오메가3", description: "1회 1알 섭취"),
+        MedicineModel(name: "단백질 보충제", description: "1회 2알 섭취"),
+        MedicineModel(name: "수면 유도제", description: "1회 1알 섭취")]
+    
+    var filtered: [MedicineModel] = []
     var searchActive: Bool = false
-    var filtered:[String] = []
     var shouldShowSearchResults: Bool = true
     let searchController: UISearchController = {
        let searchController = UISearchController(searchResultsController: nil)
@@ -33,6 +38,10 @@ class SearchMedicineViewController: UIViewController {
         navigationController?.setToolbarHidden(true, animated: false)
         setBackgroundGradientLayer()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+//        resultTableView.isHidden = filtered.isEmpty
+    }
 }
 
 extension SearchMedicineViewController : UITableViewDelegate, UITableViewDataSource {
@@ -46,8 +55,9 @@ extension SearchMedicineViewController : UITableViewDelegate, UITableViewDataSou
             return SearchResultTableViewCell()
         }
         
-        cell.itemName.text = filtered[indexPath.row]
-        cell.itemCompany.text = "회사명"
+        let medicine = filtered[indexPath.row]
+        cell.itemName.text = medicine.name
+        cell.itemCompany.text = medicine.campanyName
         
         return cell
     }
@@ -58,16 +68,17 @@ extension SearchMedicineViewController : UITableViewDelegate, UITableViewDataSou
             print("invalid destination")
             return
         }
-        let medicine = filtered[indexPath.row]
-        nextVC.medicineName = medicine
-        nextVC.medicneDescription = "1일 \(indexPath.row)회 식후"
-//        let nextVC = RegisterAlarmViewController(name: medicine, desc: "1일 \(indexPath.row)회 식후")
+        nextVC.bind(medicine: filtered[indexPath.row])
         
         navigationController?.pushViewController(nextVC, animated: true)
     }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView(frame: CGRect.zero)
     }
 }
 
@@ -96,8 +107,8 @@ extension SearchMedicineViewController: UISearchResultsUpdating, UISearchBarDele
     }
     
     func filterAndUpdateTable(inputText: String) {
-        filtered = tempData.filter { text in
-            text.contains(inputText)
+        filtered = tempData.filter { medicine in
+            medicine.name.contains(inputText)
         }
         
         resultTableView.reloadData()

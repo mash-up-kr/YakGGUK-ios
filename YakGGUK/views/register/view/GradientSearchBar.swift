@@ -45,6 +45,7 @@ class GradientSearchBar: UISearchBar {
             searchField.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes:[NSAttributedString.Key.foregroundColor: preferredHintColor])
             searchField.backgroundColor = UIColor.clear
         }
+        setImage(UIImage(named: "icX"), for: .bookmark, state: .normal)
         setImage(UIImage(named: "icSearch"), for: .search, state: .normal)
         setImage(UIImage(named: "icX"), for: .clear, state: .normal)
         super.draw(rect)

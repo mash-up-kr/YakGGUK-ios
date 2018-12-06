@@ -9,9 +9,7 @@
 import UIKit
 
 class RegisterAlarmViewController: UIViewController {
-    var medicineName: String!
-    var medicneDescription: String!
-    var alarms: [(String, Date)] = []
+    var alarms: [(name: String, date: Date)] = []
     var indexForChange: Int = 0
     
     let timeFormatter: DateFormatter = {
@@ -33,22 +31,23 @@ class RegisterAlarmViewController: UIViewController {
     @IBOutlet weak var bedroomButton: CheckBoxButton!
     @IBOutlet weak var registerButton: UIButton!
     
-    internal static func instantiate(name medicineName: String, desc medicineDescription: String) -> RegisterAlarmViewController {
-        guard let viewController = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "register_alarm") as? RegisterAlarmViewController else {
-            fatalError()
-        }
-        return viewController
-    }
-    
     override func viewDidLoad() {
         super.viewDidLoad()
+        setDelegate()
+        registerButton.backgroundColor = gradientColor(frame: registerButton.frame)
+    }
+    
+    func setDelegate() {
         morningButton.buttonDelegate = self
         afternoonButton.buttonDelegate = self
         nightButton.buttonDelegate = self
         bedroomButton.buttonDelegate = self
-        registerButton.backgroundColor = gradientColor(frame: registerButton.frame)
     }
     
+    func bind(medicine: MedicineModel) {
+        nameLabel.text = medicine.name
+        descriptLabel.text = medicine.description
+    }
 }
 
 // MARK: - IBActions
@@ -63,7 +62,6 @@ extension RegisterAlarmViewController {
         // TODO: 알람 등록하기
         self.navigationController?.addBottomDismissTransition()
         self.navigationController?.dismiss(animated: false, completion: nil)
-        
     }
     
     @IBAction func hideTimer(_ sender: UITapGestureRecognizer) {
@@ -88,8 +86,8 @@ extension RegisterAlarmViewController : UITableViewDelegate, UITableViewDataSour
             return AlarmTableViewCell()
         }
         let alarm = alarms[indexPath.row]
-        cell.titleLabel.text = alarm.0
-        cell.timeLabel.text = timeFormatter.string(from: alarm.1)
+        cell.titleLabel.text = alarm.name
+        cell.timeLabel.text = timeFormatter.string(from: alarm.date)
         return cell
     }
     

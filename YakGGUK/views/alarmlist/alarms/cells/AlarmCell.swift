@@ -23,9 +23,7 @@ class AlarmCell: UITableViewCell {
     weak var editDelegate: EditButtonDelegate?
     
     override func awakeFromNib() {
-        innerView.layer.borderWidth = 1.0
-        innerView.layer.borderColor = UIColor.purple.cgColor
-        innerView.layer.cornerRadius = 10.0
+        innerView.layer.cornerRadius = 6.0
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {
@@ -65,12 +63,12 @@ class AlarmCell: UITableViewCell {
     }
 
     func setExpand() {
-        collapseButton.setTitle("접기", for: .normal)
+        collapseButton.setImage(UIImage(named: "icUp"), for: .normal)
         isExpand = true
     }
 
     func setCollapse() {
-        collapseButton.setTitle("펼치기", for: .normal)
+        collapseButton.setImage(UIImage(named: "icDown"), for: .normal)
         isExpand = false
     }
 

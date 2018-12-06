@@ -20,6 +20,7 @@ class AlarmDetailCell: UITableViewCell {
         
         medicineTableView.delegate = self
         medicineTableView.dataSource = self
+        medicineTableView.layer.cornerRadius = 6.0
     }
     
     func setDelegate(_ delegate: PresentAlertDelegate) {
@@ -50,7 +51,7 @@ extension AlarmDetailCell: DetailButtonDelegate {
 
 extension AlarmDetailCell: UITableViewDelegate, UITableViewDataSource {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 80.0
+        return 110.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {

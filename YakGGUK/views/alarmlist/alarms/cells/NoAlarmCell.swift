@@ -7,7 +7,6 @@ protocol AddAlarmButtonDelegate: class {
 class NoAlarmCell: UITableViewCell {
 
     @IBOutlet weak var noalarmImage: UIImageView!
-    
     @IBOutlet weak var titleLabel: UILabel!
     
     weak var delegate: AddAlarmButtonDelegate?

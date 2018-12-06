@@ -9,12 +9,15 @@
 import Foundation
 
 class MedicineModel {
-    // EMPTY
-    var imageSource: String = ""
     var medicineId: Int = 0
-    
     var name: String
-    var description: String
+    var campanyName: String = "제약회사"
+    var pilType: String = "약 형태"
+    var description: String = "섭취량"
+    var dosage: String = "섭취량"
+    var cautionInfo: String = "주의사항"
+    var expirationDate: String = "2018/12/31"
+    var imageSource: String = ""
     
     init(name: String, description: String) {
         self.name = name

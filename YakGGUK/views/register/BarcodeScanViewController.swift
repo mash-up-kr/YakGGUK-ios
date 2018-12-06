@@ -31,6 +31,7 @@ class BarcodeScanViewController: UIViewController {
         AVMetadataObject.ObjectType.dataMatrix
     ]
     private var permissionGranted = false
+    var didStartCamera: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -57,23 +58,14 @@ class BarcodeScanViewController: UIViewController {
     }
     
     override func viewDidAppear(_ animated: Bool) {
-        if !permissionGranted {
-            
-            let alert = UIAlertController(title: "설정에서 카메라 권한을 허용해 주세요.", message: nil, preferredStyle: .alert)
-            alert.addAction(
-                UIAlertAction(title: "확인", style: .cancel, handler: { _ in
-                    let url = URL(string: UIApplication.openSettingsURLString)
-                    UIApplication.shared.open(url!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                })
-            )
-            present(alert, animated: true, completion: nil)
-        } else {
-            startCamera()
+        guard permissionGranted else {
+            showPermissionAlert()
+            return
         }
+        didStartCamera ? captureSession.startRunning() : startCamera()
     }
     // MARK: private function
     private func startCamera() {
-        
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
         guard let captureDevice = deviceDiscoverySession.devices.first else {
@@ -99,16 +91,11 @@ class BarcodeScanViewController: UIViewController {
             // Set delegate and use the default dispatch queue to execute the call back
             captureMetadataOutput.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
             captureMetadataOutput.metadataObjectTypes = supportedCodeTypes
+            didStartCamera = true
             
         } catch {
-            let alert = UIAlertController(title: "설정에서 카메라 권한을 허용해 주세요.", message: nil, preferredStyle: .alert)
-            alert.addAction(
-                UIAlertAction(title: "확인", style: .cancel, handler: { _ in
-                    let url = URL(string: UIApplication.openSettingsURLString)
-                    UIApplication.shared.open(url!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
-                })
-            )
-            present(alert, animated: true, completion: nil)
+            showPermissionAlert()
+            didStartCamera = false
             return
         }
         
@@ -125,6 +112,17 @@ class BarcodeScanViewController: UIViewController {
 
     @IBAction func moveToSearchByName(_ sender: UIButton) {
          navigateSearchVC()
+    }
+    
+    func showPermissionAlert() {
+        let alert = UIAlertController(title: "설정에서 카메라 권한을 허용해 주세요.", message: nil, preferredStyle: .alert)
+        alert.addAction(
+            UIAlertAction(title: "확인", style: .cancel, handler: { _ in
+                let url = URL(string: UIApplication.openSettingsURLString)
+                UIApplication.shared.open(url!, options: convertToUIApplicationOpenExternalURLOptionsKeyDictionary([:]), completionHandler: nil)
+            })
+        )
+        present(alert, animated: true, completion: nil)
     }
     
     private func navigateSearchVC() {

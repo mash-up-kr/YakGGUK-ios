@@ -26,10 +26,7 @@ class MedicineCell: UITableViewCell {
     override func awakeFromNib() {
         super.awakeFromNib()
         
-        innerView.layer.borderWidth = 1
-        innerView.layer.borderColor = UIColor.purple.cgColor
-        
-        innerView.layer.cornerRadius = 10.0
+        innerView.layer.cornerRadius = 6.0
         innerView.clipsToBounds = true
     }
 

@@ -30,6 +30,7 @@
 		D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */; };
 		D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59F73F921A9886E00D275A0 /* Search.storyboard */; };
 		D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73FC21A98D1700D275A0 /* SearchResultTableViewCell.swift */; };
+		D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B65ED521B9378C003E6886 /* UiView+Shadow.swift */; };
 		D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BCF21A9BA9600F963B0 /* CheckBoxButton.swift */; };
 		D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */; };
 		D5DA8BD521A9C7AB00F963B0 /* CheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */; };
@@ -67,6 +68,7 @@
 		D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMedicineViewController.swift; sourceTree = "<group>"; };
 		D59F73F921A9886E00D275A0 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D59F73FC21A98D1700D275A0 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
+		D5B65ED521B9378C003E6886 /* UiView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Shadow.swift"; sourceTree = "<group>"; };
 		D5DA8BCF21A9BA9600F963B0 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAlarmViewController.swift; sourceTree = "<group>"; };
 		D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxButton.xib; sourceTree = "<group>"; };
@@ -166,8 +168,8 @@
 			children = (
 				BEE70E8E21A98934003EA767 /* AlarmCell.swift */,
 				BEE70E9421A9976F003EA767 /* AlarmDetailCell.swift */,
-				BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */,
 				BEE70E9821A9ACE8003EA767 /* MedicineCell.swift */,
+				BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */,
 			);
 			path = cells;
 			sourceTree = "<group>";
@@ -235,6 +237,7 @@
 			children = (
 				D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */,
 				D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */,
+				D5B65ED521B9378C003E6886 /* UiView+Shadow.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -424,6 +427,7 @@
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
 				BEE70E9321A98DEE003EA767 /* MedicineModel.swift in Sources */,
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
+				D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */,
 				BEE70E9721A9977D003EA767 /* NoAlarmCell.swift in Sources */,
 				BEE70E9121A98C16003EA767 /* AlarmModel.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,

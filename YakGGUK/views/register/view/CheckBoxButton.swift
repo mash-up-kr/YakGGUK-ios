@@ -12,8 +12,8 @@ import UIKit
 @IBDesignable
 class CheckBoxButton: UIView {
     // Images
-    let checkedImage = UIImage(named: "ic_check_box")! as UIImage
-    let uncheckedImage = UIImage(named: "ic_check_box_outline_blank")! as UIImage
+    let checkedImage = UIImage(named: "checkboxCheck")! as UIImage
+    let uncheckedImage = UIImage(named: "checkboxBlank")! as UIImage
     
     @IBOutlet weak var checkImage: UIImageView!
     @IBOutlet weak var titleLabel: UILabel!
