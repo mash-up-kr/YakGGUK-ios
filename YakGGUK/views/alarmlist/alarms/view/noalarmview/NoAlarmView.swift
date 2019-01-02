@@ -33,6 +33,8 @@ class NoAlarmView: UIView {
         label.textColor     = .white
         label.font          = UIFont(name: "AppleSDGothicNeo-Light", size: 24.0)
         
+        label.letterSpacing = 0.25
+        
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
