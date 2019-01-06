@@ -107,12 +107,14 @@ extension AlarmViewController {
 
 // MARK: - 알람 테이블뷰
 extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-    }
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 90.0 + 4.0 * 2
+        if let cell = tableView.cellForRow(at: indexPath) as? AlarmListTableViewCell {
+            if cell.isCollapsed() {
+                return 90.0 + (4.0 * 2) + ( (110.0 * CGFloat(cell.countMedicines())) > 275.0 ? 275.0 : (110.0 * CGFloat(cell.countMedicines())) )
+            }
+        }
+        
+        return 90.0 + (4.0 * 2)
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
@@ -159,10 +161,6 @@ extension AlarmViewController: AlarmListActionDelegate {
     }
     
     func collapseAction(_ sender: UIButton, cell: AlarmListTableViewCell) {
-        let alert = UIAlertController(title: "[알림]", message: "아직 미구현 된 기능입니다.", preferredStyle: .alert)
-        
-        alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-        
-        self.present(alert, animated: true, completion: nil)
+        alarmView.updateTableViewData()
     }
 }
