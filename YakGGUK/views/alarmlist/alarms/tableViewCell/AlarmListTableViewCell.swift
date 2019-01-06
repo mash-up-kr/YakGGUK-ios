@@ -23,12 +23,35 @@ class AlarmListTableViewCell: UITableViewCell {
     
     private var medicines: [MedicineModel] = []
     
-    // TODO: 약 테이블 뷰 그림자 적용하기 위해서 뷰 하나 만들기
-    
     private var bgView: UIView = {
         let view = UIView()
         
         view.backgroundColor = UIColor.white
+        
+        view.layer.cornerRadius = 6.0
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = UIColor.init(named: "sapphire")?.cgColor ?? UIColor.black.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowOpacity = 0.8
+        
+        view.layer.zPosition = 999
+        
+        view.translatesAutoresizingMaskIntoConstraints = false
+        return view
+    }()
+    
+    private var medicineBgView: UIView = {
+        let view = UIView()
+        
+        view.backgroundColor = UIColor.white
+        
+        view.layer.cornerRadius = 6.0
+        view.layer.masksToBounds = false
+        view.layer.shadowColor = UIColor.init(named: "sapphire")?.cgColor ?? UIColor.black.cgColor
+        view.layer.shadowOffset = CGSize(width: 0, height: 2)
+        view.layer.shadowOpacity = 0.8
+        
+        view.layer.zPosition = 998
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
@@ -133,13 +156,6 @@ class AlarmListTableViewCell: UITableViewCell {
         selectionStyle = .none
         
         self.backgroundColor = UIColor.clear
-        bgView.layer.cornerRadius = 6.0
-        bgView.layer.masksToBounds = false
-        bgView.layer.shadowColor = UIColor.init(named: "sapphire")?.cgColor ?? UIColor.black.cgColor
-        bgView.layer.shadowOffset = CGSize(width: 0, height: 2)
-        bgView.layer.shadowOpacity = 0.8
-        
-        bgView.layer.zPosition = 1000
         
         bgView.addSubview(ampmLabel)
         bgView.addSubview(whenLabel)
@@ -147,8 +163,10 @@ class AlarmListTableViewCell: UITableViewCell {
         bgView.addSubview(editButton)
         bgView.addSubview(collapseButton)
         
+        medicineBgView.addSubview(medicineTableView)
+        
+        contentView.addSubview(medicineBgView)
         contentView.addSubview(bgView)
-        contentView.addSubview(medicineTableView)
         
         contentView.setNeedsUpdateConstraints()
     }
@@ -165,6 +183,12 @@ class AlarmListTableViewCell: UITableViewCell {
                 bgView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24.0),
                 bgView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24.0),
                 bgView.heightAnchor.constraint(equalToConstant: 90.0 - 4.0)
+            ])
+            
+            NSLayoutConstraint.activate([
+                medicineBgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 4.0),
+                medicineBgView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24.0),
+                medicineBgView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24.0)
             ])
             
             NSLayoutConstraint.activate([
@@ -197,14 +221,18 @@ class AlarmListTableViewCell: UITableViewCell {
             ])
             
             NSLayoutConstraint.activate([
-                medicineTableView.leadingAnchor.constraint(equalTo: bgView.leadingAnchor),
-                medicineTableView.trailingAnchor.constraint(equalTo: bgView.trailingAnchor),
-                medicineTableView.topAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -1.0)
+                medicineTableView.leadingAnchor.constraint(equalTo: medicineBgView.leadingAnchor),
+                medicineTableView.trailingAnchor.constraint(equalTo: medicineBgView.trailingAnchor),
+                medicineTableView.topAnchor.constraint(equalTo: medicineBgView.topAnchor, constant: 90.0 - 4.0 - 1.0)
             ])
             
-            let heightConstraint = medicineTableView.heightAnchor.constraint(equalToConstant: 0.0)
-            heightConstraint.identifier = "heightConstraint"
-            heightConstraint.isActive = true
+            let medicineBgHeightConstraint = medicineBgView.heightAnchor.constraint(equalToConstant: 90.0 - 4.0)
+            medicineBgHeightConstraint.identifier = "heightConstraint"
+            medicineBgHeightConstraint.isActive = true
+            
+            let medicineTbHeightConstraint = medicineTableView.heightAnchor.constraint(equalToConstant: 0.0)
+            medicineTbHeightConstraint.identifier = "heightConstraint"
+            medicineTbHeightConstraint.isActive = true
             
             didUpdateConstraints.toggle()
         }
@@ -221,18 +249,34 @@ class AlarmListTableViewCell: UITableViewCell {
         
         if isCollapsed() {
             collapseButton.setImage(#imageLiteral(resourceName: "icUp"), for: .normal)
+            if let constraint = medicineBgView.constraints.filter({ $0.identifier == "heightConstraint" }).first {
+                if Double(medicines.count) * 110.0 > 275.0 {
+                    constraint.constant = 90.0 - 4.0 + 275.0
+                } else {
+                    constraint.constant = 90.0 - 4.0 + CGFloat(Double(medicines.count) * 110.0)
+                }
+            }
+            
             if let constraint = medicineTableView.constraints.filter({ $0.identifier == "heightConstraint" }).first {
                 if Double(medicines.count) * 110.0 > 275.0 {
-                    constraint.constant = 275.0
+                    constraint.constant = 275.0 - 5.0
                 } else {
-                    constraint.constant = CGFloat(Double(medicines.count) * 110.0)
+                    constraint.constant = CGFloat(Double(medicines.count) * 110.0) - 5.0
                 }
             }
         } else {
             collapseButton.setImage(#imageLiteral(resourceName: "icDown"), for: .normal)
+            if let constraint = medicineBgView.constraints.filter({ $0.identifier == "heightConstraint" }).first {
+                constraint.constant = 90.0 - 4.0
+            }
+            
             if let constraint = medicineTableView.constraints.filter({ $0.identifier == "heightConstraint" }).first {
                 constraint.constant = 0.0
             }
+        }
+        
+        UIView.animate(withDuration: 0.3) {
+            self.layoutIfNeeded()
         }
         
         actionDelegate?.collapseAction(sender, cell: self)
