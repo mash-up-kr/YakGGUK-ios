@@ -69,14 +69,19 @@ class AlarmView: UIView {
         super.updateConstraints()
     }
 
-    func setTableViewStyle(sepStyle: UITableViewCell.SeparatorStyle, bgColor: UIColor) {
+    public func setTableViewStyle(sepStyle: UITableViewCell.SeparatorStyle, bgColor: UIColor) {
         tableView.separatorStyle    = sepStyle
         tableView.backgroundColor   = bgColor
     }
     
-    func setTableViewProtocol(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+    public func setTableViewProtocol(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
         tableView.delegate      = delegate
         tableView.dataSource    = dataSource
+    }
+    
+    public func updateTableViewData() {
+        tableView.beginUpdates()
+        tableView.endUpdates()
     }
     
 }

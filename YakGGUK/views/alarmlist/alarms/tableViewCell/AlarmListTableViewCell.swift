@@ -19,6 +19,12 @@ class AlarmListTableViewCell: UITableViewCell {
     
     private var didUpdateConstraints = false
     
+    private var medicineCollapsable = false
+    
+    private var medicines: [MedicineModel] = []
+    
+    // TODO: 약 테이블 뷰 그림자 적용하기 위해서 뷰 하나 만들기
+    
     private var bgView: UIView = {
         let view = UIView()
         
@@ -108,10 +114,14 @@ class AlarmListTableViewCell: UITableViewCell {
     }()
     
     private lazy var medicineTableView: UITableView = {
-        let tableView = UITableView.init(frame: .zero, style: .grouped)
+        let tableView = UITableView.init(frame: .zero, style: .plain)
         
         tableView.delegate     = self
         tableView.dataSource   = self
+        
+        tableView.register(MedicineTableViewCell.self, forCellReuseIdentifier: "medicine")
+        
+        tableView.separatorStyle    = .none
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -129,14 +139,16 @@ class AlarmListTableViewCell: UITableViewCell {
         bgView.layer.shadowOffset = CGSize(width: 0, height: 2)
         bgView.layer.shadowOpacity = 0.8
         
+        bgView.layer.zPosition = 1000
+        
         bgView.addSubview(ampmLabel)
         bgView.addSubview(whenLabel)
         bgView.addSubview(timeLabel)
         bgView.addSubview(editButton)
         bgView.addSubview(collapseButton)
-        bgView.addSubview(medicineTableView)
         
         contentView.addSubview(bgView)
+        contentView.addSubview(medicineTableView)
         
         contentView.setNeedsUpdateConstraints()
     }
@@ -152,7 +164,7 @@ class AlarmListTableViewCell: UITableViewCell {
                 bgView.topAnchor.constraint(equalTo: self.topAnchor, constant: 4.0),
                 bgView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 24.0),
                 bgView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -24.0),
-                bgView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -4.0)
+                bgView.heightAnchor.constraint(equalToConstant: 90.0 - 4.0)
             ])
             
             NSLayoutConstraint.activate([
@@ -187,9 +199,12 @@ class AlarmListTableViewCell: UITableViewCell {
             NSLayoutConstraint.activate([
                 medicineTableView.leadingAnchor.constraint(equalTo: bgView.leadingAnchor),
                 medicineTableView.trailingAnchor.constraint(equalTo: bgView.trailingAnchor),
-                medicineTableView.topAnchor.constraint(equalTo: bgView.bottomAnchor),
-                medicineTableView.heightAnchor.constraint(equalToConstant: 0.0)
+                medicineTableView.topAnchor.constraint(equalTo: bgView.bottomAnchor, constant: -1.0)
             ])
+            
+            let heightConstraint = medicineTableView.heightAnchor.constraint(equalToConstant: 0.0)
+            heightConstraint.identifier = "heightConstraint"
+            heightConstraint.isActive = true
             
             didUpdateConstraints.toggle()
         }
@@ -202,6 +217,24 @@ class AlarmListTableViewCell: UITableViewCell {
     }
     
     @objc private func collapseButtonAction(sender: UIButton!) {
+        toggleCollapsable()
+        
+        if isCollapsed() {
+            collapseButton.setImage(#imageLiteral(resourceName: "icUp"), for: .normal)
+            if let constraint = medicineTableView.constraints.filter({ $0.identifier == "heightConstraint" }).first {
+                if Double(medicines.count) * 110.0 > 275.0 {
+                    constraint.constant = 275.0
+                } else {
+                    constraint.constant = CGFloat(Double(medicines.count) * 110.0)
+                }
+            }
+        } else {
+            collapseButton.setImage(#imageLiteral(resourceName: "icDown"), for: .normal)
+            if let constraint = medicineTableView.constraints.filter({ $0.identifier == "heightConstraint" }).first {
+                constraint.constant = 0.0
+            }
+        }
+        
         actionDelegate?.collapseAction(sender, cell: self)
     }
     
@@ -227,22 +260,40 @@ class AlarmListTableViewCell: UITableViewCell {
         whenLabel.text = model.eWhen.description()
         timeLabel.text = model.time
         
-        // TODO: 서브 테이블 뷰 데이터 로드
+        medicines = model.medicines
+        medicineTableView.reloadData()
+    }
+    
+    public func toggleCollapsable() {
+        medicineCollapsable.toggle()
+    }
+    
+    public func isCollapsed() -> Bool {
+        return medicineCollapsable
+    }
+    
+    public func countMedicines() -> Int {
+        return medicines.count
     }
     
 }
 
-// TODO: 서브 테이블 뷰 메소드 구현하기
-extension UITableViewCell: UITableViewDelegate, UITableViewDataSource {
+extension AlarmListTableViewCell: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 100.0
+        return 110.0
     }
     
     public func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0
+        return medicines.count
     }
     
     public func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        return UITableViewCell()
+        guard let cell = medicineTableView.dequeueReusableCell(withIdentifier: "medicine", for: indexPath) as? MedicineTableViewCell else {
+            return UITableViewCell()
+        }
+        
+        // TODO: MedicineTableViewCell 데이터 설정
+        
+        return cell
     }
 }
