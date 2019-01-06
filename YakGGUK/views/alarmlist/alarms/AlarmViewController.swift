@@ -126,6 +126,14 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
         return 20.0 - 4.0 * 2
     }
     
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        return UIView()
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return alarms.count
     }
