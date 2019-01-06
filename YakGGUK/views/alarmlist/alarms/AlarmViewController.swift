@@ -19,22 +19,22 @@ class AlarmViewController: UIViewController {
         
         initFloaty()
         
-        alarms.append(AlarmModel(eWhen: .WAKEUP, eWhenType: .AFTER, time: "07 : 00", medicines: [
+        alarms.append(AlarmModel(eWhen: .WAKEUP, time: "07 : 00", medicines: [
             MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
             MedicineModel(name: "홍삼 골드", description: "1회 100ml 섭취"),
             MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
             MedicineModel(name: "홍삼 골드", description: "1회 100ml 섭취")
         ]))
         
-        alarms.append(AlarmModel(eWhen: .MORNING, eWhenType: .AFTER, time: "09 : 00", medicines: [
+        alarms.append(AlarmModel(eWhen: .MORNING, time: "09 : 00", medicines: [
             MedicineModel(name: "오메가3", description: "1회 1알 섭취"),
             MedicineModel(name: "단백질 보충제", description: "1회 2알 섭취")
         ]))
         
-        alarms.append(AlarmModel(eWhen: .DINNER, eWhenType: .AFTER, time: "19 : 00", medicines: [
+        alarms.append(AlarmModel(eWhen: .DINNER, time: "19 : 00", medicines: [
             MedicineModel(name: "단백질 보충제", description: "1회 2알 섭취")]))
         
-        alarms.append(AlarmModel(eWhen: .NIGHT, eWhenType: .BEFORE, time: "23 : 30", medicines: [
+        alarms.append(AlarmModel(eWhen: .NIGHT, time: "23 : 30", medicines: [
             MedicineModel(name: "수면 유도제", description: "1회 1알 섭취")
         ]))
         
@@ -44,14 +44,8 @@ class AlarmViewController: UIViewController {
             noAlarmView.isHidden = true
         }
         
-        // FIXME: Delegate 문제
-//        alarmView.tableViewDelegate     = self
-//        alarmView.tableViewDataSource   = self
-
-        alarmView.tableView.delegate = self
-        alarmView.tableView.dataSource = self
-        alarmView.tableView.backgroundColor   = UIColor.clear
-        alarmView.tableView.separatorStyle = .none
+        alarmView.setTableViewProtocol(delegate: self, dataSource: self)
+        alarmView.setTableViewStyle(sepStyle: .none, bgColor: .clear)
         
         view.addSubview(noAlarmView)
         view.addSubview(alarmView)
@@ -148,6 +142,27 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.setFormattedAlarm(alarm: alarms[indexPath.section])
         
+        cell.setActionDelegate(self)
+        
         return cell
+    }
+}
+
+// MARK: - 알람 리스트 뷰 셀 액션 위임
+extension AlarmViewController: AlarmListActionDelegate {
+    func editAction(_ sender: UIButton, cell: AlarmListTableViewCell) {
+        let alert = UIAlertController(title: "[알림]", message: "아직 미구현 된 기능입니다.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func collapseAction(_ sender: UIButton, cell: AlarmListTableViewCell) {
+        let alert = UIAlertController(title: "[알림]", message: "아직 미구현 된 기능입니다.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }

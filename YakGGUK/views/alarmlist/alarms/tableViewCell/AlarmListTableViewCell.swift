@@ -8,8 +8,15 @@
 
 import UIKit
 
+protocol AlarmListActionDelegate: class {
+    func editAction(_ sender: UIButton, cell: AlarmListTableViewCell)
+    func collapseAction(_ sender: UIButton, cell: AlarmListTableViewCell)
+}
+
 class AlarmListTableViewCell: UITableViewCell {
 
+    private weak var actionDelegate: AlarmListActionDelegate?
+    
     private var didUpdateConstraints = false
     
     private var bgView: UIView = {
@@ -78,19 +85,23 @@ class AlarmListTableViewCell: UITableViewCell {
         return label
     }()
     
-    private var editButton: UIButton = {
+    private lazy var editButton: UIButton = {
         let button = UIButton()
         
         button.setImage(#imageLiteral(resourceName: "icEdit"), for: .normal)
+        
+        button.addTarget(self, action: #selector(editButtonAction), for: .touchUpInside)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
     }()
     
-    private var collapseButton: UIButton = {
+    private lazy var collapseButton: UIButton = {
         let button = UIButton()
         
         button.setImage(#imageLiteral(resourceName: "icDown"), for: .normal)
+        
+        button.addTarget(self, action: #selector(collapseButtonAction), for: .touchUpInside)
         
         button.translatesAutoresizingMaskIntoConstraints = false
         return button
@@ -186,10 +197,37 @@ class AlarmListTableViewCell: UITableViewCell {
         super.updateConstraints()
     }
     
-    // TODO: 버튼 액션 만들기
-
-    func setFormattedAlarm(alarm model: AlarmModel) {
+    @objc private func editButtonAction(sender: UIButton!) {
+        actionDelegate?.editAction(sender, cell: self)
+    }
+    
+    @objc private func collapseButtonAction(sender: UIButton!) {
+        actionDelegate?.collapseAction(sender, cell: self)
+    }
+    
+    public func setActionDelegate(_ delegate: AlarmListActionDelegate) {
+        actionDelegate = delegate
+    }
+    
+    public func setFormattedAlarm(alarm model: AlarmModel) {
+        let dateFormatter = DateFormatter()
+        dateFormatter.dateFormat = "HH : mm"
         
+        let optDate = dateFormatter.date(from: model.time)
+        
+        dateFormatter.dateFormat = "a"
+        dateFormatter.amSymbol = "오전"
+        dateFormatter.pmSymbol = "오후"
+        
+        if let date = optDate {
+            let ampm = dateFormatter.string(from: date)
+            ampmLabel.text = ampm
+        }
+        
+        whenLabel.text = model.eWhen.description()
+        timeLabel.text = model.time
+        
+        // TODO: 서브 테이블 뷰 데이터 로드
     }
     
 }

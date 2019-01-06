@@ -31,31 +31,15 @@ enum EnumWhen: Int {
     }
 }
 
-enum EnumWhenType: Int {
-    case BEFORE         = 0
-    case AFTER          = 1
-    
-    func description() -> String {
-        switch self {
-        case .BEFORE:
-            return "식전"
-        case .AFTER:
-            return "식후"
-        }
-    }
-}
-
 class AlarmModel {
     var eWhen: EnumWhen
-    var eWhenType: EnumWhenType
     
     var time: String
     var medicines: [MedicineModel]
     var isExpand: Bool = false
     
-    init(eWhen: EnumWhen, eWhenType: EnumWhenType, time: String, medicines: [MedicineModel]) {
+    init(eWhen: EnumWhen, time: String, medicines: [MedicineModel]) {
         self.eWhen = eWhen
-        self.eWhenType = eWhenType
         self.time = time
         self.medicines = medicines
     }

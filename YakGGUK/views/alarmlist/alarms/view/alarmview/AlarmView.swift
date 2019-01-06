@@ -10,8 +10,8 @@ import UIKit
 
 class AlarmView: UIView {
     
-    weak var tableViewDelegate: UITableViewDelegate?
-    weak var tableViewDataSource: UITableViewDataSource?
+    private weak var tableViewDelegate: UITableViewDelegate?
+    private weak var tableViewDataSource: UITableViewDataSource?
     
     private var didUpdateConstraints = false
     
@@ -23,15 +23,10 @@ class AlarmView: UIView {
         return imageView
     }()
     
-    public lazy var tableView: UITableView = {
+    private var tableView: UITableView = {
         let tableView = UITableView(frame: .zero, style: .grouped)
         
-        tableView.separatorStyle = .none
         tableView.register(AlarmListTableViewCell.self, forCellReuseIdentifier: "alarmlist")
-        
-        // FIXME: Delegate, DataSource 동기화 시키기
-//        tableView.delegate          = self.tableViewDelegate
-//        tableView.dataSource        = self.tableViewDataSource
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
@@ -74,4 +69,14 @@ class AlarmView: UIView {
         super.updateConstraints()
     }
 
+    func setTableViewStyle(sepStyle: UITableViewCell.SeparatorStyle, bgColor: UIColor) {
+        tableView.separatorStyle    = sepStyle
+        tableView.backgroundColor   = bgColor
+    }
+    
+    func setTableViewProtocol(delegate: UITableViewDelegate, dataSource: UITableViewDataSource) {
+        tableView.delegate      = delegate
+        tableView.dataSource    = dataSource
+    }
+    
 }
