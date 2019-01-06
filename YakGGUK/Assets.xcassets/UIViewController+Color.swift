@@ -30,6 +30,15 @@ extension UIViewController {
         gradient.endPoint = CGPoint(x: 0, y: 1)
         view.layer.insertSublayer(gradient, at: 0)
     }
+    
+    func setHorizontalGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.frame = view.bounds
+        gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
+        gradient.startPoint = CGPoint(x: 0, y: 1)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+        view.layer.insertSublayer(gradient, at: 0)
+    }
 
     func setBackgGroundGradientView() {
         let backgroundView = UIView()

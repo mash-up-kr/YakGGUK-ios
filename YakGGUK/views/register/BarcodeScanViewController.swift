@@ -10,6 +10,7 @@ import UIKit
 import AVFoundation
 
 class BarcodeScanViewController: UIViewController {
+    
     @IBOutlet weak var cameraView: UIView!
     var overlayFrameView: UIView?
     
@@ -54,7 +55,7 @@ class BarcodeScanViewController: UIViewController {
             }
         }
         navigationController?.setToolbarHidden(true, animated: false)
-        setBackgroundGradientLayer()
+        setHorizontalGradientLayer()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -126,7 +127,9 @@ class BarcodeScanViewController: UIViewController {
     }
     
     private func navigateSearchVC() {
+        print("navigateSearchVC")
         guard let nextVC: SearchMedicineViewController = storyboard?.instantiateViewController(withIdentifier: "search_by_name") as? SearchMedicineViewController else {
+            print("no matched controller")
             return
         }
         
@@ -160,14 +163,24 @@ extension BarcodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         }
         
         if supportedCodeTypes.contains(metadataObj.type) {
-            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
+//            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
 //            overlayFrameView?.frame = barCodeObject!.bounds
+
+            if presentedViewController == self {
+                
+            }
             
+            if presentationController == self {
+                
+            }
             if metadataObj.stringValue != nil {
                 // TODO : 바코드 검색 기능
-                let alertVC = UIAlertController(title: "검색 결과 없음", message: "바코드 검색 결과가 없습니다. 이름 검색 화면으로 이동합니다.", preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "확인", style: .cancel, handler: { [weak self] _ in
+                let alertVC = UIAlertController(title: "바코드 데이터가 없습니다.\n제품을 검색하시겠습니까?", message: nil, preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: { [weak self] _ in
                     self?.navigateSearchVC()
+                }))
+                alertVC.addAction(UIAlertAction(title: "네", style: .default , handler: { [weak self] _ in
+                    self?.captureSession.startRunning()
                 }))
                 
                 present(alertVC, animated: true) { [weak self] in

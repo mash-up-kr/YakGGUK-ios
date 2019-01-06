@@ -86,6 +86,7 @@ extension AlarmViewController {
     func initFloaty() {
         floaty.addItem(title: "추가하기") { _ in
             guard let nextVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "barcode_scan") as? BarcodeScanViewController else {
+                print("[navigation Error]")
                 return
             }
             let naviVC = UINavigationController(rootViewController: nextVC)

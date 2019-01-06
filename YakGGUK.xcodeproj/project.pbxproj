@@ -16,16 +16,17 @@
 		BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */; };
 		BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8821A98650003EA767 /* AlarmViewController.swift */; };
 		BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */; };
-		BEE70E8F21A98934003EA767 /* AlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8E21A98934003EA767 /* AlarmCell.swift */; };
-		BEE70E9121A98C16003EA767 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9021A98C16003EA767 /* AlarmModel.swift */; };
-		BEE70E9321A98DEE003EA767 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9221A98DEE003EA767 /* MedicineModel.swift */; };
-		BEE70E9521A9976F003EA767 /* AlarmDetailCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9421A9976F003EA767 /* AlarmDetailCell.swift */; };
-		BEE70E9721A9977D003EA767 /* NoAlarmCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */; };
-		BEE70E9921A9ACE8003EA767 /* MedicineCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E9821A9ACE8003EA767 /* MedicineCell.swift */; };
 		D50DE0F421B8B01700F8D920 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50DE0F321B8B01700F8D920 /* Color.xcassets */; };
+		D561E46E21E2336500DF5B34 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46421E2336400DF5B34 /* MedicineModel.swift */; };
+		D561E46F21E2336500DF5B34 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46521E2336400DF5B34 /* AlarmModel.swift */; };
+		D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46721E2336400DF5B34 /* MedicineTableViewCell.swift */; };
+		D561E47121E2336500DF5B34 /* AlarmListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46821E2336400DF5B34 /* AlarmListTableViewCell.swift */; };
+		D561E47221E2336500DF5B34 /* NoAlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46B21E2336500DF5B34 /* NoAlarmView.swift */; };
+		D561E47321E2336500DF5B34 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46D21E2336500DF5B34 /* AlarmView.swift */; };
+		D561E47521E2338900DF5B34 /* UILabel+Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E47421E2338900DF5B34 /* UILabel+Spacing.swift */; };
+		D561E47821E23AAF00DF5B34 /* BarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E47621E238DA00DF5B34 /* BarcodeScanViewController.swift */; };
 		D56518E321B8EDB400E8F6C4 /* GradientSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56518E221B8EDB400E8F6C4 /* GradientSearchBar.swift */; };
 		D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */; };
-		D56A6E0A21A9F02D003B7FAE /* BarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */; };
 		D59F73E321A97E7900D275A0 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E221A97E7900D275A0 /* Member.swift */; };
 		D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */; };
 		D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59F73F921A9886E00D275A0 /* Search.storyboard */; };
@@ -54,13 +55,15 @@
 		BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListNavigationController.swift; sourceTree = "<group>"; };
 		BEE70E8821A98650003EA767 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmViewController.storyboard; sourceTree = "<group>"; };
-		BEE70E8E21A98934003EA767 /* AlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmCell.swift; sourceTree = "<group>"; };
-		BEE70E9021A98C16003EA767 /* AlarmModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
-		BEE70E9221A98DEE003EA767 /* MedicineModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
-		BEE70E9421A9976F003EA767 /* AlarmDetailCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmDetailCell.swift; sourceTree = "<group>"; };
-		BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NoAlarmCell.swift; sourceTree = "<group>"; };
-		BEE70E9821A9ACE8003EA767 /* MedicineCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MedicineCell.swift; sourceTree = "<group>"; };
 		D50DE0F321B8B01700F8D920 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		D561E46421E2336400DF5B34 /* MedicineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
+		D561E46521E2336400DF5B34 /* AlarmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
+		D561E46721E2336400DF5B34 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
+		D561E46821E2336400DF5B34 /* AlarmListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmListTableViewCell.swift; sourceTree = "<group>"; };
+		D561E46B21E2336500DF5B34 /* NoAlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NoAlarmView.swift; sourceTree = "<group>"; };
+		D561E46D21E2336500DF5B34 /* AlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
+		D561E47421E2338900DF5B34 /* UILabel+Spacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Spacing.swift"; sourceTree = "<group>"; };
+		D561E47621E238DA00DF5B34 /* BarcodeScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewController.swift; sourceTree = "<group>"; };
 		D56518E221B8EDB400E8F6C4 /* GradientSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSearchBar.swift; sourceTree = "<group>"; };
 		D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Color.swift"; path = "YakGGUK/Assets.xcassets/UIViewController+Color.swift"; sourceTree = SOURCE_ROOT; };
 		D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewController.swift; sourceTree = "<group>"; };
@@ -155,32 +158,59 @@
 		BEE70E8721A98633003EA767 /* alarms */ = {
 			isa = PBXGroup;
 			children = (
-				BEE70E8D21A98910003EA767 /* models */,
-				BEE70E8C21A988F9003EA767 /* cells */,
+				D561E46321E2336400DF5B34 /* model */,
+				D561E46621E2336400DF5B34 /* tableViewCell */,
+				D561E46921E2336500DF5B34 /* view */,
 				BEE70E8821A98650003EA767 /* AlarmViewController.swift */,
 				BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */,
 			);
 			path = alarms;
 			sourceTree = "<group>";
 		};
-		BEE70E8C21A988F9003EA767 /* cells */ = {
+		D561E46321E2336400DF5B34 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				BEE70E8E21A98934003EA767 /* AlarmCell.swift */,
-				BEE70E9421A9976F003EA767 /* AlarmDetailCell.swift */,
-				BEE70E9821A9ACE8003EA767 /* MedicineCell.swift */,
-				BEE70E9621A9977D003EA767 /* NoAlarmCell.swift */,
+				D561E46421E2336400DF5B34 /* MedicineModel.swift */,
+				D561E46521E2336400DF5B34 /* AlarmModel.swift */,
 			);
-			path = cells;
+			name = model;
+			path = YakGGUK/views/alarmlist/alarms/model;
+			sourceTree = SOURCE_ROOT;
+		};
+		D561E46621E2336400DF5B34 /* tableViewCell */ = {
+			isa = PBXGroup;
+			children = (
+				D561E46721E2336400DF5B34 /* MedicineTableViewCell.swift */,
+				D561E46821E2336400DF5B34 /* AlarmListTableViewCell.swift */,
+			);
+			name = tableViewCell;
+			path = YakGGUK/views/alarmlist/alarms/tableViewCell;
+			sourceTree = SOURCE_ROOT;
+		};
+		D561E46921E2336500DF5B34 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				D561E46A21E2336500DF5B34 /* noalarmview */,
+				D561E46C21E2336500DF5B34 /* alarmview */,
+			);
+			name = view;
+			path = YakGGUK/views/alarmlist/alarms/view;
+			sourceTree = SOURCE_ROOT;
+		};
+		D561E46A21E2336500DF5B34 /* noalarmview */ = {
+			isa = PBXGroup;
+			children = (
+				D561E46B21E2336500DF5B34 /* NoAlarmView.swift */,
+			);
+			path = noalarmview;
 			sourceTree = "<group>";
 		};
-		BEE70E8D21A98910003EA767 /* models */ = {
+		D561E46C21E2336500DF5B34 /* alarmview */ = {
 			isa = PBXGroup;
 			children = (
-				BEE70E9021A98C16003EA767 /* AlarmModel.swift */,
-				BEE70E9221A98DEE003EA767 /* MedicineModel.swift */,
+				D561E46D21E2336500DF5B34 /* AlarmView.swift */,
 			);
-			path = models;
+			path = alarmview;
 			sourceTree = "<group>";
 		};
 		D59F73E021A97E6400D275A0 /* Network */ = {
@@ -206,9 +236,9 @@
 				D5DA8BD321A9C78A00F963B0 /* view */,
 				D59F73FB21A98CFD00D275A0 /* tableViewCell */,
 				D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */,
+				D561E47621E238DA00DF5B34 /* BarcodeScanViewController.swift */,
 				D59F73F921A9886E00D275A0 /* Search.storyboard */,
 				D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */,
-				D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -225,6 +255,7 @@
 		D5DA8BD321A9C78A00F963B0 /* view */ = {
 			isa = PBXGroup;
 			children = (
+				D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */,
 				D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */,
 				D5DA8BCF21A9BA9600F963B0 /* CheckBoxButton.swift */,
 				D56518E221B8EDB400E8F6C4 /* GradientSearchBar.swift */,
@@ -235,6 +266,7 @@
 		D5DA8BDA21A9D86500F963B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				D561E47421E2338900DF5B34 /* UILabel+Spacing.swift */,
 				D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */,
 				D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */,
 				D5B65ED521B9378C003E6886 /* UiView+Shadow.swift */,
@@ -411,29 +443,27 @@
 			buildActionMask = 2147483647;
 			files = (
 				D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */,
-				D56A6E0A21A9F02D003B7FAE /* BarcodeScanViewController.swift in Sources */,
+				D561E46E21E2336500DF5B34 /* MedicineModel.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
+				D561E47521E2338900DF5B34 /* UILabel+Spacing.swift in Sources */,
 				D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */,
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
 				D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */,
+				D561E47321E2336500DF5B34 /* AlarmView.swift in Sources */,
 				D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */,
-				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
-				BEE70E9521A9976F003EA767 /* AlarmDetailCell.swift in Sources */,
 				D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */,
-				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
-				BEE70E8F21A98934003EA767 /* AlarmCell.swift in Sources */,
-				BEE70E9921A9ACE8003EA767 /* MedicineCell.swift in Sources */,
+				D561E47221E2336500DF5B34 /* NoAlarmView.swift in Sources */,
+				D561E46F21E2336500DF5B34 /* AlarmModel.swift in Sources */,
 				BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */,
-				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
-				BEE70E9321A98DEE003EA767 /* MedicineModel.swift in Sources */,
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
 				D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */,
-				BEE70E9721A9977D003EA767 /* NoAlarmCell.swift in Sources */,
-				BEE70E9121A98C16003EA767 /* AlarmModel.swift in Sources */,
+				D561E47821E23AAF00DF5B34 /* BarcodeScanViewController.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
 				D56518E321B8EDB400E8F6C4 /* GradientSearchBar.swift in Sources */,
+				D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
+				D561E47121E2336500DF5B34 /* AlarmListTableViewCell.swift in Sources */,
 				D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
