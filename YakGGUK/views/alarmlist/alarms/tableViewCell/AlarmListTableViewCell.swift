@@ -87,7 +87,7 @@ class AlarmListTableViewCell: UITableViewCell {
         
         label.textAlignment = .center
         label.textColor     = UIColor(red: 79 / 255, green: 79 / 255, blue: 79 / 255, alpha: 1.0)
-        label.font          = UIFont(name: "AppleSDGothicNeo-Medium", size: 20.0)
+        label.font          = UIFont(name: "AppleSDGothicNeo-Light", size: 20.0)
         
         label.letterSpacing = 0.21
         
@@ -106,7 +106,7 @@ class AlarmListTableViewCell: UITableViewCell {
         
         label.textAlignment = .center
         label.textColor     = UIColor(red: 59 / 255, green: 59 / 255, blue: 59 / 255, alpha: 1.0)
-        label.font          = UIFont(name: "AppleSDGothicNeo-Light", size: 34.0)
+        label.font          = UIFont(name: "SFProDisplay-Light", size: 34.0)
         
         label.letterSpacing = 0.36
         
