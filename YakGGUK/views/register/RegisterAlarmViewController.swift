@@ -10,6 +10,7 @@ import UIKit
 
 class RegisterAlarmViewController: UIViewController {
     var alarms: [(name: String, date: Date)] = []
+    var medicine: MedicineModel!
     var indexForChange: Int = 0
     
     let timeFormatter: DateFormatter = {
@@ -34,7 +35,8 @@ class RegisterAlarmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegate()
-        registerButton.backgroundColor = gradientColor(frame: registerButton.frame)
+        setMedicineInfo()
+        registerButton.backgroundColor = horizontalGradientColor(frame: registerButton.frame)
     }
     
     func setDelegate() {
@@ -44,9 +46,13 @@ class RegisterAlarmViewController: UIViewController {
         bedroomButton.buttonDelegate = self
     }
     
-    func bind(medicine: MedicineModel) {
+    func setMedicineInfo() {
         nameLabel.text = medicine.name
         descriptLabel.text = medicine.description
+    }
+    
+    func bind(medicine data: MedicineModel) {
+        medicine = data
     }
 }
 

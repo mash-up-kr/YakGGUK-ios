@@ -32,10 +32,29 @@ class BarcodeScanViewController: UIViewController {
         AVMetadataObject.ObjectType.dataMatrix
     ]
     private var permissionGranted = false
+    private var alertIsPresented = false
     var didStartCamera: Bool = false
 
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationController?.setToolbarHidden(true, animated: false)
+        setVerticalGradientLayer()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        createCameraFrame()
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        guard permissionGranted else {
+            showPermissionAlert()
+            return
+        }
+        didStartCamera ? captureSession.startRunning() : startCamera()
+    }
+    
+    // MARK: private function
+    private func createCameraFrame() {
         switch AVCaptureDevice.authorizationStatus(for: .video) {
         case .authorized:
             permissionGranted = true
@@ -54,18 +73,8 @@ class BarcodeScanViewController: UIViewController {
                 view.bringSubviewToFront(overlayFrameView)
             }
         }
-        navigationController?.setToolbarHidden(true, animated: false)
-        setHorizontalGradientLayer()
     }
     
-    override func viewDidAppear(_ animated: Bool) {
-        guard permissionGranted else {
-            showPermissionAlert()
-            return
-        }
-        didStartCamera ? captureSession.startRunning() : startCamera()
-    }
-    // MARK: private function
     private func startCamera() {
         let deviceDiscoverySession = AVCaptureDevice.DiscoverySession(deviceTypes: [.builtInWideAngleCamera], mediaType: AVMediaType.video, position: .back)
         
@@ -165,27 +174,22 @@ extension BarcodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
         if supportedCodeTypes.contains(metadataObj.type) {
 //            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
 //            overlayFrameView?.frame = barCodeObject!.bounds
-
-            if presentedViewController == self {
-                
-            }
-            
-            if presentationController == self {
-                
-            }
-            if metadataObj.stringValue != nil {
+            if !alertIsPresented && metadataObj.stringValue != nil {
                 // TODO : 바코드 검색 기능
-                let alertVC = UIAlertController(title: "바코드 데이터가 없습니다.\n제품을 검색하시겠습니까?", message: nil, preferredStyle: .alert)
-                alertVC.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: { [weak self] _ in
-                    self?.navigateSearchVC()
-                }))
-                alertVC.addAction(UIAlertAction(title: "네", style: .default , handler: { [weak self] _ in
-                    self?.captureSession.startRunning()
-                }))
-                
-                present(alertVC, animated: true) { [weak self] in
-                    self?.captureSession.stopRunning()
-                }
+                    
+                    let alertVC = UIAlertController(title: "바코드 데이터가 없습니다.\n제품을 검색하시겠습니까?", message: nil, preferredStyle: .alert)
+                    alertVC.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: { [weak self] _ in
+                        self?.alertIsPresented.toggle()
+                        self?.captureSession.startRunning()
+                    }))
+                    alertVC.addAction(UIAlertAction(title: "네", style: .default , handler: { [weak self] _ in
+                        self?.alertIsPresented.toggle()
+                        self?.navigateSearchVC()
+                    }))
+                    alertIsPresented.toggle()
+                    present(alertVC, animated: true) { [weak self] in
+                        self?.captureSession.stopRunning()
+                    }
             }
         }
     }

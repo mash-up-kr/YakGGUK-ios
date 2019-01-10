@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="wKH-at-1Qr">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Auk-5S-RJU">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -117,7 +117,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="2575.1999999999998" y="63.418290854572717"/>
+            <point key="canvasLocation" x="3514.4000000000001" y="63.418290854572717"/>
         </scene>
         <!--알람 등록-->
         <scene sceneID="Pfb-B1-1vs">
@@ -385,7 +385,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="3303.1999999999998" y="60.719640179910051"/>
+            <point key="canvasLocation" x="4242.3999999999996" y="60.719640179910051"/>
         </scene>
         <!--Barcode Scan View Controller-->
         <scene sceneID="cUu-LM-Xvi">
@@ -395,29 +395,44 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLeftWhite" translatesAutoresizingMaskIntoConstraints="NO" id="lns-Zh-hJy">
+                                <rect key="frame" x="16" y="48" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="24" id="49k-uT-vdc"/>
+                                    <constraint firstAttribute="width" secondItem="lns-Zh-hJy" secondAttribute="height" id="jfw-QB-llg"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aGl-ou-ioe">
+                                <rect key="frame" x="0.0" y="32" width="56" height="56"/>
+                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="J07-k8-NiE" userLabel="CameraView">
-                                <rect key="frame" x="0.0" y="144" width="375" height="155"/>
+                                <rect key="frame" x="0.0" y="100" width="375" height="199"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="화면 안에 바코드를 위치켜주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoW-Gs-k5r">
-                                <rect key="frame" x="75.5" y="323" width="224" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="화면 안에 바코드를 위치시켜주세요." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RoW-Gs-k5r">
+                                <rect key="frame" x="68.5" y="323" width="238" height="20.5"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="17"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
+                                <userDefinedRuntimeAttributes>
+                                    <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
+                                        <real key="value" value="0.17000000000000001"/>
+                                    </userDefinedRuntimeAttribute>
+                                </userDefinedRuntimeAttributes>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCam" translatesAutoresizingMaskIntoConstraints="NO" id="xsP-bW-YNB">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icCamSet" translatesAutoresizingMaskIntoConstraints="NO" id="xsP-bW-YNB">
                                 <rect key="frame" x="159.5" y="575" width="56" height="56"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="xsP-bW-YNB" secondAttribute="height" id="8u3-vV-NhJ"/>
                                     <constraint firstAttribute="height" constant="56" id="h72-e6-MR0"/>
                                 </constraints>
                             </imageView>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icRight" translatesAutoresizingMaskIntoConstraints="NO" id="IAa-tL-C2I">
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icRightWhite" translatesAutoresizingMaskIntoConstraints="NO" id="IAa-tL-C2I">
                                 <rect key="frame" x="335" y="591" width="24" height="24"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제품 검색" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nMg-rS-b1x">
-                                <rect key="frame" x="267" y="592.5" width="64" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <rect key="frame" x="271" y="593" width="60" height="20"/>
+                                <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="16"/>
                                 <color key="textColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <nil key="highlightedColor"/>
                                 <userDefinedRuntimeAttributes>
@@ -427,7 +442,7 @@
                                 </userDefinedRuntimeAttributes>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qO0-Pc-MZs">
-                                <rect key="frame" x="275" y="579" width="100" height="48"/>
+                                <rect key="frame" x="279" y="579" width="96" height="48"/>
                                 <connections>
                                     <action selector="moveToSearchByName:" destination="WBh-Ah-3in" eventType="touchUpInside" id="1d7-1u-61y"/>
                                 </connections>
@@ -435,14 +450,21 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="aGl-ou-ioe" firstAttribute="bottom" secondItem="lns-Zh-hJy" secondAttribute="bottom" constant="16" id="A4d-NX-SMZ"/>
+                            <constraint firstItem="lns-Zh-hJy" firstAttribute="top" secondItem="zD5-Gf-0OR" secondAttribute="top" constant="28" id="Aai-pa-3Wt"/>
                             <constraint firstAttribute="trailing" secondItem="J07-k8-NiE" secondAttribute="trailing" id="CW6-aT-4Jl"/>
+                            <constraint firstItem="J07-k8-NiE" firstAttribute="height" secondItem="9Qz-Xr-ZpB" secondAttribute="height" multiplier="199:667" id="I4v-dq-Jgi"/>
                             <constraint firstItem="J07-k8-NiE" firstAttribute="leading" secondItem="9Qz-Xr-ZpB" secondAttribute="leading" id="Ic4-Nl-svu"/>
+                            <constraint firstItem="aGl-ou-ioe" firstAttribute="trailing" secondItem="lns-Zh-hJy" secondAttribute="trailing" constant="16" id="K7U-xU-4vi"/>
                             <constraint firstItem="qO0-Pc-MZs" firstAttribute="leading" secondItem="nMg-rS-b1x" secondAttribute="leading" constant="8" id="N6n-zX-ioE"/>
                             <constraint firstItem="RoW-Gs-k5r" firstAttribute="centerX" secondItem="9Qz-Xr-ZpB" secondAttribute="centerX" id="QOS-bM-34K"/>
+                            <constraint firstItem="lns-Zh-hJy" firstAttribute="leading" secondItem="zD5-Gf-0OR" secondAttribute="leading" constant="16" id="QkH-j7-QkC"/>
                             <constraint firstItem="IAa-tL-C2I" firstAttribute="centerY" secondItem="xsP-bW-YNB" secondAttribute="centerY" id="SnA-HC-3B1"/>
                             <constraint firstItem="IAa-tL-C2I" firstAttribute="leading" secondItem="nMg-rS-b1x" secondAttribute="trailing" constant="4" id="VeP-cg-9nr"/>
                             <constraint firstItem="zD5-Gf-0OR" firstAttribute="trailing" secondItem="IAa-tL-C2I" secondAttribute="trailing" constant="16" id="Y8V-zP-zip"/>
                             <constraint firstItem="nMg-rS-b1x" firstAttribute="centerY" secondItem="IAa-tL-C2I" secondAttribute="centerY" id="YTc-2B-knj"/>
+                            <constraint firstItem="aGl-ou-ioe" firstAttribute="top" secondItem="lns-Zh-hJy" secondAttribute="top" constant="-16" id="aQ4-Yo-blc"/>
+                            <constraint firstItem="aGl-ou-ioe" firstAttribute="leading" secondItem="lns-Zh-hJy" secondAttribute="leading" constant="-16" id="gnh-BA-2Ph"/>
                             <constraint firstItem="RoW-Gs-k5r" firstAttribute="top" secondItem="J07-k8-NiE" secondAttribute="bottom" constant="24" id="j2f-oQ-QFu"/>
                             <constraint firstItem="xsP-bW-YNB" firstAttribute="centerX" secondItem="9Qz-Xr-ZpB" secondAttribute="centerX" id="l9j-UL-Ure"/>
                             <constraint firstItem="zD5-Gf-0OR" firstAttribute="bottom" secondItem="xsP-bW-YNB" secondAttribute="bottom" constant="36" id="nnm-6r-AaL"/>
@@ -450,7 +472,7 @@
                             <constraint firstItem="qO0-Pc-MZs" firstAttribute="top" secondItem="IAa-tL-C2I" secondAttribute="top" constant="-12" id="oSZ-Fa-hVr"/>
                             <constraint firstItem="J07-k8-NiE" firstAttribute="top" secondItem="zD5-Gf-0OR" secondAttribute="top" constant="80" id="qDo-io-GJi"/>
                             <constraint firstItem="zD5-Gf-0OR" firstAttribute="trailing" secondItem="qO0-Pc-MZs" secondAttribute="trailing" id="rAZ-VV-q3Y"/>
-                            <constraint firstItem="zD5-Gf-0OR" firstAttribute="bottom" secondItem="J07-k8-NiE" secondAttribute="bottom" constant="368" id="skb-al-Wsu"/>
+                            <constraint firstItem="zD5-Gf-0OR" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="J07-k8-NiE" secondAttribute="bottom" constant="250" id="skb-al-Wsu"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="zD5-Gf-0OR"/>
                     </view>
@@ -462,35 +484,37 @@
                             </connections>
                         </barButtonItem>
                     </navigationItem>
+                    <nil key="simulatedTopBarMetrics"/>
                     <connections>
                         <outlet property="cameraView" destination="J07-k8-NiE" id="cZX-QJ-cfS"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Um7-Kz-LZ1" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1356" y="46.326836581709152"/>
+            <point key="canvasLocation" x="2295.1999999999998" y="46.326836581709152"/>
         </scene>
         <!--Navigation Controller-->
-        <scene sceneID="57l-Cr-rMx">
+        <scene sceneID="fVc-Nm-0pd">
             <objects>
-                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="wKH-at-1Qr" sceneMemberID="viewController">
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Auk-5S-RJU" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="QAF-XL-x2j">
-                        <rect key="frame" x="0.0" y="20" width="375" height="44"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="g8c-er-YgE">
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="WBh-Ah-3in" kind="relationship" relationship="rootViewController" id="dFe-eE-8Zv"/>
+                        <segue destination="WBh-Ah-3in" kind="relationship" relationship="rootViewController" id="533-6D-pv9"/>
                     </connections>
                 </navigationController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="DqA-xs-NEK" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="sOi-fG-CR8" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="416.80000000000001" y="46.326836581709152"/>
+            <point key="canvasLocation" x="1356" y="46.326836581709152"/>
         </scene>
     </scenes>
     <resources>
-        <image name="icCam" width="36" height="36"/>
+        <image name="icCamSet" width="56" height="56"/>
+        <image name="icLeftWhite" width="24" height="24"/>
         <image name="icRight" width="24" height="24"/>
+        <image name="icRightWhite" width="24" height="24"/>
     </resources>
 </document>

@@ -34,8 +34,8 @@ class SearchMedicineViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         definesPresentationContext = true
-        medicindeSearch.barTintColor = gradientColor(frame: medicindeSearch.frame)
         navigationController?.setToolbarHidden(true, animated: false)
+        medicindeSearch.barTintColor = horizontalGradientColor(frame: medicindeSearch.frame)
         setHorizontalGradientLayer()
     }
     

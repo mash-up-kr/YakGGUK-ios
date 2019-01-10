@@ -15,7 +15,7 @@ class AlarmViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setBackgroundGradientLayer()
+        setVerticalGradientLayer()
         
         initFloaty()
         
