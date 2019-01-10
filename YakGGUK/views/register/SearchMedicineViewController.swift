@@ -35,8 +35,17 @@ class SearchMedicineViewController: UIViewController {
         super.viewDidLoad()
         definesPresentationContext = true
         navigationController?.setToolbarHidden(true, animated: false)
-        medicindeSearch.barTintColor = horizontalGradientColor(frame: medicindeSearch.frame)
+//        medicindeSearch.barTintColor = horizontalGradientColor(frame: medicindeSearch.frame)
         setHorizontalGradientLayer()
+        
+        for subView in medicindeSearch.subviews {
+            for view in subView.subviews {
+                if view.isKind(of: NSClassFromString("UISearchBarBackground")!) {
+                    let imageView = view as! UIImageView
+                    imageView.removeFromSuperview()
+                }
+            }
+        }
     }
     
     override func viewWillAppear(_ animated: Bool) {

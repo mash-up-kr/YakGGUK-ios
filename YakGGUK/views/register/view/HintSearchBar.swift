@@ -8,7 +8,7 @@
 
 import UIKit
 
-class GradientSearchBar: UISearchBar {
+class HintSearchBar: UISearchBar {
     
     @IBInspectable var preferredTextColor: UIColor!
     @IBInspectable var preferredHintColor: UIColor!
@@ -44,10 +44,15 @@ class GradientSearchBar: UISearchBar {
             searchField.textColor = preferredTextColor
             searchField.attributedPlaceholder = NSAttributedString(string: self.placeholder ?? "", attributes:[NSAttributedString.Key.foregroundColor: preferredHintColor])
             searchField.backgroundColor = UIColor.clear
+            let searchImage = UIImage(named: "icSearch")
+            let imageView = UIImageView(frame: CGRect(x: 0, y: 0, width: 24, height: 24))
+            imageView.image = searchImage
+            searchField.leftViewMode = .always
+            searchField.leftView = imageView
         }
-        setImage(UIImage(named: "icX"), for: .bookmark, state: .normal)
-        setImage(UIImage(named: "icSearch"), for: .search, state: .normal)
         setImage(UIImage(named: "icX"), for: .clear, state: .normal)
+        setImage(UIImage(named: "icSearch"), for: .search, state: .normal)
+        
         super.draw(rect)
     }
 }

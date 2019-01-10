@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -18,11 +19,13 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <searchBar contentMode="redraw" searchBarStyle="prominent" placeholder="약 이름" translucent="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-R6-J2U" customClass="GradientSearchBar" customModule="YakGGUK" customModuleProvider="target">
-                                <rect key="frame" x="0.0" y="20" width="375" height="80"/>
+                            <searchBar contentMode="redraw" placeholder="약 이름" backgroundImage="nil" translatesAutoresizingMaskIntoConstraints="NO" id="TUe-R6-J2U" customClass="HintSearchBar" customModule="YakGGUK" customModuleProvider="target">
+                                <rect key="frame" x="40" y="20" width="335" height="80"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="80" id="8rW-ae-0NI"/>
                                 </constraints>
+                                <color key="barTintColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <offsetWrapper key="searchFieldBackgroundPositionAdjustment" horizontal="-8" vertical="0.0"/>
                                 <textInputTraits key="textInputTraits"/>
                                 <userDefinedRuntimeAttributes>
                                     <userDefinedRuntimeAttribute type="color" keyPath="preferredTextColor">
@@ -48,10 +51,15 @@
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Lh6-cN-ZsE">
-                                                    <rect key="frame" x="20" y="29" width="45" height="21"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="medium" pointSize="18"/>
+                                                    <rect key="frame" x="20" y="29" width="40.5" height="22"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Medium" family="Apple SD Gothic Neo" pointSize="18"/>
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
+                                                            <real key="value" value="0.19"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                                 <button opaque="NO" contentMode="scaleAspectFit" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OTk-9f-Q7a">
                                                     <rect key="frame" x="323" y="34" width="32" height="32"/>
@@ -62,10 +70,15 @@
                                                     <state key="normal" image="icRight"/>
                                                 </button>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6Ww-80-dNI">
-                                                    <rect key="frame" x="20" y="54.5" width="33" height="16"/>
-                                                    <fontDescription key="fontDescription" type="system" weight="light" pointSize="13"/>
-                                                    <nil key="textColor"/>
+                                                    <rect key="frame" x="20" y="53.5" width="31.5" height="17"/>
+                                                    <fontDescription key="fontDescription" name="AppleSDGothicNeo-Regular" family="Apple SD Gothic Neo" pointSize="14"/>
+                                                    <color key="textColor" name="greyishBrown"/>
                                                     <nil key="highlightedColor"/>
+                                                    <userDefinedRuntimeAttributes>
+                                                        <userDefinedRuntimeAttribute type="number" keyPath="letterSpacing">
+                                                            <real key="value" value="0.14999999999999999"/>
+                                                        </userDefinedRuntimeAttribute>
+                                                    </userDefinedRuntimeAttributes>
                                                 </label>
                                             </subviews>
                                             <constraints>
@@ -88,16 +101,32 @@
                                     <outlet property="delegate" destination="c1m-gV-gGj" id="BT1-yq-1Cl"/>
                                 </connections>
                             </tableView>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icLeftWhite" translatesAutoresizingMaskIntoConstraints="NO" id="uRd-6w-gaV">
+                                <rect key="frame" x="16" y="48" width="24" height="24"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="uRd-6w-gaV" secondAttribute="height" id="NBc-Ht-2xo"/>
+                                    <constraint firstAttribute="width" constant="24" id="TRx-gm-NvZ"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PNB-N1-NBc">
+                                <rect key="frame" x="0.0" y="20" width="40" height="80"/>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
+                            <constraint firstItem="uRd-6w-gaV" firstAttribute="centerY" secondItem="TUe-R6-J2U" secondAttribute="centerY" id="4Rk-GL-pDM"/>
                             <constraint firstItem="TUe-R6-J2U" firstAttribute="top" secondItem="67o-DN-PAI" secondAttribute="top" constant="20" id="5LZ-0g-CN7"/>
+                            <constraint firstItem="TUe-R6-J2U" firstAttribute="leading" secondItem="PNB-N1-NBc" secondAttribute="trailing" id="5by-tc-9Ax"/>
                             <constraint firstItem="wKi-ws-Mgo" firstAttribute="trailing" secondItem="4vl-mP-ych" secondAttribute="trailing" id="76Z-l7-l5A"/>
+                            <constraint firstItem="4vl-mP-ych" firstAttribute="top" secondItem="PNB-N1-NBc" secondAttribute="bottom" id="Bhq-9n-2qc"/>
                             <constraint firstItem="TUe-R6-J2U" firstAttribute="trailing" secondItem="wKi-ws-Mgo" secondAttribute="trailing" id="a01-Wm-c66"/>
                             <constraint firstItem="wKi-ws-Mgo" firstAttribute="bottom" secondItem="4vl-mP-ych" secondAttribute="bottom" id="a0M-La-xYO"/>
                             <constraint firstItem="4vl-mP-ych" firstAttribute="leading" secondItem="wKi-ws-Mgo" secondAttribute="leading" id="jbw-h1-3XH"/>
                             <constraint firstItem="4vl-mP-ych" firstAttribute="top" secondItem="TUe-R6-J2U" secondAttribute="bottom" id="oln-Uk-bfA"/>
-                            <constraint firstItem="TUe-R6-J2U" firstAttribute="leading" secondItem="wKi-ws-Mgo" secondAttribute="leading" id="qL1-vX-0n3"/>
+                            <constraint firstItem="uRd-6w-gaV" firstAttribute="leading" secondItem="67o-DN-PAI" secondAttribute="leading" constant="16" id="pTh-Mr-gBa"/>
+                            <constraint firstItem="TUe-R6-J2U" firstAttribute="leading" secondItem="wKi-ws-Mgo" secondAttribute="leading" constant="40" id="qL1-vX-0n3"/>
+                            <constraint firstItem="PNB-N1-NBc" firstAttribute="leading" secondItem="wKi-ws-Mgo" secondAttribute="leading" id="yZV-X5-h4h"/>
+                            <constraint firstItem="PNB-N1-NBc" firstAttribute="top" secondItem="wKi-ws-Mgo" secondAttribute="top" id="zIl-Yc-Cli"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="wKi-ws-Mgo"/>
                     </view>
@@ -117,7 +146,7 @@
                     </connections>
                 </searchDisplayController>
             </objects>
-            <point key="canvasLocation" x="3514.4000000000001" y="63.418290854572717"/>
+            <point key="canvasLocation" x="3077.5999999999999" y="48.125937031484263"/>
         </scene>
         <!--알람 등록-->
         <scene sceneID="Pfb-B1-1vs">
@@ -385,7 +414,7 @@
                     </connections>
                 </tapGestureRecognizer>
             </objects>
-            <point key="canvasLocation" x="4242.3999999999996" y="60.719640179910051"/>
+            <point key="canvasLocation" x="3807" y="46"/>
         </scene>
         <!--Barcode Scan View Controller-->
         <scene sceneID="cUu-LM-Xvi">
@@ -444,7 +473,7 @@
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qO0-Pc-MZs">
                                 <rect key="frame" x="279" y="579" width="96" height="48"/>
                                 <connections>
-                                    <action selector="moveToSearchByName:" destination="WBh-Ah-3in" eventType="touchUpInside" id="1d7-1u-61y"/>
+                                    <segue destination="c1m-gV-gGj" kind="show" id="HIW-zf-Bvm"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -516,5 +545,9 @@
         <image name="icLeftWhite" width="24" height="24"/>
         <image name="icRight" width="24" height="24"/>
         <image name="icRightWhite" width="24" height="24"/>
+        <image name="nil" width="16" height="16"/>
+        <namedColor name="greyishBrown">
+            <color red="0.32549019607843138" green="0.32549019607843138" blue="0.32549019607843138" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
     </resources>
 </document>

@@ -111,7 +111,6 @@ class BarcodeScanViewController: UIViewController {
         
         // Initialize the video preview layer and add it as a sublayer to the viewPreview view's layer.
         videoPreviewLayer = AVCaptureVideoPreviewLayer(session: captureSession)
-        
         videoPreviewLayer?.videoGravity = AVLayerVideoGravity.resizeAspectFill
         videoPreviewLayer?.frame = cameraView.layer.bounds
         cameraView.layer.addSublayer(videoPreviewLayer!)
@@ -120,10 +119,6 @@ class BarcodeScanViewController: UIViewController {
         captureSession.startRunning()
     }
 
-    @IBAction func moveToSearchByName(_ sender: UIButton) {
-         navigateSearchVC()
-    }
-    
     func showPermissionAlert() {
         let alert = UIAlertController(title: "설정에서 카메라 권한을 허용해 주세요.", message: nil, preferredStyle: .alert)
         alert.addAction(
@@ -136,7 +131,6 @@ class BarcodeScanViewController: UIViewController {
     }
     
     private func navigateSearchVC() {
-        print("navigateSearchVC")
         guard let nextVC: SearchMedicineViewController = storyboard?.instantiateViewController(withIdentifier: "search_by_name") as? SearchMedicineViewController else {
             print("no matched controller")
             return
@@ -153,6 +147,7 @@ class BarcodeScanViewController: UIViewController {
         navigationController?.pushViewController(nextVC, animated: true)
         
     }
+    
     @IBAction func dismiss(_ sender: UIBarButtonItem) {
         navigationController?.addBottomDismissTransition()
         navigationController?.dismiss(animated: false, completion: nil)

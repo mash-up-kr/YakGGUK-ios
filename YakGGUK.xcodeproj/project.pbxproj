@@ -25,7 +25,7 @@
 		D561E47321E2336500DF5B34 /* AlarmView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46D21E2336500DF5B34 /* AlarmView.swift */; };
 		D561E47521E2338900DF5B34 /* UILabel+Spacing.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E47421E2338900DF5B34 /* UILabel+Spacing.swift */; };
 		D561E47821E23AAF00DF5B34 /* BarcodeScanViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E47621E238DA00DF5B34 /* BarcodeScanViewController.swift */; };
-		D56518E321B8EDB400E8F6C4 /* GradientSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56518E221B8EDB400E8F6C4 /* GradientSearchBar.swift */; };
+		D56518E321B8EDB400E8F6C4 /* HintSearchBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56518E221B8EDB400E8F6C4 /* HintSearchBar.swift */; };
 		D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */; };
 		D59F73E321A97E7900D275A0 /* Member.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73E221A97E7900D275A0 /* Member.swift */; };
 		D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */; };
@@ -64,9 +64,8 @@
 		D561E46D21E2336500DF5B34 /* AlarmView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmView.swift; sourceTree = "<group>"; };
 		D561E47421E2338900DF5B34 /* UILabel+Spacing.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "UILabel+Spacing.swift"; sourceTree = "<group>"; };
 		D561E47621E238DA00DF5B34 /* BarcodeScanViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewController.swift; sourceTree = "<group>"; };
-		D56518E221B8EDB400E8F6C4 /* GradientSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientSearchBar.swift; sourceTree = "<group>"; };
+		D56518E221B8EDB400E8F6C4 /* HintSearchBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HintSearchBar.swift; sourceTree = "<group>"; };
 		D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = "UIViewController+Color.swift"; path = "YakGGUK/Assets.xcassets/UIViewController+Color.swift"; sourceTree = SOURCE_ROOT; };
-		D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanViewController.swift; sourceTree = "<group>"; };
 		D59F73E221A97E7900D275A0 /* Member.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Member.swift; sourceTree = "<group>"; };
 		D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchMedicineViewController.swift; sourceTree = "<group>"; };
 		D59F73F921A9886E00D275A0 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
@@ -235,8 +234,8 @@
 			children = (
 				D5DA8BD321A9C78A00F963B0 /* view */,
 				D59F73FB21A98CFD00D275A0 /* tableViewCell */,
-				D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */,
 				D561E47621E238DA00DF5B34 /* BarcodeScanViewController.swift */,
+				D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */,
 				D59F73F921A9886E00D275A0 /* Search.storyboard */,
 				D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */,
 			);
@@ -255,10 +254,9 @@
 		D5DA8BD321A9C78A00F963B0 /* view */ = {
 			isa = PBXGroup;
 			children = (
-				D56A6E0921A9F02D003B7FAE /* BarcodeScanViewController.swift */,
 				D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */,
 				D5DA8BCF21A9BA9600F963B0 /* CheckBoxButton.swift */,
-				D56518E221B8EDB400E8F6C4 /* GradientSearchBar.swift */,
+				D56518E221B8EDB400E8F6C4 /* HintSearchBar.swift */,
 			);
 			path = view;
 			sourceTree = "<group>";
@@ -459,7 +457,7 @@
 				D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */,
 				D561E47821E23AAF00DF5B34 /* BarcodeScanViewController.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
-				D56518E321B8EDB400E8F6C4 /* GradientSearchBar.swift in Sources */,
+				D56518E321B8EDB400E8F6C4 /* HintSearchBar.swift in Sources */,
 				D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
