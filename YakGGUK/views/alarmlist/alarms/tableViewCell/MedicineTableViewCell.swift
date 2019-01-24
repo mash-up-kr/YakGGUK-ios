@@ -17,7 +17,7 @@ class MedicineTableViewCell: UITableViewCell {
         
         // TODO: 디폴트 이미지로 설정하기
         imageView.image = #imageLiteral(resourceName: "ic_check_box_outline_blank")
-        imageView.layer.borderColor = UIColor.gray.cgColor
+        imageView.layer.borderColor = UIColor(named: "veryLightPink")?.cgColor
         imageView.layer.borderWidth = 1.0
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
@@ -58,28 +58,17 @@ class MedicineTableViewCell: UITableViewCell {
         return label
     }()
     
-    private var moreButton: UIButton = {
-        var button = UIButton()
-        
-        button.setImage(#imageLiteral(resourceName: "icMoreGray"), for: .normal)
-        
-        button.addTarget(self, action: #selector(moreButtonAction), for: .touchUpInside)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
-    }()
-    
     private var sepView: UIView = {
         var view = UIView()
         
-        view.backgroundColor = UIColor.gray
+        view.backgroundColor = UIColor(named: "veryLightPink")
         
         view.translatesAutoresizingMaskIntoConstraints = false
         return view
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifier: reuseIdentifier)
+        super.init(style: style, reuseIdentifiser: reuseIdentifier)
         
         selectionStyle = .none
         
@@ -120,13 +109,6 @@ class MedicineTableViewCell: UITableViewCell {
             ])
             
             NSLayoutConstraint.activate([
-                moreButton.topAnchor.constraint(equalTo: self.topAnchor, constant: 41.0),
-                moreButton.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0),
-                moreButton.widthAnchor.constraint(equalToConstant: 28.0),
-                moreButton.heightAnchor.constraint(equalToConstant: 28.0)
-            ])
-            
-            NSLayoutConstraint.activate([
                 sepView.bottomAnchor.constraint(equalTo: self.bottomAnchor, constant: -1),
                 sepView.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0),
                 sepView.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -20.0),
@@ -137,9 +119,5 @@ class MedicineTableViewCell: UITableViewCell {
         }
         
         super.updateConstraints()
-    }
-    
-    @objc private func moreButtonAction(sender: UIButton!) {
-        
     }
 }
