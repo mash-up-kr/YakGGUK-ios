@@ -9,13 +9,19 @@
 import UIKit
 
 protocol AlarmListActionDelegate: class {
-    func editAction(_ sender: UIButton, cell: AlarmListTableViewCell)
     func collapseAction(_ sender: UIButton, cell: AlarmListTableViewCell)
+}
+
+protocol MedicineListActionDelegate: class {
+    func editAction(_ sender: UITableViewRowAction, indexPath: IndexPath, completion: @escaping (IndexPath) -> Void)
+    func deleteAction(_ sender: UITableViewRowAction, indexPath: IndexPath, completion: @escaping (IndexPath) -> Void)
 }
 
 class AlarmListTableViewCell: UITableViewCell {
 
     private weak var actionDelegate: AlarmListActionDelegate?
+    
+    private weak var medicineActionDelegate: MedicineListActionDelegate?
     
     private var didUpdateConstraints = false
     
@@ -259,8 +265,9 @@ class AlarmListTableViewCell: UITableViewCell {
         actionDelegate?.collapseAction(sender, cell: self)
     }
     
-    public func setActionDelegate(_ delegate: AlarmListActionDelegate) {
-        actionDelegate = delegate
+    public func setActionDelegate(alarmDelegate: AlarmListActionDelegate, medicineDelegate: MedicineListActionDelegate) {
+        actionDelegate = alarmDelegate
+        medicineActionDelegate = medicineDelegate
     }
     
     public func setFormattedAlarm(alarm model: AlarmModel) {
@@ -285,6 +292,10 @@ class AlarmListTableViewCell: UITableViewCell {
         medicineTableView.reloadData()
     }
     
+    public func updateMedicineTable() {
+        medicineTableView.reloadData()
+    }
+    
     public func toggleCollapsable() {
         medicineCollapsable.toggle()
     }
@@ -299,6 +310,7 @@ class AlarmListTableViewCell: UITableViewCell {
     
 }
 
+// MARK: - 약 테이블뷰
 extension AlarmListTableViewCell: UITableViewDelegate, UITableViewDataSource {
     public func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 110.0
@@ -316,5 +328,30 @@ extension AlarmListTableViewCell: UITableViewDelegate, UITableViewDataSource {
         // TODO: MedicineTableViewCell 데이터 설정
         
         return cell
+    }
+}
+
+// MARK: - 약 테이블뷰 액션 정의
+extension AlarmListTableViewCell {
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+    
+    func tableView(_ tableView: UITableView, editActionsForRowAt indexPath: IndexPath) -> [UITableViewRowAction]? {
+        
+        let deleteAction = UITableViewRowAction(style: .default, title: "삭제") { sender, indexPath  in
+            self.medicineActionDelegate?.deleteAction(sender, indexPath: indexPath) { _ in
+                self.medicines.remove(at: indexPath.row)
+                self.medicineTableView.deleteRows(at: [indexPath], with: .automatic)
+            }
+        }
+        
+        let editAction = UITableViewRowAction(style: .normal, title: "수정") { sender, indexPath  in
+            self.medicineActionDelegate?.editAction(sender, indexPath: indexPath) { _ in
+                
+            }
+        }
+        
+        return [deleteAction, editAction]
     }
 }

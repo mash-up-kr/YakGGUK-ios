@@ -149,7 +149,7 @@ extension AlarmViewController: UITableViewDelegate, UITableViewDataSource {
         
         cell.setFormattedAlarm(alarm: alarms[indexPath.section])
         
-        cell.setActionDelegate(self)
+        cell.setActionDelegate(alarmDelegate: self, medicineDelegate: self)
         
         return cell
     }
@@ -167,5 +167,27 @@ extension AlarmViewController: AlarmListActionDelegate {
     
     func collapseAction(_ sender: UIButton, cell: AlarmListTableViewCell) {
         alarmView.updateTableViewData()
+    }
+}
+
+// MARK: - 약 리스트 뷰 셀 액션 위임
+extension AlarmViewController: MedicineListActionDelegate {
+    func editAction(_ sender: UITableViewRowAction, indexPath: IndexPath, completion: @escaping (IndexPath) -> Void) {
+        let alert = UIAlertController(title: "[알림]", message: "아직 미구현 된 기능입니다.", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
+        
+        self.present(alert, animated: true, completion: nil)
+    }
+    
+    func deleteAction(_ sender: UITableViewRowAction, indexPath: IndexPath, completion: @escaping (IndexPath) -> Void) {
+        let alert = UIAlertController(title: "[알림]", message: "정말 삭제하시겠습니까?", preferredStyle: .alert)
+        
+        alert.addAction(UIAlertAction(title: "취소", style: .cancel, handler: nil))
+        alert.addAction(UIAlertAction(title: "삭제", style: .default) { _ in
+            completion(indexPath)
+        })
+        
+        self.present(alert, animated: true, completion: nil)
     }
 }
