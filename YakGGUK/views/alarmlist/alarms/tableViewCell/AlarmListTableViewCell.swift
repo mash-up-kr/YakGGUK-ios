@@ -12,6 +12,15 @@ protocol AlarmListActionDelegate: class {
     func collapseAction(_ sender: UIButton, cell: AlarmListTableViewCell)
 }
 
+enum FadeType: Int {
+    case fadeout = 0
+    case fadein
+}
+
+protocol AlarmListFadeDelegate: class {
+    func fade(indexPath: IndexPath, fadeType: FadeType)
+}
+
 protocol MedicineListActionDelegate: class {
     func editAction(_ sender: UITableViewRowAction, indexPath: IndexPath, completion: @escaping (IndexPath) -> Void)
     func deleteAction(_ sender: UITableViewRowAction, indexPath: IndexPath, completion: @escaping (IndexPath) -> Void)
@@ -20,6 +29,8 @@ protocol MedicineListActionDelegate: class {
 class AlarmListTableViewCell: UITableViewCell {
 
     private weak var actionDelegate: AlarmListActionDelegate?
+    
+    private weak var fadeDelegate: AlarmListFadeDelegate?
     
     private weak var medicineActionDelegate: MedicineListActionDelegate?
     
@@ -325,7 +336,11 @@ extension AlarmListTableViewCell: UITableViewDelegate, UITableViewDataSource {
             return UITableViewCell()
         }
         
-        // TODO: MedicineTableViewCell 데이터 설정
+        let index = indexPath.row
+        cell.setTitle(title: medicines[index].name)
+        cell.setDescription(description: medicines[index].description)
+        
+        // TODO: 이미지 설정
         
         return cell
     }

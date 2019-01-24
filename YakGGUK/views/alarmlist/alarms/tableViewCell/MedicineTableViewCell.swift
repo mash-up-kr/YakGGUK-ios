@@ -68,14 +68,13 @@ class MedicineTableViewCell: UITableViewCell {
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
-        super.init(style: style, reuseIdentifiser: reuseIdentifier)
+        super.init(style: style, reuseIdentifier: reuseIdentifier)
         
         selectionStyle = .none
         
         contentView.addSubview(medicineImage)
         contentView.addSubview(titleLabel)
         contentView.addSubview(descriptionLabel)
-        contentView.addSubview(moreButton)
         contentView.addSubview(sepView)
         
         contentView.setNeedsUpdateConstraints()
@@ -119,5 +118,17 @@ class MedicineTableViewCell: UITableViewCell {
         }
         
         super.updateConstraints()
+    }
+    
+    func setTitle(title: String) {
+        titleLabel.text = title
+    }
+    
+    func setDescription(description: String) {
+        descriptionLabel.text = description
+    }
+    
+    func setImage(image: UIImage) {
+        medicineImage.image = image
     }
 }
