@@ -17,6 +17,7 @@ enum FadeType: Int {
     case fadein
 }
 
+// TODO: Collapse 시 페이드 기능 추가하기
 protocol AlarmListFadeDelegate: class {
     func fade(indexPath: IndexPath, fadeType: FadeType)
 }
