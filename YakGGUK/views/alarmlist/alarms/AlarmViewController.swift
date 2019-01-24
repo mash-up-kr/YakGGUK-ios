@@ -17,8 +17,6 @@ class AlarmViewController: UIViewController {
         super.viewDidLoad()
         setVerticalGradientLayer()
         
-        initFloaty()
-        
         alarms.append(AlarmModel(eWhen: .WAKEUP, time: "07 : 00", medicines: [
             MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
             MedicineModel(name: "홍삼 골드", description: "1회 100ml 섭취"),
@@ -49,6 +47,8 @@ class AlarmViewController: UIViewController {
         
         view.addSubview(noAlarmView)
         view.addSubview(alarmView)
+        
+        initFloaty()
         
         view.updateConstraintsIfNeeded()
     }
@@ -84,7 +84,7 @@ class AlarmViewController: UIViewController {
 // MARK: - 플로팅 버튼
 extension AlarmViewController {
     func initFloaty() {
-        floaty.addItem(title: "추가하기") { _ in
+        floaty.addItem("바코드 촬영하기", icon: #imageLiteral(resourceName: "icCam")) { _ in
             guard let nextVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "barcode_scan") as? BarcodeScanViewController else {
                 print("[navigation Error]")
                 return

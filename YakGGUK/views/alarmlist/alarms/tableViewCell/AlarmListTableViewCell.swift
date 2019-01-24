@@ -106,23 +106,12 @@ class AlarmListTableViewCell: UITableViewCell {
         
         label.textAlignment = .center
         label.textColor     = UIColor(red: 59 / 255, green: 59 / 255, blue: 59 / 255, alpha: 1.0)
-        label.font          = UIFont(name: "SFProDisplay-Light", size: 34.0)
+        label.font          = UIFont(name: "SFProDisplay-Medium", size: 32.0)
         
-        label.letterSpacing = 0.36
+        label.letterSpacing = 0.34
         
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
-    }()
-    
-    private lazy var editButton: UIButton = {
-        let button = UIButton()
-        
-        button.setImage(#imageLiteral(resourceName: "icEdit"), for: .normal)
-        
-        button.addTarget(self, action: #selector(editButtonAction), for: .touchUpInside)
-        
-        button.translatesAutoresizingMaskIntoConstraints = false
-        return button
     }()
     
     private lazy var collapseButton: UIButton = {
@@ -160,7 +149,6 @@ class AlarmListTableViewCell: UITableViewCell {
         bgView.addSubview(ampmLabel)
         bgView.addSubview(whenLabel)
         bgView.addSubview(timeLabel)
-        bgView.addSubview(editButton)
         bgView.addSubview(collapseButton)
         
         medicineBgView.addSubview(medicineTableView)
@@ -214,13 +202,6 @@ class AlarmListTableViewCell: UITableViewCell {
             ])
             
             NSLayoutConstraint.activate([
-                editButton.centerYAnchor.constraint(equalTo: bgView.centerYAnchor),
-                editButton.trailingAnchor.constraint(equalTo: collapseButton.leadingAnchor, constant: -17.0),
-                editButton.widthAnchor.constraint(equalToConstant: 32.0),
-                editButton.heightAnchor.constraint(equalToConstant: 32.0)
-            ])
-            
-            NSLayoutConstraint.activate([
                 medicineTableView.leadingAnchor.constraint(equalTo: medicineBgView.leadingAnchor),
                 medicineTableView.trailingAnchor.constraint(equalTo: medicineBgView.trailingAnchor),
                 medicineTableView.topAnchor.constraint(equalTo: medicineBgView.topAnchor, constant: 90.0 - 4.0 - 1.0)
@@ -238,10 +219,6 @@ class AlarmListTableViewCell: UITableViewCell {
         }
         
         super.updateConstraints()
-    }
-    
-    @objc private func editButtonAction(sender: UIButton!) {
-        actionDelegate?.editAction(sender, cell: self)
     }
     
     @objc private func collapseButtonAction(sender: UIButton!) {
