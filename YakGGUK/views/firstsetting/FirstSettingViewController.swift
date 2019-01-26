@@ -10,21 +10,46 @@ import UIKit
 
 class FirstSettingViewController: UIViewController {
 
+    private var didUpdateConstraints = false
+    
+    private let settingView = SettingView()
+    
+    private let settingViews = [WakeUpSettingView(),
+                                LunchSettingView(),
+                                DinnerSettingView(),
+                                SleepSettingView()]
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        for view in settingViews {
+            settingView.append(settingView: view)
+        }
+        
+        view.addSubview(settingView)
+        
+        view.updateConstraintsIfNeeded()
+        
+        settingView.reloadSettingViewContainer()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewDidLayoutSubviews() {
+        settingView.setBackgroundGradient()
     }
-    */
-
+    
+    override func updateViewConstraints() {
+        if !didUpdateConstraints {
+            
+            NSLayoutConstraint.activate([
+                settingView.topAnchor.constraint(equalTo: view.topAnchor),
+                settingView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+                settingView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+                settingView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
+            ])
+            
+            didUpdateConstraints.toggle()
+        }
+        
+        super.updateViewConstraints()
+    }
 }
