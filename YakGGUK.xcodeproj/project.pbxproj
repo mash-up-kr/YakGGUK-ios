@@ -17,6 +17,7 @@
 		BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8821A98650003EA767 /* AlarmViewController.swift */; };
 		BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */; };
 		D50DE0F421B8B01700F8D920 /* Color.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D50DE0F321B8B01700F8D920 /* Color.xcassets */; };
+		D5378292220AE4D100336646 /* GradientDirection.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5378291220AE4D100336646 /* GradientDirection.swift */; };
 		D561E46E21E2336500DF5B34 /* MedicineModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46421E2336400DF5B34 /* MedicineModel.swift */; };
 		D561E46F21E2336500DF5B34 /* AlarmModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46521E2336400DF5B34 /* AlarmModel.swift */; };
 		D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D561E46721E2336400DF5B34 /* MedicineTableViewCell.swift */; };
@@ -56,6 +57,7 @@
 		BEE70E8821A98650003EA767 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
 		BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmViewController.storyboard; sourceTree = "<group>"; };
 		D50DE0F321B8B01700F8D920 /* Color.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Color.xcassets; sourceTree = "<group>"; };
+		D5378291220AE4D100336646 /* GradientDirection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientDirection.swift; sourceTree = "<group>"; };
 		D561E46421E2336400DF5B34 /* MedicineModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineModel.swift; sourceTree = "<group>"; };
 		D561E46521E2336400DF5B34 /* AlarmModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlarmModel.swift; sourceTree = "<group>"; };
 		D561E46721E2336400DF5B34 /* MedicineTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MedicineTableViewCell.swift; sourceTree = "<group>"; };
@@ -121,6 +123,7 @@
 		BE84E70621A954BD00A507FB /* YakGGUK */ = {
 			isa = PBXGroup;
 			children = (
+				D5378293220AE50100336646 /* Model */,
 				D5DA8BDA21A9D86500F963B0 /* Extensions */,
 				BEE70E8121A98338003EA767 /* views */,
 				D59F73E021A97E6400D275A0 /* Network */,
@@ -164,6 +167,14 @@
 				BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */,
 			);
 			path = alarms;
+			sourceTree = "<group>";
+		};
+		D5378293220AE50100336646 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				D5378291220AE4D100336646 /* GradientDirection.swift */,
+			);
+			path = Model;
 			sourceTree = "<group>";
 		};
 		D561E46321E2336400DF5B34 /* model */ = {
@@ -449,6 +460,7 @@
 				D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */,
 				D561E47321E2336500DF5B34 /* AlarmView.swift in Sources */,
 				D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */,
+				D5378292220AE4D100336646 /* GradientDirection.swift in Sources */,
 				D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */,
 				D561E47221E2336500DF5B34 /* NoAlarmView.swift in Sources */,
 				D561E46F21E2336500DF5B34 /* AlarmModel.swift in Sources */,

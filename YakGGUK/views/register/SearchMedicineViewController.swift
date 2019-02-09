@@ -11,7 +11,9 @@ import UIKit
 class SearchMedicineViewController: UIViewController {
     
     @IBOutlet weak var resultTableView: UITableView!
-    @IBOutlet weak var medicindeSearch: UISearchBar!
+    @IBOutlet weak var productNameSearchBar: UISearchBar!
+    @IBOutlet weak var companySearchBar: UISearchBar!
+    @IBOutlet weak var searchButton: UIButton!
     
     let tempData: [MedicineModel] = [
         MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
@@ -23,21 +25,34 @@ class SearchMedicineViewController: UIViewController {
     var filtered: [MedicineModel] = []
     var searchActive: Bool = false
     var shouldShowSearchResults: Bool = true
-    let searchController: UISearchController = {
-       let searchController = UISearchController(searchResultsController: nil)
-        searchController.searchBar.placeholder = "약 이름으로 검색해주세요."
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        return searchController
-    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         definesPresentationContext = true
         navigationController?.setToolbarHidden(true, animated: false)
+        
+        configUIComponents()
+    }
+    
+    @IBAction func popViewController(sender: UIButton) {
+        navigationController?.popViewController(animated: true)
+    }
+    
+    @IBAction func searchMedicines(sender: UIButton) {
+        view.endEditing(true)
+        filterAndUpdateTable()
+    }
+    
+    private func configUIComponents() {
         setHorizontalGradientLayer()
         
-        for subView in medicindeSearch.subviews {
+        // setButtonBackground
+        searchButton.layer.cornerRadius = 0.5 * searchButton.bounds.size.width
+        searchButton.clipsToBounds = true
+        searchButton.setImage(UIImage(named:"icSearch"), for: .normal)
+        
+        // configSearchBar
+        for subView in productNameSearchBar.subviews {
             for view in subView.subviews {
                 if view.isKind(of: NSClassFromString("UISearchBarBackground")!) {
                     if let imageView = view as? UIImageView {
@@ -46,12 +61,8 @@ class SearchMedicineViewController: UIViewController {
                 }
             }
         }
+        productNameSearchBar.becomeFirstResponder()
     }
-    
-    @IBAction func popViewController(sender: UIButton) {
-        navigationController?.popViewController(animated: true)
-    }
-    
 }
 
 extension SearchMedicineViewController : UITableViewDelegate, UITableViewDataSource {
@@ -105,20 +116,28 @@ extension SearchMedicineViewController: UISearchResultsUpdating, UISearchBarDele
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         print("searchBarSearchButtonClicked")
-        guard let searchText = searchBar.text else {
-            return
-        }
         if !shouldShowSearchResults {
-            shouldShowSearchResults = true
+            shouldShowSearchResults.toggle()
             resultTableView.reloadData()
         }
         view.endEditing(true)
-        filterAndUpdateTable(inputText: searchText)
+        filterAndUpdateTable()
     }
     
-    func filterAndUpdateTable(inputText: String) {
+    func filterAndUpdateTable() {
+        let product: String? = productNameSearchBar.text == "" ? nil : productNameSearchBar.text
+        let company: String? = companySearchBar.text == "" ? nil : companySearchBar.text
+        
         filtered = tempData.filter { medicine in
-            medicine.name.contains(inputText)
+            var productIncluded: Bool = true
+            var companyIncluded: Bool = true
+            if let name = product {
+                productIncluded = medicine.name.contains(name)
+            }
+            if let campanyName = company {
+                companyIncluded = medicine.campanyName.contains(campanyName)
+            }
+            return productIncluded && companyIncluded
         }
         
         resultTableView.reloadData()

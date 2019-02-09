@@ -10,12 +10,17 @@ import Foundation
 import UIKit
 
 extension UIViewController {
-    func horizontalGradientColor(frame: CGRect) -> UIColor {
+    func gradientLayer(direction: GradientDirection, frame: CGRect) -> CAGradientLayer {
         let gradient = CAGradientLayer()
         gradient.frame = frame
-        gradient.colors =  [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
-        gradient.startPoint = CGPoint(x: 0, y: 1)
-        gradient.endPoint = CGPoint(x: 1, y: 1)
+        gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
+        gradient.startPoint = direction.startPoint
+        gradient.endPoint = direction.endPoint
+        return gradient
+    }
+    
+    func horizontalGradientColor(frame: CGRect) -> UIColor {
+        let gradient = gradientLayer(direction: .horizontal, frame: frame)
         UIGraphicsBeginImageContext(gradient.bounds.size)
         gradient.render(in: UIGraphicsGetCurrentContext()!)
         let backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext()
@@ -24,23 +29,16 @@ extension UIViewController {
     }
     
     func setVerticalGradientLayer() {
-        let gradient = CAGradientLayer()
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
-        gradient.startPoint = CGPoint(x: 0, y: 0)
-        gradient.endPoint = CGPoint(x: 0, y: 1)
+        let gradient = gradientLayer(direction: .vertical, frame: view.bounds)
         view.layer.insertSublayer(gradient, at: 0)
     }
     
     func setHorizontalGradientLayer() {
-        let gradient = CAGradientLayer()
-        gradient.frame = view.bounds
-        gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
-        gradient.startPoint = CGPoint(x: 0, y: 1)
-        gradient.endPoint = CGPoint(x: 1, y: 1)
+        let gradient = gradientLayer(direction: .horizontal, frame: view.bounds)
         view.layer.insertSublayer(gradient, at: 0)
     }
 
+    // MARK: FIXME UNUSED
     func setBackgGroundGradientView() {
         let backgroundView = UIView()
         view.addSubview(backgroundView)
