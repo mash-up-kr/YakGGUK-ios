@@ -37,8 +37,11 @@ class RegisterAlarmViewController: UIViewController {
     @IBOutlet private var intakeButtons: [UIButton]!
     @IBOutlet private weak var clockPickerView: UIView!
     @IBOutlet private weak var clockPickerHeaderView: UIView!
+    @IBOutlet private weak var clockPickerTitleLabel: UILabel!
+    @IBOutlet private weak var clockPicker: UIDatePicker!
     
     private var intakeAlarmViews: [AlarmClockView] = []
+    private var selectedAlarmView: AlarmClockView?
     
     private var selectedDay: [Weekend] = [] {
         didSet {
@@ -79,8 +82,11 @@ class RegisterAlarmViewController: UIViewController {
             let clockView = AlarmClockView(frame: frame)
             clockView.intakeTime = time
             clockView.isHidden = true
-            clockView.clockAction = { [weak self] in
+            clockView.clockAction = { [weak self] date in
                 self?.clockPickerView.isHidden = false
+                self?.clockPickerTitleLabel.text = "\(time.title) 알람"
+                self?.selectedAlarmView = clockView
+                self?.clockPicker.date = date
             }
             
             intakeStackView.insertArrangedSubview(clockView, at: index)
@@ -156,5 +162,9 @@ extension RegisterAlarmViewController {
     
     @IBAction func tapClockPickerConfirmButton(_ sender: UIButton) {
         clockPickerView.isHidden = true
+    }
+    
+    @IBAction func clockPickerChanged(_ sender: UIDatePicker) {
+        selectedAlarmView?.date = sender.date
     }
 }

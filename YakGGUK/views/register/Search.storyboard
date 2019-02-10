@@ -605,6 +605,9 @@
                                                 <date key="date" timeIntervalSinceReferenceDate="571470249.89991796">
                                                     <!--2019-02-10 05:44:09 +0000-->
                                                 </date>
+                                                <connections>
+                                                    <action selector="clockPickerChanged:" destination="QIa-07-Z1x" eventType="valueChanged" id="1vj-ao-Leo"/>
+                                                </connections>
                                             </datePicker>
                                         </subviews>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
@@ -692,7 +695,9 @@
                         <viewLayoutGuide key="safeArea" id="QwR-IO-ftD"/>
                     </view>
                     <connections>
+                        <outlet property="clockPicker" destination="Ab4-P6-I6r" id="Azt-cl-CD8"/>
                         <outlet property="clockPickerHeaderView" destination="KJ2-Sn-13r" id="ZYH-la-QhS"/>
+                        <outlet property="clockPickerTitleLabel" destination="9Cm-sx-cIA" id="b7F-qW-afJ"/>
                         <outlet property="clockPickerView" destination="WtC-g6-PEZ" id="fWi-Gk-TIb"/>
                         <outlet property="intakeGuideLabel" destination="y51-rQ-b9k" id="O0K-NF-MfL"/>
                         <outlet property="intakeStackView" destination="Yli-Wh-Yao" id="NiC-QN-auh"/>
