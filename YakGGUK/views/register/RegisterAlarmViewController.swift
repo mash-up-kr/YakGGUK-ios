@@ -40,8 +40,10 @@ class RegisterAlarmViewController: UIViewController {
     @IBOutlet private weak var clockPickerTitleLabel: UILabel!
     @IBOutlet private weak var clockPicker: UIDatePicker!
     
+    private let manager = AlarmRegistManager.shared
     private var intakeAlarmViews: [AlarmClockView] = []
     private var selectedAlarmView: AlarmClockView?
+    private var settedTime: Date?
     
     private var selectedDay: [Weekend] = [] {
         didSet {
@@ -87,6 +89,7 @@ class RegisterAlarmViewController: UIViewController {
                 self?.clockPickerTitleLabel.text = "\(time.title) 알람"
                 self?.selectedAlarmView = clockView
                 self?.clockPicker.date = date
+                self?.settedTime = date
             }
             
             intakeStackView.insertArrangedSubview(clockView, at: index)
@@ -161,10 +164,29 @@ extension RegisterAlarmViewController {
     }
     
     @IBAction func tapClockPickerConfirmButton(_ sender: UIButton) {
+        selectedAlarmView?.date = settedTime
         clockPickerView.isHidden = true
     }
     
     @IBAction func clockPickerChanged(_ sender: UIDatePicker) {
-        selectedAlarmView?.date = sender.date
+        settedTime = sender.date
+    }
+    
+    @IBAction func tapRegisterButton(_ sender: UIButton) {
+        var alarms: [Alarmmmmmmm] = []
+        
+        for (index, button) in intakeButtons.enumerated() {
+            if button.isSelected {
+                if let date = intakeAlarmViews[index].date, let medicine = medicine {
+                    let days = selectedDay
+                    let sound = AlarmSound.allCases[soundIndexPath.row]
+                    
+                    alarms.append(Alarmmmmmmm(date: date, repeatingDay: days, medicine: medicine, sound: sound))
+                }
+            }
+        }
+        
+        manager.save(alarms)
+        navigationController?.popViewController(animated: true)
     }
 }

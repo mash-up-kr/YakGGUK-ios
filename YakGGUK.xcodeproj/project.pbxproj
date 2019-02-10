@@ -41,6 +41,7 @@
 		D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */; };
 		DC22B715220F4330002D6D99 /* AlarmClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC22B714220F4330002D6D99 /* AlarmClockView.xib */; };
 		DC22B719220FE824002D6D99 /* AlarmClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22B718220FE824002D6D99 /* AlarmClockView.swift */; };
+		DC22B71B220FFB75002D6D99 /* AlarmRegistManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22B71A220FFB75002D6D99 /* AlarmRegistManager.swift */; };
 		DC31E22A220EF8280038DCE0 /* Temp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC31E229220EF8280038DCE0 /* Temp.xcassets */; };
 		DC31E22C220EFC1F0038DCE0 /* DateSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC31E22B220EFC1F0038DCE0 /* DateSettingViewController.swift */; };
 		DC31E22E220F17940038DCE0 /* SoundSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC31E22D220F17940038DCE0 /* SoundSettingViewController.swift */; };
@@ -86,6 +87,7 @@
 		D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Transition.swift"; sourceTree = "<group>"; };
 		DC22B714220F4330002D6D99 /* AlarmClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmClockView.xib; sourceTree = "<group>"; };
 		DC22B718220FE824002D6D99 /* AlarmClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClockView.swift; sourceTree = "<group>"; };
+		DC22B71A220FFB75002D6D99 /* AlarmRegistManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmRegistManager.swift; sourceTree = "<group>"; };
 		DC31E229220EF8280038DCE0 /* Temp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Temp.xcassets; sourceTree = "<group>"; };
 		DC31E22B220EFC1F0038DCE0 /* DateSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingViewController.swift; sourceTree = "<group>"; };
 		DC31E22D220F17940038DCE0 /* SoundSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingViewController.swift; sourceTree = "<group>"; };
@@ -264,6 +266,7 @@
 				DC22B718220FE824002D6D99 /* AlarmClockView.swift */,
 				DC31E22B220EFC1F0038DCE0 /* DateSettingViewController.swift */,
 				DC31E22D220F17940038DCE0 /* SoundSettingViewController.swift */,
+				DC22B71A220FFB75002D6D99 /* AlarmRegistManager.swift */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -485,6 +488,7 @@
 				BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */,
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
 				D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */,
+				DC22B71B220FFB75002D6D99 /* AlarmRegistManager.swift in Sources */,
 				D561E47821E23AAF00DF5B34 /* BarcodeScanViewController.swift in Sources */,
 				DC22B719220FE824002D6D99 /* AlarmClockView.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
