@@ -89,7 +89,8 @@ extension SearchMedicineViewController : UITableViewDelegate, UITableViewDataSou
             print("invalid destination")
             return
         }
-        nextVC.bind(medicine: filtered[indexPath.row])
+//        nextVC.bind(medicine: filtered[indexPath.row])
+        nextVC.medicine = filtered[indexPath.row]
         
         navigationController?.pushViewController(nextVC, animated: true)
     }

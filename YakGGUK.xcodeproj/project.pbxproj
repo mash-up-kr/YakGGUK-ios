@@ -39,6 +39,11 @@
 		D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */; };
 		D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD821A9D72000F963B0 /* Alarm.swift */; };
 		D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */; };
+		DC22B715220F4330002D6D99 /* AlarmClockView.xib in Resources */ = {isa = PBXBuildFile; fileRef = DC22B714220F4330002D6D99 /* AlarmClockView.xib */; };
+		DC22B719220FE824002D6D99 /* AlarmClockView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC22B718220FE824002D6D99 /* AlarmClockView.swift */; };
+		DC31E22A220EF8280038DCE0 /* Temp.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = DC31E229220EF8280038DCE0 /* Temp.xcassets */; };
+		DC31E22C220EFC1F0038DCE0 /* DateSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC31E22B220EFC1F0038DCE0 /* DateSettingViewController.swift */; };
+		DC31E22E220F17940038DCE0 /* SoundSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DC31E22D220F17940038DCE0 /* SoundSettingViewController.swift */; };
 		EA7889502714CD4DD2D45BEB /* Pods_YakGGUK.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6C9019A93A8CD30B152FF684 /* Pods_YakGGUK.framework */; };
 /* End PBXBuildFile section */
 
@@ -79,6 +84,11 @@
 		D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTableViewCell.swift; sourceTree = "<group>"; };
 		D5DA8BD821A9D72000F963B0 /* Alarm.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Alarm.swift; sourceTree = "<group>"; };
 		D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UINavigationController+Transition.swift"; sourceTree = "<group>"; };
+		DC22B714220F4330002D6D99 /* AlarmClockView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmClockView.xib; sourceTree = "<group>"; };
+		DC22B718220FE824002D6D99 /* AlarmClockView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmClockView.swift; sourceTree = "<group>"; };
+		DC31E229220EF8280038DCE0 /* Temp.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Temp.xcassets; sourceTree = "<group>"; };
+		DC31E22B220EFC1F0038DCE0 /* DateSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateSettingViewController.swift; sourceTree = "<group>"; };
+		DC31E22D220F17940038DCE0 /* SoundSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SoundSettingViewController.swift; sourceTree = "<group>"; };
 		E67BFB6931EAD8D2F54086A1 /* Pods-YakGGUK.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YakGGUK.release.xcconfig"; path = "Pods/Target Support Files/Pods-YakGGUK/Pods-YakGGUK.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -131,6 +141,7 @@
 				BE84E70921A954BD00A507FB /* ViewController.swift */,
 				BE84E70B21A954BD00A507FB /* Main.storyboard */,
 				BE84E70E21A954BF00A507FB /* Assets.xcassets */,
+				DC31E229220EF8280038DCE0 /* Temp.xcassets */,
 				BE84E71021A954BF00A507FB /* LaunchScreen.storyboard */,
 				BE84E71321A954BF00A507FB /* Info.plist */,
 				D50DE0F321B8B01700F8D920 /* Color.xcassets */,
@@ -249,6 +260,10 @@
 				D59F73EE21A97F5A00D275A0 /* SearchMedicineViewController.swift */,
 				D59F73F921A9886E00D275A0 /* Search.storyboard */,
 				D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */,
+				DC22B714220F4330002D6D99 /* AlarmClockView.xib */,
+				DC22B718220FE824002D6D99 /* AlarmClockView.swift */,
+				DC31E22B220EFC1F0038DCE0 /* DateSettingViewController.swift */,
+				DC31E22D220F17940038DCE0 /* SoundSettingViewController.swift */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -357,7 +372,9 @@
 				BEE70E8421A983A3003EA767 /* AlarmListNavigationController.storyboard in Resources */,
 				D50DE0F421B8B01700F8D920 /* Color.xcassets in Resources */,
 				BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */,
+				DC31E22A220EF8280038DCE0 /* Temp.xcassets in Resources */,
 				BE84E70F21A954BF00A507FB /* Assets.xcassets in Resources */,
+				DC22B715220F4330002D6D99 /* AlarmClockView.xib in Resources */,
 				BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */,
 				D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */,
 				D5DA8BD521A9C7AB00F963B0 /* CheckBoxButton.xib in Resources */,
@@ -454,6 +471,7 @@
 				D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */,
 				D561E46E21E2336500DF5B34 /* MedicineModel.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
+				DC31E22C220EFC1F0038DCE0 /* DateSettingViewController.swift in Sources */,
 				D561E47521E2338900DF5B34 /* UILabel+Spacing.swift in Sources */,
 				D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */,
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
@@ -468,12 +486,14 @@
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
 				D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */,
 				D561E47821E23AAF00DF5B34 /* BarcodeScanViewController.swift in Sources */,
+				DC22B719220FE824002D6D99 /* AlarmClockView.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
 				D56518E321B8EDB400E8F6C4 /* HintSearchBar.swift in Sources */,
 				D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
 				D561E47121E2336500DF5B34 /* AlarmListTableViewCell.swift in Sources */,
+				DC31E22E220F17940038DCE0 /* SoundSettingViewController.swift in Sources */,
 				D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
