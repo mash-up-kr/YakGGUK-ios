@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="14460.31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES">
+    <device id="retina4_7" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14460.20"/>
+        <capability name="Named colors" minToolsVersion="9.0"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner" customClass="TimeView" customModule="YakGGUK" customModuleProvider="target">
+            <connections>
+                <outlet property="mAmPmPickerView" destination="xEX-G0-8Ey" id="meZ-4d-ou6"/>
+                <outlet property="mHourPickerView" destination="9eq-Mn-7xf" id="5qq-jN-yE9"/>
+                <outlet property="mMinutePickerView" destination="vUK-N5-VlP" id="T9a-B4-fvt"/>
+                <outlet property="mSelectedView" destination="C3h-UW-STj" id="G5R-zI-atJ"/>
+            </connections>
+        </placeholder>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB">
+            <rect key="frame" x="0.0" y="0.0" width="219" height="134"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="C3h-UW-STj">
+                    <rect key="frame" x="0.0" y="43.5" width="219" height="47"/>
+                    <color key="backgroundColor" white="1" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="47" id="on5-CN-TF0"/>
+                    </constraints>
+                    <userDefinedRuntimeAttributes>
+                        <userDefinedRuntimeAttribute type="color" keyPath="borderColor">
+                            <color key="value" name="gradientLeading"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderWidth">
+                            <real key="value" value="1"/>
+                        </userDefinedRuntimeAttribute>
+                        <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
+                            <real key="value" value="6"/>
+                        </userDefinedRuntimeAttribute>
+                    </userDefinedRuntimeAttributes>
+                </view>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9eq-Mn-7xf" customClass="HourPickerView" customModule="YakGGUK" customModuleProvider="target">
+                    <rect key="frame" x="0.0" y="0.0" width="65" height="134"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="bmK-9v-vTv"/>
+                    </constraints>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="vUK-N5-VlP" customClass="MinutePickerView" customModule="YakGGUK" customModuleProvider="target">
+                    <rect key="frame" x="89" y="0.0" width="65" height="134"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="QOp-n8-SSZ"/>
+                    </constraints>
+                </pickerView>
+                <pickerView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="xEX-G0-8Ey" customClass="AmPmPickerView" customModule="YakGGUK" customModuleProvider="target">
+                    <rect key="frame" x="154" y="0.0" width="65" height="134"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="65" id="hRM-lg-5w3"/>
+                    </constraints>
+                </pickerView>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="icClockdotPrimary" translatesAutoresizingMaskIntoConstraints="NO" id="BVy-dy-tht">
+                    <rect key="frame" x="65" y="54.5" width="24" height="24"/>
+                    <constraints>
+                        <constraint firstAttribute="width" constant="24" id="nIp-nO-dPd"/>
+                        <constraint firstAttribute="height" constant="24" id="sZ7-TA-vQT"/>
+                    </constraints>
+                </imageView>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstItem="xEX-G0-8Ey" firstAttribute="leading" secondItem="vUK-N5-VlP" secondAttribute="trailing" id="1TR-L6-qsa"/>
+                <constraint firstItem="BVy-dy-tht" firstAttribute="leading" secondItem="C3h-UW-STj" secondAttribute="leading" constant="65" id="9I9-cb-7iA"/>
+                <constraint firstItem="xEX-G0-8Ey" firstAttribute="top" secondItem="vUN-kp-3ea" secondAttribute="top" id="B3T-nV-8Gl"/>
+                <constraint firstAttribute="trailing" secondItem="xEX-G0-8Ey" secondAttribute="trailing" id="Gzd-wj-xpf"/>
+                <constraint firstItem="9eq-Mn-7xf" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="L2e-d5-cSV"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="9eq-Mn-7xf" secondAttribute="bottom" id="Ndi-KQ-7bQ"/>
+                <constraint firstItem="xEX-G0-8Ey" firstAttribute="bottom" secondItem="vUN-kp-3ea" secondAttribute="bottom" id="j9C-m2-dmm"/>
+                <constraint firstItem="C3h-UW-STj" firstAttribute="centerY" secondItem="vUN-kp-3ea" secondAttribute="centerY" id="jch-s0-VMY"/>
+                <constraint firstItem="vUK-N5-VlP" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="kz8-Hi-miG"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="bottom" secondItem="vUK-N5-VlP" secondAttribute="bottom" id="mKI-dO-Bwu"/>
+                <constraint firstItem="C3h-UW-STj" firstAttribute="leading" secondItem="vUN-kp-3ea" secondAttribute="leading" id="mnF-ig-xiF"/>
+                <constraint firstItem="BVy-dy-tht" firstAttribute="top" secondItem="C3h-UW-STj" secondAttribute="bottom" constant="-36" id="nGw-eM-oHh"/>
+                <constraint firstItem="vUN-kp-3ea" firstAttribute="trailing" secondItem="C3h-UW-STj" secondAttribute="trailing" id="r5O-tE-FDH"/>
+                <constraint firstItem="9eq-Mn-7xf" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" id="uXL-70-AnU"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <viewLayoutGuide key="safeArea" id="vUN-kp-3ea"/>
+            <point key="canvasLocation" x="39.200000000000003" y="23.388305847076463"/>
+        </view>
+    </objects>
+    <resources>
+        <image name="icClockdotPrimary" width="24" height="24"/>
+        <namedColor name="gradientLeading">
+            <color red="0.20784313725490197" green="0.51372549019607838" blue="0.97647058823529409" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+        </namedColor>
+    </resources>
+</document>

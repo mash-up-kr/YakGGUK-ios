@@ -29,4 +29,15 @@ extension UIView {
         
         layer.insertSublayer(gradient, at: 0)
     }
+    
+    func updateHorizontalGradientLayer() {
+        guard let gradient = layer.sublayers?.first as? CAGradientLayer else {
+            return
+        }
+        
+        gradient.frame = bounds
+        gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
+        gradient.startPoint = CGPoint(x: 0, y: 1)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+    }
 }

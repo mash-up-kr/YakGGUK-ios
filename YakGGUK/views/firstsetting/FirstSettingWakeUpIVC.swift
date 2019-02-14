@@ -10,5 +10,6 @@ import UIKit
 
 class FirstSettingWakeUpIVC: UIViewController {
 
+    @IBOutlet weak var mTimeView: TimeView!
 
 }

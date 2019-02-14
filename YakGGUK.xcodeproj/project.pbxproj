@@ -12,12 +12,18 @@
 		BE2CF229220E82BC007ECCB3 /* FirstSettingLunchIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF228220E82BC007ECCB3 /* FirstSettingLunchIVC.swift */; };
 		BE2CF22B220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF22A220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift */; };
 		BE2CF22D220E82DF007ECCB3 /* FirstSettingSleepIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF22C220E82DF007ECCB3 /* FirstSettingSleepIVC.swift */; };
-		BE2CF230220E8C1D007ECCB3 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF22F220E8C1D007ECCB3 /* DateModel.swift */; };
-		BE2CF232220E8D19007ECCB3 /* DateDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF231220E8D19007ECCB3 /* DateDataCenter.swift */; };
-		BE69C22F21FA6E2F004AC050 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE69C22E21FA6E2B004AC050 /* SF-Pro-Display-Medium.otf */; };
 		BE69C23121FA709C004AC050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE69C23021FA709C004AC050 /* Assets.xcassets */; };
 		BE69C23921FA82D3004AC050 /* FirstSettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE69C23821FA82D3004AC050 /* FirstSettingViewController.storyboard */; };
 		BE69C23B21FA82EC004AC050 /* FirstSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE69C23A21FA82EC004AC050 /* FirstSettingViewController.swift */; };
+		BE7000C622155E9F0049377D /* TimeView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE7000C522155E9F0049377D /* TimeView.xib */; };
+		BE7000C82215643B0049377D /* TimeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7000C72215643B0049377D /* TimeView.swift */; };
+		BE7000D5221576170049377D /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE7000D3221576170049377D /* SF-Pro-Display-Medium.otf */; };
+		BE7000D6221576170049377D /* SF-Pro-Display-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE7000D4221576170049377D /* SF-Pro-Display-Light.otf */; };
+		BE7000DA22157A960049377D /* HourPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7000D922157A960049377D /* HourPickerView.swift */; };
+		BE7000DC22157AA50049377D /* MinutePickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7000DB22157AA50049377D /* MinutePickerView.swift */; };
+		BE7000DE22157AB10049377D /* AmPmPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7000DD22157AB10049377D /* AmPmPickerView.swift */; };
+		BE7000E2221582C80049377D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE7000E1221582C70049377D /* Assets.xcassets */; };
+		BE7000E52215A2280049377D /* AlarmTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7000E42215A2280049377D /* AlarmTime.swift */; };
 		BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84E70721A954BD00A507FB /* AppDelegate.swift */; };
 		BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84E70921A954BD00A507FB /* ViewController.swift */; };
 		BE84E70D21A954BD00A507FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE84E70B21A954BD00A507FB /* Main.storyboard */; };
@@ -67,12 +73,19 @@
 		BE2CF228220E82BC007ECCB3 /* FirstSettingLunchIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingLunchIVC.swift; sourceTree = "<group>"; };
 		BE2CF22A220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingDinnerIVC.swift; sourceTree = "<group>"; };
 		BE2CF22C220E82DF007ECCB3 /* FirstSettingSleepIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingSleepIVC.swift; sourceTree = "<group>"; };
-		BE2CF22F220E8C1D007ECCB3 /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
-		BE2CF231220E8D19007ECCB3 /* DateDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDataCenter.swift; sourceTree = "<group>"; };
 		BE69C22E21FA6E2B004AC050 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		BE69C23021FA709C004AC050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE69C23821FA82D3004AC050 /* FirstSettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstSettingViewController.storyboard; sourceTree = "<group>"; };
 		BE69C23A21FA82EC004AC050 /* FirstSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingViewController.swift; sourceTree = "<group>"; };
+		BE7000C522155E9F0049377D /* TimeView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = TimeView.xib; sourceTree = "<group>"; };
+		BE7000C72215643B0049377D /* TimeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TimeView.swift; sourceTree = "<group>"; };
+		BE7000D3221576170049377D /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		BE7000D4221576170049377D /* SF-Pro-Display-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Light.otf"; sourceTree = "<group>"; };
+		BE7000D922157A960049377D /* HourPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HourPickerView.swift; sourceTree = "<group>"; };
+		BE7000DB22157AA50049377D /* MinutePickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MinutePickerView.swift; sourceTree = "<group>"; };
+		BE7000DD22157AB10049377D /* AmPmPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmPmPickerView.swift; sourceTree = "<group>"; };
+		BE7000E1221582C70049377D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE7000E42215A2280049377D /* AlarmTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTime.swift; sourceTree = "<group>"; };
 		BE84E70421A954BD00A507FB /* YakGGUK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YakGGUK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE84E70721A954BD00A507FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE84E70921A954BD00A507FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -147,18 +160,8 @@
 		BE2CF22E220E8C12007ECCB3 /* model */ = {
 			isa = PBXGroup;
 			children = (
-				BE2CF22F220E8C1D007ECCB3 /* DateModel.swift */,
-				BE2CF231220E8D19007ECCB3 /* DateDataCenter.swift */,
 			);
 			path = model;
-			sourceTree = "<group>";
-		};
-		BE69C22D21FA6E0F004AC050 /* Font */ = {
-			isa = PBXGroup;
-			children = (
-				BE69C22E21FA6E2B004AC050 /* SF-Pro-Display-Medium.otf */,
-			);
-			path = Font;
 			sourceTree = "<group>";
 		};
 		BE69C23521FA829E004AC050 /* firstsetting */ = {
@@ -176,6 +179,45 @@
 			path = firstsetting;
 			sourceTree = "<group>";
 		};
+		BE7000C022154F610049377D /* Recovered References */ = {
+			isa = PBXGroup;
+			children = (
+				BE69C22E21FA6E2B004AC050 /* SF-Pro-Display-Medium.otf */,
+				BE69C23021FA709C004AC050 /* Assets.xcassets */,
+			);
+			name = "Recovered References";
+			sourceTree = "<group>";
+		};
+		BE7000C12215527E0049377D /* UIPickerView */ = {
+			isa = PBXGroup;
+			children = (
+				BE7000E32215A2100049377D /* model */,
+				BE7000C522155E9F0049377D /* TimeView.xib */,
+				BE7000C72215643B0049377D /* TimeView.swift */,
+				BE7000D922157A960049377D /* HourPickerView.swift */,
+				BE7000DB22157AA50049377D /* MinutePickerView.swift */,
+				BE7000DD22157AB10049377D /* AmPmPickerView.swift */,
+			);
+			path = UIPickerView;
+			sourceTree = "<group>";
+		};
+		BE7000D2221575FA0049377D /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				BE7000D4221576170049377D /* SF-Pro-Display-Light.otf */,
+				BE7000D3221576170049377D /* SF-Pro-Display-Medium.otf */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		BE7000E32215A2100049377D /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BE7000E42215A2280049377D /* AlarmTime.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
 		BE84E6FB21A954BD00A507FB = {
 			isa = PBXGroup;
 			children = (
@@ -183,6 +225,7 @@
 				BE84E70521A954BD00A507FB /* Products */,
 				D9463A841448C99BA47C01A0 /* Pods */,
 				06DD2C2D2EB806DAF8A87E6B /* Frameworks */,
+				BE7000C022154F610049377D /* Recovered References */,
 			);
 			sourceTree = "<group>";
 		};
@@ -197,6 +240,7 @@
 		BE84E70621A954BD00A507FB /* YakGGUK */ = {
 			isa = PBXGroup;
 			children = (
+				BE7000D2221575FA0049377D /* Fonts */,
 				D5378293220AE50100336646 /* Model */,
 				D5DA8BDA21A9D86500F963B0 /* Extensions */,
 				BEE70E8121A98338003EA767 /* views */,
@@ -204,11 +248,11 @@
 				BE84E70721A954BD00A507FB /* AppDelegate.swift */,
 				BE84E70921A954BD00A507FB /* ViewController.swift */,
 				BE84E70B21A954BD00A507FB /* Main.storyboard */,
-				BE84E70E21A954BF00A507FB /* Assets.xcassets */,
 				DC31E229220EF8280038DCE0 /* Temp.xcassets */,
 				BE84E71021A954BF00A507FB /* LaunchScreen.storyboard */,
 				BE84E71321A954BF00A507FB /* Info.plist */,
 				D50DE0F321B8B01700F8D920 /* Color.xcassets */,
+				BE7000E1221582C70049377D /* Assets.xcassets */,
 			);
 			path = YakGGUK;
 			sourceTree = "<group>";
@@ -357,6 +401,7 @@
 		D5DA8BDA21A9D86500F963B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BE7000C12215527E0049377D /* UIPickerView */,
 				D561E47421E2338900DF5B34 /* UILabel+Spacing.swift */,
 				D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */,
 				D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */,
@@ -440,15 +485,17 @@
 				BEE70E8421A983A3003EA767 /* AlarmListNavigationController.storyboard in Resources */,
 				D50DE0F421B8B01700F8D920 /* Color.xcassets in Resources */,
 				BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */,
+				BE7000C622155E9F0049377D /* TimeView.xib in Resources */,
+				BE7000E2221582C80049377D /* Assets.xcassets in Resources */,
 				BE69C23921FA82D3004AC050 /* FirstSettingViewController.storyboard in Resources */,
 				DC31E22A220EF8280038DCE0 /* Temp.xcassets in Resources */,
-				BE84E70F21A954BF00A507FB /* Assets.xcassets in Resources */,
 				DC22B715220F4330002D6D99 /* AlarmClockView.xib in Resources */,
+				BE7000D5221576170049377D /* SF-Pro-Display-Medium.otf in Resources */,
 				BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */,
 				D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */,
-				BE69C22F21FA6E2F004AC050 /* SF-Pro-Display-Medium.otf in Resources */,
 				D5DA8BD521A9C7AB00F963B0 /* CheckBoxButton.xib in Resources */,
 				BE69C23121FA709C004AC050 /* Assets.xcassets in Resources */,
+				BE7000D6221576170049377D /* SF-Pro-Display-Light.otf in Resources */,
 				BE84E70D21A954BD00A507FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,22 +586,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE7000DC22157AA50049377D /* MinutePickerView.swift in Sources */,
 				BE2CF22B220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift in Sources */,
 				D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */,
-				BE2CF230220E8C1D007ECCB3 /* DateModel.swift in Sources */,
 				D561E46E21E2336500DF5B34 /* MedicineModel.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
 				DC31E22C220EFC1F0038DCE0 /* DateSettingViewController.swift in Sources */,
 				D561E47521E2338900DF5B34 /* UILabel+Spacing.swift in Sources */,
 				BE2CF225220E7F62007ECCB3 /* PageIndicator.swift in Sources */,
 				D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */,
-				BE2CF232220E8D19007ECCB3 /* DateDataCenter.swift in Sources */,
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
 				BE2CF22D220E82DF007ECCB3 /* FirstSettingSleepIVC.swift in Sources */,
 				BE2CF227220E8285007ECCB3 /* FirstSettingWakeUpIVC.swift in Sources */,
 				D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */,
 				D561E47321E2336500DF5B34 /* AlarmView.swift in Sources */,
 				D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */,
+				BE7000C82215643B0049377D /* TimeView.swift in Sources */,
 				BEC53F8021FC54A400DA6FA6 /* UIView+Color.swift in Sources */,
 				D5378292220AE4D100336646 /* GradientDirection.swift in Sources */,
 				D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */,
@@ -565,9 +612,11 @@
 				D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */,
 				DC22B71B220FFB75002D6D99 /* AlarmRegistManager.swift in Sources */,
 				D561E47821E23AAF00DF5B34 /* BarcodeScanViewController.swift in Sources */,
+				BE7000DE22157AB10049377D /* AmPmPickerView.swift in Sources */,
 				BE69C23B21FA82EC004AC050 /* FirstSettingViewController.swift in Sources */,
 				DC22B719220FE824002D6D99 /* AlarmClockView.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
+				BE7000E52215A2280049377D /* AlarmTime.swift in Sources */,
 				D56518E321B8EDB400E8F6C4 /* HintSearchBar.swift in Sources */,
 				D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
@@ -575,6 +624,7 @@
 				D561E47121E2336500DF5B34 /* AlarmListTableViewCell.swift in Sources */,
 				DC31E22E220F17940038DCE0 /* SoundSettingViewController.swift in Sources */,
 				D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */,
+				BE7000DA22157A960049377D /* HourPickerView.swift in Sources */,
 				BE2CF229220E82BC007ECCB3 /* FirstSettingLunchIVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
