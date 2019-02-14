@@ -7,11 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		BE2CF225220E7F62007ECCB3 /* PageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF224220E7F62007ECCB3 /* PageIndicator.swift */; };
+		BE2CF227220E8285007ECCB3 /* FirstSettingWakeUpIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF226220E8285007ECCB3 /* FirstSettingWakeUpIVC.swift */; };
+		BE2CF229220E82BC007ECCB3 /* FirstSettingLunchIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF228220E82BC007ECCB3 /* FirstSettingLunchIVC.swift */; };
+		BE2CF22B220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF22A220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift */; };
+		BE2CF22D220E82DF007ECCB3 /* FirstSettingSleepIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF22C220E82DF007ECCB3 /* FirstSettingSleepIVC.swift */; };
+		BE2CF230220E8C1D007ECCB3 /* DateModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF22F220E8C1D007ECCB3 /* DateModel.swift */; };
+		BE2CF232220E8D19007ECCB3 /* DateDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF231220E8D19007ECCB3 /* DateDataCenter.swift */; };
+		BE69C22F21FA6E2F004AC050 /* SF-Pro-Display-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = BE69C22E21FA6E2B004AC050 /* SF-Pro-Display-Medium.otf */; };
+		BE69C23121FA709C004AC050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE69C23021FA709C004AC050 /* Assets.xcassets */; };
+		BE69C23921FA82D3004AC050 /* FirstSettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE69C23821FA82D3004AC050 /* FirstSettingViewController.storyboard */; };
+		BE69C23B21FA82EC004AC050 /* FirstSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE69C23A21FA82EC004AC050 /* FirstSettingViewController.swift */; };
 		BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84E70721A954BD00A507FB /* AppDelegate.swift */; };
 		BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84E70921A954BD00A507FB /* ViewController.swift */; };
 		BE84E70D21A954BD00A507FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE84E70B21A954BD00A507FB /* Main.storyboard */; };
-		BE84E70F21A954BF00A507FB /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE84E70E21A954BF00A507FB /* Assets.xcassets */; };
 		BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE84E71021A954BF00A507FB /* LaunchScreen.storyboard */; };
+		BEC53F8021FC54A400DA6FA6 /* UIView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC53F7F21FC54A400DA6FA6 /* UIView+Color.swift */; };
 		BEE70E8421A983A3003EA767 /* AlarmListNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE70E8321A983A3003EA767 /* AlarmListNavigationController.storyboard */; };
 		BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */; };
 		BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8821A98650003EA767 /* AlarmViewController.swift */; };
@@ -44,13 +55,24 @@
 /* Begin PBXFileReference section */
 		6BBF346AB41CCEDFDDBB8CB4 /* Pods-YakGGUK.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-YakGGUK.debug.xcconfig"; path = "Pods/Target Support Files/Pods-YakGGUK/Pods-YakGGUK.debug.xcconfig"; sourceTree = "<group>"; };
 		6C9019A93A8CD30B152FF684 /* Pods_YakGGUK.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_YakGGUK.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BE2CF224220E7F62007ECCB3 /* PageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PageIndicator.swift; sourceTree = "<group>"; };
+		BE2CF226220E8285007ECCB3 /* FirstSettingWakeUpIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingWakeUpIVC.swift; sourceTree = "<group>"; };
+		BE2CF228220E82BC007ECCB3 /* FirstSettingLunchIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingLunchIVC.swift; sourceTree = "<group>"; };
+		BE2CF22A220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingDinnerIVC.swift; sourceTree = "<group>"; };
+		BE2CF22C220E82DF007ECCB3 /* FirstSettingSleepIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingSleepIVC.swift; sourceTree = "<group>"; };
+		BE2CF22F220E8C1D007ECCB3 /* DateModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateModel.swift; sourceTree = "<group>"; };
+		BE2CF231220E8D19007ECCB3 /* DateDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DateDataCenter.swift; sourceTree = "<group>"; };
+		BE69C22E21FA6E2B004AC050 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
+		BE69C23021FA709C004AC050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		BE69C23821FA82D3004AC050 /* FirstSettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstSettingViewController.storyboard; sourceTree = "<group>"; };
+		BE69C23A21FA82EC004AC050 /* FirstSettingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingViewController.swift; sourceTree = "<group>"; };
 		BE84E70421A954BD00A507FB /* YakGGUK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YakGGUK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE84E70721A954BD00A507FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE84E70921A954BD00A507FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		BE84E70C21A954BD00A507FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
-		BE84E70E21A954BF00A507FB /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE84E71121A954BF00A507FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE84E71321A954BF00A507FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BEC53F7F21FC54A400DA6FA6 /* UIView+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Color.swift"; sourceTree = "<group>"; };
 		BEE70E8321A983A3003EA767 /* AlarmListNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmListNavigationController.storyboard; sourceTree = "<group>"; };
 		BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListNavigationController.swift; sourceTree = "<group>"; };
 		BEE70E8821A98650003EA767 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
@@ -100,6 +122,46 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		BE2CF223220E7F51007ECCB3 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BE2CF224220E7F62007ECCB3 /* PageIndicator.swift */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
+		BE2CF22E220E8C12007ECCB3 /* model */ = {
+			isa = PBXGroup;
+			children = (
+				BE2CF22F220E8C1D007ECCB3 /* DateModel.swift */,
+				BE2CF231220E8D19007ECCB3 /* DateDataCenter.swift */,
+			);
+			path = model;
+			sourceTree = "<group>";
+		};
+		BE69C22D21FA6E0F004AC050 /* Font */ = {
+			isa = PBXGroup;
+			children = (
+				BE69C22E21FA6E2B004AC050 /* SF-Pro-Display-Medium.otf */,
+			);
+			path = Font;
+			sourceTree = "<group>";
+		};
+		BE69C23521FA829E004AC050 /* firstsetting */ = {
+			isa = PBXGroup;
+			children = (
+				BE2CF22E220E8C12007ECCB3 /* model */,
+				BE2CF223220E7F51007ECCB3 /* view */,
+				BE69C23821FA82D3004AC050 /* FirstSettingViewController.storyboard */,
+				BE69C23A21FA82EC004AC050 /* FirstSettingViewController.swift */,
+				BE2CF226220E8285007ECCB3 /* FirstSettingWakeUpIVC.swift */,
+				BE2CF228220E82BC007ECCB3 /* FirstSettingLunchIVC.swift */,
+				BE2CF22A220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift */,
+				BE2CF22C220E82DF007ECCB3 /* FirstSettingSleepIVC.swift */,
+			);
+			path = firstsetting;
+			sourceTree = "<group>";
+		};
 		BE84E6FB21A954BD00A507FB = {
 			isa = PBXGroup;
 			children = (
@@ -121,13 +183,14 @@
 		BE84E70621A954BD00A507FB /* YakGGUK */ = {
 			isa = PBXGroup;
 			children = (
+				BE69C22D21FA6E0F004AC050 /* Font */,
 				D5DA8BDA21A9D86500F963B0 /* Extensions */,
 				BEE70E8121A98338003EA767 /* views */,
 				D59F73E021A97E6400D275A0 /* Network */,
 				BE84E70721A954BD00A507FB /* AppDelegate.swift */,
 				BE84E70921A954BD00A507FB /* ViewController.swift */,
 				BE84E70B21A954BD00A507FB /* Main.storyboard */,
-				BE84E70E21A954BF00A507FB /* Assets.xcassets */,
+				BE69C23021FA709C004AC050 /* Assets.xcassets */,
 				BE84E71021A954BF00A507FB /* LaunchScreen.storyboard */,
 				BE84E71321A954BF00A507FB /* Info.plist */,
 				D50DE0F321B8B01700F8D920 /* Color.xcassets */,
@@ -138,6 +201,7 @@
 		BEE70E8121A98338003EA767 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				BE69C23521FA829E004AC050 /* firstsetting */,
 				D59F73F821A9885D00D275A0 /* register */,
 				BEE70E8221A9835D003EA767 /* alarmlist */,
 			);
@@ -260,6 +324,7 @@
 			);
 			path = view;
 			sourceTree = "<group>";
+			wrapsLines = 1;
 		};
 		D5DA8BDA21A9D86500F963B0 /* Extensions */ = {
 			isa = PBXGroup;
@@ -268,6 +333,7 @@
 				D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */,
 				D56518E421B903C500E8F6C4 /* UIViewController+Color.swift */,
 				D5B65ED521B9378C003E6886 /* UiView+Shadow.swift */,
+				BEC53F7F21FC54A400DA6FA6 /* UIView+Color.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -346,10 +412,12 @@
 				BEE70E8421A983A3003EA767 /* AlarmListNavigationController.storyboard in Resources */,
 				D50DE0F421B8B01700F8D920 /* Color.xcassets in Resources */,
 				BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */,
-				BE84E70F21A954BF00A507FB /* Assets.xcassets in Resources */,
+				BE69C23921FA82D3004AC050 /* FirstSettingViewController.storyboard in Resources */,
 				BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */,
 				D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */,
+				BE69C22F21FA6E2F004AC050 /* SF-Pro-Display-Medium.otf in Resources */,
 				D5DA8BD521A9C7AB00F963B0 /* CheckBoxButton.xib in Resources */,
+				BE69C23121FA709C004AC050 /* Assets.xcassets in Resources */,
 				BE84E70D21A954BD00A507FB /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -440,15 +508,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				BE2CF22B220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift in Sources */,
 				D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */,
+				BE2CF230220E8C1D007ECCB3 /* DateModel.swift in Sources */,
 				D561E46E21E2336500DF5B34 /* MedicineModel.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
 				D561E47521E2338900DF5B34 /* UILabel+Spacing.swift in Sources */,
+				BE2CF225220E7F62007ECCB3 /* PageIndicator.swift in Sources */,
 				D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */,
+				BE2CF232220E8D19007ECCB3 /* DateDataCenter.swift in Sources */,
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
+				BE2CF22D220E82DF007ECCB3 /* FirstSettingSleepIVC.swift in Sources */,
+				BE2CF227220E8285007ECCB3 /* FirstSettingWakeUpIVC.swift in Sources */,
 				D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */,
 				D561E47321E2336500DF5B34 /* AlarmView.swift in Sources */,
 				D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */,
+				BEC53F8021FC54A400DA6FA6 /* UIView+Color.swift in Sources */,
 				D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */,
 				D561E47221E2336500DF5B34 /* NoAlarmView.swift in Sources */,
 				D561E46F21E2336500DF5B34 /* AlarmModel.swift in Sources */,
@@ -456,6 +531,7 @@
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
 				D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */,
 				D561E47821E23AAF00DF5B34 /* BarcodeScanViewController.swift in Sources */,
+				BE69C23B21FA82EC004AC050 /* FirstSettingViewController.swift in Sources */,
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
 				D56518E321B8EDB400E8F6C4 /* HintSearchBar.swift in Sources */,
 				D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */,
@@ -463,6 +539,7 @@
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
 				D561E47121E2336500DF5B34 /* AlarmListTableViewCell.swift in Sources */,
 				D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */,
+				BE2CF229220E82BC007ECCB3 /* FirstSettingLunchIVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
