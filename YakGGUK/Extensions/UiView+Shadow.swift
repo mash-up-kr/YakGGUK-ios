@@ -47,4 +47,42 @@ extension UIView {
         }
     }
     
+    @IBInspectable var borderColor: UIColor? {
+        get {
+            guard let color = layer.borderColor else {
+                return nil
+            }
+            return UIColor(cgColor: color)
+        }
+        set {
+            layer.borderColor = newValue?.cgColor
+        }
+    }
+    
+    @IBInspectable var borderWidth: CGFloat {
+        get {
+            return layer.borderWidth
+        }
+        set {
+            layer.borderWidth = newValue
+        }
+    }
+    
+    func gradientLayer(direction: GradientDirection, frame: CGRect) -> CAGradientLayer {
+        let gradient = CAGradientLayer()
+        gradient.frame = frame
+        gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
+        gradient.startPoint = direction.startPoint
+        gradient.endPoint = direction.endPoint
+        return gradient
+    }
+    
+    func horizontalGradientColor(frame: CGRect) -> UIColor {
+        let gradient = gradientLayer(direction: .horizontal, frame: frame)
+        UIGraphicsBeginImageContext(gradient.bounds.size)
+        gradient.render(in: UIGraphicsGetCurrentContext()!)
+        let backgroundColorImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        return UIColor(patternImage: backgroundColorImage!)
+    }
 }

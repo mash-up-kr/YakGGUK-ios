@@ -2,119 +2,191 @@
 //  RegisterAlarmViewController.swift
 //  YakGGUK
 //
-//  Created by juhee on 2018. 11. 25..
-//  Copyright © 2018년 team1. All rights reserved.
+//  Created by Lee Junho on 09/02/2019.
+//  Copyright © 2019 team1. All rights reserved.
 //
 
 import UIKit
 
+enum IntakeTime: Int, CaseIterable {
+    case morning = 0
+    case noon
+    case evening
+    case night
+    
+    var title: String {
+        switch self {
+        case .morning: return "기상"
+        case .noon: return "점심"
+        case .evening: return "저녁"
+        case .night: return "취침"
+        }
+    }
+}
+
 class RegisterAlarmViewController: UIViewController {
-    var alarms: [(name: String, date: Date)] = []
-    var medicine: MedicineModel!
-    var indexForChange: Int = 0
+    @IBOutlet private weak var sanaImageView: UIImageView!
+    @IBOutlet private weak var medicineInfoView: UIView!
+    @IBOutlet private weak var medicineNameLabel: UILabel!
+    @IBOutlet private weak var medicineCompanyLabel: UILabel!
+    @IBOutlet private weak var intakeGuideLabel: UILabel!
+    @IBOutlet private weak var intakeStackView: UIStackView!
+    @IBOutlet private weak var weekendLabel: UILabel!
+    @IBOutlet private weak var soundLabel: UILabel!
+    @IBOutlet private weak var registerButton: UIButton!
+    @IBOutlet private var intakeButtons: [UIButton]!
+    @IBOutlet private weak var clockPickerView: UIView!
+    @IBOutlet private weak var clockPickerHeaderView: UIView!
+    @IBOutlet private weak var clockPickerTitleLabel: UILabel!
+    @IBOutlet private weak var clockPicker: UIDatePicker!
     
-    let timeFormatter: DateFormatter = {
-        let format = DateFormatter()
-        format.locale = Locale.current
-        format.timeStyle = DateFormatter.Style.short
-        return format
-    }()
+    private let manager = AlarmRegistManager.shared
+    private var intakeAlarmViews: [AlarmClockView] = []
+    private var selectedAlarmView: AlarmClockView?
+    private var settedTime: Date?
     
-    @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var descriptLabel: UILabel!
-    @IBOutlet weak var alarmTableView: UITableView!
-    @IBOutlet weak var pickerView: UIView!
-    @IBOutlet weak var timePiker: UIDatePicker!
+    private var selectedDay: [Weekend] = [] {
+        didSet {
+            if selectedDay.count == Weekend.allCases.count {
+                weekendLabel.text = "매일"
+            } else if selectedDay.count == 2, selectedDay.contains(.sun), selectedDay.contains(.sat) {
+                weekendLabel.text = "주말"
+            } else if selectedDay.count == 5, !selectedDay.contains(.sun), !selectedDay.contains(.sat) {
+                weekendLabel.text = "주중"
+            } else if selectedDay.count == 0 {
+                weekendLabel.text = "미설정"
+            } else {
+                var text = ""
+                for (index, day) in selectedDay.enumerated() {
+                    text.append(index + 1 < selectedDay.count ? "\(day.localize.1), " : "\(day.localize.1)")
+                }
+                weekendLabel.text = text
+            }
+        }
+    }
+    private var soundIndexPath: IndexPath = IndexPath(row: 0, section: 0) {
+        didSet {
+            soundLabel.text = AlarmSound.allCases[soundIndexPath.row].title
+        }
+    }
     
-    @IBOutlet weak var morningButton: CheckBoxButton!
-    @IBOutlet weak var afternoonButton: CheckBoxButton!
-    @IBOutlet weak var nightButton: CheckBoxButton!
-    @IBOutlet weak var bedroomButton: CheckBoxButton!
-    @IBOutlet weak var registerButton: UIButton!
+    var medicine: MedicineModel?
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        setDelegate()
-        setMedicineInfo()
+        
+        medicineInfoView.backgroundColor = horizontalGradientColor(frame: medicineInfoView.frame)
         registerButton.backgroundColor = horizontalGradientColor(frame: registerButton.frame)
+        clockPickerHeaderView.backgroundColor = horizontalGradientColor(frame: clockPickerHeaderView.frame)
+        
+        for (index, time) in IntakeTime.allCases.enumerated() {
+            let frame = CGRect(x: 0, y: 0, width: intakeStackView.frame.size.width, height: 126)
+            let clockView = AlarmClockView(frame: frame)
+            clockView.intakeTime = time
+            clockView.isHidden = true
+            clockView.clockAction = { [weak self] date in
+                self?.clockPickerView.isHidden = false
+                self?.clockPickerTitleLabel.text = "\(time.title) 알람"
+                self?.selectedAlarmView = clockView
+                self?.clockPicker.date = date
+                self?.settedTime = date
+            }
+            
+            intakeStackView.insertArrangedSubview(clockView, at: index)
+            intakeAlarmViews.append(clockView)
+        }
+        
+        let gradient = CAGradientLayer()
+        gradient.frame = self.view.frame
+        gradient.colors = [UIColor(red: 0, green: 0, blue: 0, alpha: 0.8).cgColor, UIColor(red: 0, green: 0, blue: 0, alpha: 0.94).cgColor]
+        gradient.startPoint = GradientDirection.vertical.startPoint
+        gradient.endPoint = GradientDirection.vertical.endPoint
+        clockPickerView.layer.insertSublayer(gradient, at: 0)
+        clockPickerView.isHidden = true
+        
+        refreshView()
     }
     
-    func setDelegate() {
-        morningButton.buttonDelegate = self
-        afternoonButton.buttonDelegate = self
-        nightButton.buttonDelegate = self
-        bedroomButton.buttonDelegate = self
-    }
-    
-    func setMedicineInfo() {
-        nameLabel.text = medicine.name
-        descriptLabel.text = medicine.description
-    }
-    
-    func bind(medicine data: MedicineModel) {
-        medicine = data
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        super.prepare(for: segue, sender: sender)
+        
+        if segue.identifier == "DateSettingViewController" {
+            (segue.destination as? DateSettingViewController)?.selectedDate = selectedDay
+        } else if segue.identifier == "SoundSettingViewController" {
+            (segue.destination as? SoundSettingViewController)?.selectedIndexPath = soundIndexPath
+        }
     }
 }
 
-// MARK: - IBActions
+extension RegisterAlarmViewController: UIScrollViewDelegate {
+    func scrollViewDidScroll(_ scrollView: UIScrollView) {
+        let offsetY = scrollView.contentOffset.y
+        if offsetY > 0 {
+            sanaImageView.frame.size.height = sanaImageView.frame.height
+        } else {
+            sanaImageView.frame.size.height = -offsetY
+        }
+    }
+}
+
 extension RegisterAlarmViewController {
-    @IBAction func registerAlarm(_ sender: UIButton) {
-        guard !alarms.isEmpty else {
-            let alertVC = UIAlertController(title: "알람을 등록하세요", message: nil, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: "확인", style: .cancel, handler: nil))
-            self.present(alertVC, animated: true)
+    private func refreshView() {
+        guard let medicine = medicine else {
             return
         }
-        // TODO: 알람 등록하기
-        self.navigationController?.addBottomDismissTransition()
-        self.navigationController?.dismiss(animated: false, completion: nil)
-    }
-    
-    @IBAction func hideTimer(_ sender: UITapGestureRecognizer) {
-        self.pickerView.isHidden = true
-    }
-    @IBAction func changeAlarmTime(_ sender: UIBarButtonItem) {
-        self.pickerView.isHidden = true
-        self.alarms[indexForChange].1 = self.timePiker.date
-        self.alarmTableView.reloadData()
-    }
-}
-
-extension RegisterAlarmViewController : UITableViewDelegate, UITableViewDataSource {
-    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return alarms.count
-    }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-        guard let cell = tableView.dequeueReusableCell(withIdentifier: "alarm_cell", for: indexPath) as? AlarmTableViewCell else {
-            
-            return AlarmTableViewCell()
-        }
-        let alarm = alarms[indexPath.row]
-        cell.titleLabel.text = alarm.name
-        cell.timeLabel.text = timeFormatter.string(from: alarm.date)
-        return cell
-    }
-    
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 120
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        self.indexForChange = indexPath.row
-        self.pickerView.isHidden = false
+        medicineNameLabel.text = medicine.name
+        medicineCompanyLabel.text = medicine.campanyName
+        intakeGuideLabel.text = medicine.dosage
     }
 }
 
-extension RegisterAlarmViewController: CheckBoxButtonDeleagate {
-    func actionButtonClicked(_ checked : Bool, _ title : String) {
-        if checked {
-            alarms.append((title, Date()))
-        } else if let item = alarms.firstIndex(where: {$0.0 == title}) {
-            alarms.remove(at: item)
+extension RegisterAlarmViewController {
+    @IBAction func tapIntakeTimeButton(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        intakeAlarmViews[sender.tag].isHidden = !sender.isSelected
+    }
+    
+    @IBAction func unwindeSegueFromDateSettingViewController(_ sender: UIStoryboardSegue) {
+        if let vc = sender.source as? DateSettingViewController {
+            selectedDay = vc.selectedDate
         }
-        self.alarmTableView.reloadData()
+    }
+    
+    @IBAction func unwindSegueFromSoundSettingViewController(_ sender: UIStoryboardSegue) {
+        if let vc = sender.source as? SoundSettingViewController {
+            soundIndexPath = vc.selectedIndexPath
+        }
+    }
+    
+    @IBAction func tapClockPickerCancelButton(_ sender: UIButton) {
+        clockPickerView.isHidden = true
+    }
+    
+    @IBAction func tapClockPickerConfirmButton(_ sender: UIButton) {
+        selectedAlarmView?.date = settedTime
+        clockPickerView.isHidden = true
+    }
+    
+    @IBAction func clockPickerChanged(_ sender: UIDatePicker) {
+        settedTime = sender.date
+    }
+    
+    @IBAction func tapRegisterButton(_ sender: UIButton) {
+        var alarms: [Alarmmmmmmm] = []
+        
+        for (index, button) in intakeButtons.enumerated() {
+            if button.isSelected {
+                if let date = intakeAlarmViews[index].date, let medicine = medicine {
+                    let days = selectedDay
+                    let sound = AlarmSound.allCases[soundIndexPath.row]
+                    
+                    alarms.append(Alarmmmmmmm(date: date, repeatingDay: days, medicine: medicine, sound: sound))
+                }
+            }
+        }
+        
+        manager.save(alarms)
+        navigationController?.popViewController(animated: true)
     }
 }
