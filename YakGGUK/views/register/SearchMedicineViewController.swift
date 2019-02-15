@@ -63,6 +63,19 @@ class SearchMedicineViewController: UIViewController {
         }
         productNameSearchBar.becomeFirstResponder()
     }
+    
+    // MARK: - Navigation
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let cell = sender as? SearchResultTableViewCell {
+            if let indexPath = resultTableView.indexPath(for: cell),
+                let destination = segue.destination as? PillDetailViewController {
+                // FIXME : Bind data for indexPath need
+                    //            destination.product = Product()
+//                    destination.medicine = filtered[indexPath.row]
+                    print("destination : \(destination)")
+            }
+        }
+    }
 }
 
 extension SearchMedicineViewController : UITableViewDelegate, UITableViewDataSource {
@@ -79,21 +92,20 @@ extension SearchMedicineViewController : UITableViewDelegate, UITableViewDataSou
         let medicine = filtered[indexPath.row]
         cell.itemName.text = medicine.name
         cell.itemCompany.text = medicine.campanyName
-        
         return cell
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        tableView.deselectRow(at: indexPath, animated: false)
-        guard let nextVC = storyboard?.instantiateViewController(withIdentifier: "register_alarm") as? RegisterAlarmViewController else {
-            print("invalid destination")
-            return
-        }
-//        nextVC.bind(medicine: filtered[indexPath.row])
-        nextVC.medicine = filtered[indexPath.row]
-        
-        navigationController?.pushViewController(nextVC, animated: true)
-    }
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        tableView.deselectRow(at: indexPath, animated: false)
+//        guard let nextVC = storyboard?.instantiateViewController(withIdentifier: "register_alarm") as? RegisterAlarmViewController else {
+//            print("invalid destination")
+//            return
+//        }
+////        nextVC.bind(medicine: filtered[indexPath.row])
+//        nextVC.medicine = filtered[indexPath.row]
+//
+//        navigationController?.pushViewController(nextVC, animated: true)
+//    }
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 100

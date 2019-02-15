@@ -33,6 +33,12 @@
 		D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D59F73F921A9886E00D275A0 /* Search.storyboard */; };
 		D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D59F73FC21A98D1700D275A0 /* SearchResultTableViewCell.swift */; };
 		D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5B65ED521B9378C003E6886 /* UiView+Shadow.swift */; };
+		D5CCA13E2216AAF30055D264 /* PillDetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CCA13D2216AAF30055D264 /* PillDetailTableViewCell.swift */; };
+		D5CCA1402216AE150055D264 /* Api.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CCA13F2216AE150055D264 /* Api.swift */; };
+		D5CCA1422216B76B0055D264 /* Pill.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CCA1412216B76B0055D264 /* Pill.swift */; };
+		D5CCA1442216B7F50055D264 /* PillDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CCA1432216B7F50055D264 /* PillDetailViewController.swift */; };
+		D5CCA1462216BB590055D264 /* PillDetailCellType.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CCA1452216BB590055D264 /* PillDetailCellType.swift */; };
+		D5CCA1482216D1850055D264 /* NetworkProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5CCA1472216D1850055D264 /* NetworkProvider.swift */; };
 		D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BCF21A9BA9600F963B0 /* CheckBoxButton.swift */; };
 		D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */; };
 		D5DA8BD521A9C7AB00F963B0 /* CheckBoxButton.xib in Resources */ = {isa = PBXBuildFile; fileRef = D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */; };
@@ -79,6 +85,12 @@
 		D59F73F921A9886E00D275A0 /* Search.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Search.storyboard; sourceTree = "<group>"; };
 		D59F73FC21A98D1700D275A0 /* SearchResultTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SearchResultTableViewCell.swift; sourceTree = "<group>"; };
 		D5B65ED521B9378C003E6886 /* UiView+Shadow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UiView+Shadow.swift"; sourceTree = "<group>"; };
+		D5CCA13D2216AAF30055D264 /* PillDetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDetailTableViewCell.swift; sourceTree = "<group>"; };
+		D5CCA13F2216AE150055D264 /* Api.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Api.swift; sourceTree = "<group>"; };
+		D5CCA1412216B76B0055D264 /* Pill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Pill.swift; sourceTree = "<group>"; };
+		D5CCA1432216B7F50055D264 /* PillDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDetailViewController.swift; sourceTree = "<group>"; };
+		D5CCA1452216BB590055D264 /* PillDetailCellType.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PillDetailCellType.swift; sourceTree = "<group>"; };
+		D5CCA1472216D1850055D264 /* NetworkProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkProvider.swift; sourceTree = "<group>"; };
 		D5DA8BCF21A9BA9600F963B0 /* CheckBoxButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CheckBoxButton.swift; sourceTree = "<group>"; };
 		D5DA8BD121A9C27900F963B0 /* RegisterAlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterAlarmViewController.swift; sourceTree = "<group>"; };
 		D5DA8BD421A9C7AB00F963B0 /* CheckBoxButton.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = CheckBoxButton.xib; sourceTree = "<group>"; };
@@ -240,6 +252,8 @@
 			isa = PBXGroup;
 			children = (
 				D59F73E121A97E6C00D275A0 /* Model */,
+				D5CCA13F2216AE150055D264 /* Api.swift */,
+				D5CCA1472216D1850055D264 /* NetworkProvider.swift */,
 			);
 			path = Network;
 			sourceTree = "<group>";
@@ -249,6 +263,7 @@
 			children = (
 				D59F73E221A97E7900D275A0 /* Member.swift */,
 				D5DA8BD821A9D72000F963B0 /* Alarm.swift */,
+				D5CCA1412216B76B0055D264 /* Pill.swift */,
 			);
 			path = Model;
 			sourceTree = "<group>";
@@ -267,6 +282,7 @@
 				DC31E22B220EFC1F0038DCE0 /* DateSettingViewController.swift */,
 				DC31E22D220F17940038DCE0 /* SoundSettingViewController.swift */,
 				DC22B71A220FFB75002D6D99 /* AlarmRegistManager.swift */,
+				D5CCA1432216B7F50055D264 /* PillDetailViewController.swift */,
 			);
 			path = register;
 			sourceTree = "<group>";
@@ -276,6 +292,8 @@
 			children = (
 				D59F73FC21A98D1700D275A0 /* SearchResultTableViewCell.swift */,
 				D5DA8BD621A9CDBD00F963B0 /* AlarmTableViewCell.swift */,
+				D5CCA13D2216AAF30055D264 /* PillDetailTableViewCell.swift */,
+				D5CCA1452216BB590055D264 /* PillDetailCellType.swift */,
 			);
 			path = tableViewCell;
 			sourceTree = "<group>";
@@ -450,6 +468,7 @@
 				"${BUILT_PRODUCTS_DIR}/Floaty/Floaty.framework",
 				"${BUILT_PRODUCTS_DIR}/Moya/Moya.framework",
 				"${BUILT_PRODUCTS_DIR}/Result/Result.framework",
+				"${BUILT_PRODUCTS_DIR}/lottie-ios/Lottie.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
@@ -458,6 +477,7 @@
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Floaty.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Moya.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Result.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Lottie.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
@@ -475,19 +495,24 @@
 				D561E46E21E2336500DF5B34 /* MedicineModel.swift in Sources */,
 				BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */,
 				DC31E22C220EFC1F0038DCE0 /* DateSettingViewController.swift in Sources */,
+				D5CCA1462216BB590055D264 /* PillDetailCellType.swift in Sources */,
 				D561E47521E2338900DF5B34 /* UILabel+Spacing.swift in Sources */,
 				D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */,
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
 				D5DA8BD721A9CDBD00F963B0 /* AlarmTableViewCell.swift in Sources */,
+				D5CCA1482216D1850055D264 /* NetworkProvider.swift in Sources */,
 				D561E47321E2336500DF5B34 /* AlarmView.swift in Sources */,
 				D5DA8BD221A9C27900F963B0 /* RegisterAlarmViewController.swift in Sources */,
 				D5378292220AE4D100336646 /* GradientDirection.swift in Sources */,
+				D5CCA1422216B76B0055D264 /* Pill.swift in Sources */,
 				D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */,
 				D561E47221E2336500DF5B34 /* NoAlarmView.swift in Sources */,
 				D561E46F21E2336500DF5B34 /* AlarmModel.swift in Sources */,
 				BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */,
+				D5CCA13E2216AAF30055D264 /* PillDetailTableViewCell.swift in Sources */,
 				BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */,
 				D5B65ED621B9378C003E6886 /* UiView+Shadow.swift in Sources */,
+				D5CCA1402216AE150055D264 /* Api.swift in Sources */,
 				DC22B71B220FFB75002D6D99 /* AlarmRegistManager.swift in Sources */,
 				D561E47821E23AAF00DF5B34 /* BarcodeScanViewController.swift in Sources */,
 				DC22B719220FE824002D6D99 /* AlarmClockView.swift in Sources */,
@@ -496,6 +521,7 @@
 				D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
+				D5CCA1442216B7F50055D264 /* PillDetailViewController.swift in Sources */,
 				D561E47121E2336500DF5B34 /* AlarmListTableViewCell.swift in Sources */,
 				DC31E22E220F17940038DCE0 /* SoundSettingViewController.swift in Sources */,
 				D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */,
