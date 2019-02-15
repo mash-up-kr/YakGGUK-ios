@@ -23,6 +23,7 @@ extension UIView {
     func setHorizontalGradientLayer() {
         let gradient = CAGradientLayer()
         gradient.frame = bounds
+        gradient.cornerRadius = layer.cornerRadius
         gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 1)
         gradient.endPoint = CGPoint(x: 1, y: 1)

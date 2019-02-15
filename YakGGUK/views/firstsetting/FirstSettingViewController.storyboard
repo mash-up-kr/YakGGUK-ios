@@ -100,7 +100,7 @@
                                         <real key="value" value="10"/>
                                     </userDefinedRuntimeAttribute>
                                     <userDefinedRuntimeAttribute type="number" keyPath="borderRadius">
-                                        <real key="value" value="0.0"/>
+                                        <real key="value" value="12"/>
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                                 <connections>
@@ -242,16 +242,20 @@
                             <constraint firstItem="2bJ-uG-T20" firstAttribute="top" secondItem="kqc-8C-PlZ" secondAttribute="bottom" constant="80" id="uoh-cl-LpM"/>
                             <constraint firstItem="kqc-8C-PlZ" firstAttribute="leading" secondItem="EBY-iF-1XR" secondAttribute="leading" id="yo2-hz-l1q"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="CvF-8Z-sFy"/>
                     </view>
+                    <connections>
+                        <outlet property="mTimeView" destination="2bJ-uG-T20" id="QRj-KA-Gfx"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="I93-94-Gp3" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="831" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--First Setting DinnerIVC-->
         <scene sceneID="Lrd-1t-Dup">
             <objects>
-                <viewController id="TJq-Ew-G68" sceneMemberID="viewController">
+                <viewController id="TJq-Ew-G68" customClass="FirstSettingDinnerIVC" customModule="YakGGUK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="a3P-ok-bUW">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -296,16 +300,20 @@
                             <constraint firstItem="Zn5-BI-BaQ" firstAttribute="centerX" secondItem="a3P-ok-bUW" secondAttribute="centerX" id="iMr-ip-hs2"/>
                             <constraint firstItem="COj-A6-5vy" firstAttribute="leading" secondItem="a3P-ok-bUW" secondAttribute="leading" constant="20" id="jB3-pf-Nln"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="dNa-IO-9vG"/>
                     </view>
+                    <connections>
+                        <outlet property="mTimeView" destination="Zn5-BI-BaQ" id="XcW-3T-eIv"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hJA-Lm-WPi" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1602" y="72"/>
         </scene>
-        <!--View Controller-->
+        <!--First Setting SleepIVC-->
         <scene sceneID="GUr-Bv-LJ5">
             <objects>
-                <viewController id="h1L-zt-9dO" sceneMemberID="viewController">
+                <viewController id="h1L-zt-9dO" customClass="FirstSettingSleepIVC" customModule="YakGGUK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Z9S-GC-ROg">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="579"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -350,7 +358,11 @@
                             <constraint firstItem="2VQ-Kt-yea" firstAttribute="top" secondItem="Z9S-GC-ROg" secondAttribute="top" id="bLO-Mg-tmD"/>
                             <constraint firstItem="wUF-vq-rdv" firstAttribute="centerX" secondItem="Z9S-GC-ROg" secondAttribute="centerX" id="cmK-LM-WJn"/>
                         </constraints>
+                        <viewLayoutGuide key="safeArea" id="YYH-0I-tfa"/>
                     </view>
+                    <connections>
+                        <outlet property="mTimeView" destination="wUF-vq-rdv" id="Wb2-3f-eqc"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="vof-oE-rUw" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

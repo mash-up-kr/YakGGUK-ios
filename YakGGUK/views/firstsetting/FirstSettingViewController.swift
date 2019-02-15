@@ -8,6 +8,10 @@
 
 import UIKit
 
+protocol INextable: class {
+    func nextable()
+}
+
 class FirstSettingViewController: UIViewController {
     
     @IBOutlet weak var pageIndicator: PageIndicator!
@@ -36,7 +40,7 @@ class FirstSettingViewController: UIViewController {
         
         nextButton.setHorizontalGradientLayer()
         
-        updateUI(currentIndex: 0)
+        backButton.isHidden = true
     }
     
     @IBAction func prevButton(_ sender: Any) {
@@ -60,25 +64,56 @@ class FirstSettingViewController: UIViewController {
             currentIndex += 1
             pageIndicator.next()
             updateUI(currentIndex: currentIndex)
+            
+            if currentIndex == 1 {
+                backButton.isHidden = false
+            }
+            
+            if currentIndex + 1 == total {
+                nextButton.setTitle("완료", for: .normal)
+            }
+        } else {
+            sleepIVC.nextable()
+            
+            let alert = UIAlertController(title: "첫 등록을 마치겠습니까?", message: "후에 알람 수정이 가능합니다.", preferredStyle: .alert)
+            
+            alert.addAction(UIAlertAction(title: "예", style: .default, handler: { _ in
+                self.complete()
+            }))
+                
+            alert.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: nil))
+            
+            present(alert, animated: true)
         }
+    }
+    
+    private func complete() {
+        guard let ATWakeUp = wakeUpIVC.mAlarmTime else { return }
+        guard let ATLunch = lunchIVC.mAlarmTime else { return }
+        guard let ATDinner = dinnerIVC.mAlarmTime else { return }
+        guard let ATSleep = sleepIVC.mAlarmTime else { return }
         
-        if currentIndex == 1 {
-            backButton.isHidden = false
-        }
+        print("Wake Up : \(ATWakeUp.mAmpm.rawValue) \(ATWakeUp.mHour)시 \(ATWakeUp.mMinute)분")
+        print("Lunch : \(ATLunch.mAmpm.rawValue) \(ATLunch.mHour)시 \(ATLunch.mMinute)분")
+        print("Dinner : \(ATDinner.mAmpm.rawValue) \(ATDinner.mHour)시 \(ATDinner.mMinute)분")
+        print("Sleep : \(ATSleep.mAmpm.rawValue) \(ATSleep.mHour)시 \(ATSleep.mMinute)분")
         
-        if currentIndex + 1 == total {
-            nextButton.setTitle("완료", for: .normal)
-        }
+        LocalDataCenter.saveAlarmTimes(alarmTimes: [ATWakeUp, ATLunch, ATDinner, ATSleep])
     }
         
     private func updateUI(currentIndex: Int) {
         let tmp = CGPoint(x: CGFloat(currentIndex) * scrollView.frame.width, y: 0.0)
         scrollView.setContentOffset(tmp, animated: true)
         
-        if (currentIndex == 0) {
-            backButton.isHidden = true
-        } else {
-            backButton.isHidden = false
+        switch currentIndex {
+        case 1:
+            wakeUpIVC.nextable()
+        case 2:
+            lunchIVC.nextable()
+        case 3:
+            dinnerIVC.nextable()
+        default:
+            return
         }
     }
     

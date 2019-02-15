@@ -11,5 +11,14 @@ import UIKit
 class FirstSettingWakeUpIVC: UIViewController {
 
     @IBOutlet weak var mTimeView: TimeView!
+    var mAlarmTime: AlarmTime?
 
+}
+
+extension FirstSettingWakeUpIVC: INextable {
+    
+    func nextable() {
+        mAlarmTime = mTimeView.getTime()
+    }
+    
 }

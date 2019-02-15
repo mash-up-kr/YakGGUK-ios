@@ -8,26 +8,17 @@
 
 import Foundation
 
-enum EnumAMPM {
-    case eAM
-    case ePM
-    
-    func description() -> String {
-        switch self {
-        case .eAM:
-            return "오전"
-        case .ePM:
-            return "오후"
-        }
-    }
+enum EnumAMPM: String {
+    case eAM = "오전"
+    case ePM = "오후"
 }
 
-class AlarmTime {
+class AlarmTime: NSObject, NSCoding {
     var mHour: Int
     var mMinute: Int
     var mAmpm: EnumAMPM
     
-    init() {
+    override init() {
         mHour = 1
         mMinute = 0
         mAmpm = .eAM
@@ -37,5 +28,20 @@ class AlarmTime {
         mHour = hour
         mMinute = minute
         mAmpm = ampm
+    }
+    
+    required convenience init?(coder aDecoder: NSCoder) {
+        let hour = aDecoder.decodeInteger(forKey: "hour")
+        let minute = aDecoder.decodeInteger(forKey: "minute")
+        let ampm = aDecoder.decodeObject(forKey: "ampm") as? String
+        let eAmpm = EnumAMPM(rawValue: ampm!)
+        
+        self.init(hour: hour, minute: minute, ampm: eAmpm!)
+    }
+    
+    func encode(with aCoder: NSCoder) {
+        aCoder.encode(mHour, forKey: "hour")
+        aCoder.encode(mMinute, forKey: "minute")
+        aCoder.encode(mAmpm.rawValue, forKey: "ampm")
     }
 }
