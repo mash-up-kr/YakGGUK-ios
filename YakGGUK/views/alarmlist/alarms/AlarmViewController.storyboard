@@ -13,7 +13,7 @@
         <!--Alarm View Controller-->
         <scene sceneID="3ro-ml-LgQ">
             <objects>
-                <viewController id="c9h-Dr-bF1" customClass="AlarmViewController" customModule="YakGGUK" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="AlarmListView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="c9h-Dr-bF1" customClass="AlarmViewController" customModule="YakGGUK" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="bdv-VM-tzx">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

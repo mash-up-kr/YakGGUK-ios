@@ -17,13 +17,11 @@ class LocalDataCenter {
         
         do {
             guard let alarmTimes: [AlarmTime] = try NSKeyedUnarchiver.unarchiveTopLevelObjectWithData(unarchivedData) as? [AlarmTime] else {
-                fatalError("b")
                 return []
             }
             
             return alarmTimes
         } catch {
-            fatalError("c")
             return []
         }
     }

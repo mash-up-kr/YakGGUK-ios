@@ -14,7 +14,7 @@ class NoAlarmView: UIView {
     
     private var imageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = #imageLiteral(resourceName: "symbol")
+        imageView.image = #imageLiteral(resourceName: "symbolWhite")
         
         imageView.translatesAutoresizingMaskIntoConstraints = false
         return imageView
@@ -59,8 +59,8 @@ class NoAlarmView: UIView {
             NSLayoutConstraint.activate([
                 imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 184.0),
                 imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                imageView.widthAnchor.constraint(equalToConstant: 145.0),
-                imageView.heightAnchor.constraint(equalToConstant: 122.0)
+                imageView.widthAnchor.constraint(equalToConstant: 113.0),
+                imageView.heightAnchor.constraint(equalToConstant: 95.0)
             ])
             
             NSLayoutConstraint.activate([

@@ -98,7 +98,13 @@ class FirstSettingViewController: UIViewController {
         print("Dinner : \(ATDinner.mAmpm.rawValue) \(ATDinner.mHour)시 \(ATDinner.mMinute)분")
         print("Sleep : \(ATSleep.mAmpm.rawValue) \(ATSleep.mHour)시 \(ATSleep.mMinute)분")
         
-        LocalDataCenter.saveAlarmTimes(alarmTimes: [ATWakeUp, ATLunch, ATDinner, ATSleep])
+        let bSuccess = LocalDataCenter.saveAlarmTimes(alarmTimes: [ATWakeUp, ATLunch, ATDinner, ATSleep])
+        
+        if bSuccess {
+            
+        } else {
+            
+        }
     }
         
     private func updateUI(currentIndex: Int) {

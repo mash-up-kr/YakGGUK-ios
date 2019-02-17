@@ -29,7 +29,11 @@
 		BE84E70D21A954BD00A507FB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE84E70B21A954BD00A507FB /* Main.storyboard */; };
 		BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE84E71021A954BF00A507FB /* LaunchScreen.storyboard */; };
 		BE903DCA2216DEEE0073CD22 /* LocalDataCenter.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE903DC92216DEEE0073CD22 /* LocalDataCenter.swift */; };
+		BE9DAF82221A186700C2F741 /* AlarmSegmentControl.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE9DAF81221A186700C2F741 /* AlarmSegmentControl.swift */; };
 		BEC53F8021FC54A400DA6FA6 /* UIView+Color.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEC53F7F21FC54A400DA6FA6 /* UIView+Color.swift */; };
+		BED0C477221A0B0C00900AB3 /* Splash.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BED0C476221A0B0C00900AB3 /* Splash.storyboard */; };
+		BED0C479221A0B9E00900AB3 /* SplashViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED0C478221A0B9E00900AB3 /* SplashViewController.swift */; };
+		BED0C47B221A0BC100900AB3 /* SplashView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BED0C47A221A0BC100900AB3 /* SplashView.swift */; };
 		BEE70E8421A983A3003EA767 /* AlarmListNavigationController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BEE70E8321A983A3003EA767 /* AlarmListNavigationController.storyboard */; };
 		BEE70E8621A98527003EA767 /* AlarmListNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */; };
 		BEE70E8921A98650003EA767 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BEE70E8821A98650003EA767 /* AlarmViewController.swift */; };
@@ -94,7 +98,11 @@
 		BE84E71121A954BF00A507FB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		BE84E71321A954BF00A507FB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		BE903DC92216DEEE0073CD22 /* LocalDataCenter.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocalDataCenter.swift; sourceTree = "<group>"; };
+		BE9DAF81221A186700C2F741 /* AlarmSegmentControl.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmSegmentControl.swift; sourceTree = "<group>"; };
 		BEC53F7F21FC54A400DA6FA6 /* UIView+Color.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIView+Color.swift"; sourceTree = "<group>"; };
+		BED0C476221A0B0C00900AB3 /* Splash.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Splash.storyboard; sourceTree = "<group>"; };
+		BED0C478221A0B9E00900AB3 /* SplashViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashViewController.swift; sourceTree = "<group>"; };
+		BED0C47A221A0BC100900AB3 /* SplashView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SplashView.swift; sourceTree = "<group>"; };
 		BEE70E8321A983A3003EA767 /* AlarmListNavigationController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmListNavigationController.storyboard; sourceTree = "<group>"; };
 		BEE70E8521A98527003EA767 /* AlarmListNavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmListNavigationController.swift; sourceTree = "<group>"; };
 		BEE70E8821A98650003EA767 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
@@ -259,9 +267,18 @@
 			path = YakGGUK;
 			sourceTree = "<group>";
 		};
+		BE9DAF80221A183B00C2F741 /* UISegmentControl */ = {
+			isa = PBXGroup;
+			children = (
+				BE9DAF81221A186700C2F741 /* AlarmSegmentControl.swift */,
+			);
+			path = UISegmentControl;
+			sourceTree = "<group>";
+		};
 		BEE70E8121A98338003EA767 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				BEFDEDA12216EA2C005F5968 /* splash */,
 				BE69C23521FA829E004AC050 /* firstsetting */,
 				D59F73F821A9885D00D275A0 /* register */,
 				BEE70E8221A9835D003EA767 /* alarmlist */,
@@ -289,6 +306,16 @@
 				BEE70E8A21A9866E003EA767 /* AlarmViewController.storyboard */,
 			);
 			path = alarms;
+			sourceTree = "<group>";
+		};
+		BEFDEDA12216EA2C005F5968 /* splash */ = {
+			isa = PBXGroup;
+			children = (
+				BED0C476221A0B0C00900AB3 /* Splash.storyboard */,
+				BED0C478221A0B9E00900AB3 /* SplashViewController.swift */,
+				BED0C47A221A0BC100900AB3 /* SplashView.swift */,
+			);
+			path = splash;
 			sourceTree = "<group>";
 		};
 		D5378293220AE50100336646 /* Model */ = {
@@ -403,6 +430,7 @@
 		D5DA8BDA21A9D86500F963B0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				BE9DAF80221A183B00C2F741 /* UISegmentControl */,
 				BE7000C12215527E0049377D /* UIPickerView */,
 				D561E47421E2338900DF5B34 /* UILabel+Spacing.swift */,
 				D5DA8BDB21A9D86F00F963B0 /* UINavigationController+Transition.swift */,
@@ -487,6 +515,7 @@
 			files = (
 				BEE70E8421A983A3003EA767 /* AlarmListNavigationController.storyboard in Resources */,
 				D50DE0F421B8B01700F8D920 /* Color.xcassets in Resources */,
+				BED0C477221A0B0C00900AB3 /* Splash.storyboard in Resources */,
 				BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */,
 				BE7000C622155E9F0049377D /* TimeView.xib in Resources */,
 				BE7000E2221582C80049377D /* Assets.xcassets in Resources */,
@@ -590,6 +619,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				BE7000DC22157AA50049377D /* MinutePickerView.swift in Sources */,
+				BED0C47B221A0BC100900AB3 /* SplashView.swift in Sources */,
 				BE2CF22B220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift in Sources */,
 				D59F73FD21A98D1700D275A0 /* SearchResultTableViewCell.swift in Sources */,
 				D561E46E21E2336500DF5B34 /* MedicineModel.swift in Sources */,
@@ -622,12 +652,14 @@
 				D59F73E321A97E7900D275A0 /* Member.swift in Sources */,
 				BE7000E52215A2280049377D /* AlarmTime.swift in Sources */,
 				D56518E321B8EDB400E8F6C4 /* HintSearchBar.swift in Sources */,
+				BED0C479221A0B9E00900AB3 /* SplashViewController.swift in Sources */,
 				D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
 				D561E47121E2336500DF5B34 /* AlarmListTableViewCell.swift in Sources */,
 				DC31E22E220F17940038DCE0 /* SoundSettingViewController.swift in Sources */,
 				D5DA8BDC21A9D86F00F963B0 /* UINavigationController+Transition.swift in Sources */,
+				BE9DAF82221A186700C2F741 /* AlarmSegmentControl.swift in Sources */,
 				BE7000DA22157A960049377D /* HourPickerView.swift in Sources */,
 				BE2CF229220E82BC007ECCB3 /* FirstSettingLunchIVC.swift in Sources */,
 			);
@@ -787,7 +819,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = MedicineAlarm;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -807,7 +839,7 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = MedicineAlarm;
 				SWIFT_VERSION = 4.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};
