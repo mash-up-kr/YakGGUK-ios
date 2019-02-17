@@ -19,6 +19,8 @@ class MedicineModel {
     var expirationDate: String = "2018/12/31"
     var imageSource: String = ""
     
+    var alarmDays: [Int] = [0, 0, 0, 0, 0, 0, 0]
+    
     init(name: String, description: String) {
         self.name = name
         self.description = description

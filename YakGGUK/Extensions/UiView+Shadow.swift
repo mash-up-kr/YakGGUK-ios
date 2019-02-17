@@ -68,6 +68,15 @@ extension UIView {
         }
     }
     
+    @IBInspectable var borderRadius: CGFloat {
+        get {
+            return layer.cornerRadius
+        }
+        set {
+            layer.cornerRadius = newValue
+        }
+    }
+    
     func gradientLayer(direction: GradientDirection, frame: CGRect) -> CAGradientLayer {
         let gradient = CAGradientLayer()
         gradient.frame = frame

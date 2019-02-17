@@ -52,8 +52,8 @@ class AlarmView: UIView {
             NSLayoutConstraint.activate([
                 imageView.topAnchor.constraint(equalTo: self.topAnchor, constant: 57.0),
                 imageView.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-                imageView.widthAnchor.constraint(equalToConstant: 78.0),
-                imageView.heightAnchor.constraint(equalToConstant: 45.0)
+                imageView.widthAnchor.constraint(equalToConstant: 84.0),
+                imageView.heightAnchor.constraint(equalToConstant: 47.0)
             ])
             
             NSLayoutConstraint.activate([

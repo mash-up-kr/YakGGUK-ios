@@ -2,17 +2,17 @@
   "images" : [
     {
       "idiom" : "universal",
-      "filename" : "symbolMini.png",
+      "filename" : "icClockdotPrimary.png",
       "scale" : "1x"
     },
     {
       "idiom" : "universal",
-      "filename" : "symbolMini@2x.png",
+      "filename" : "icClockdotPrimary@2x.png",
       "scale" : "2x"
     },
     {
       "idiom" : "universal",
-      "filename" : "symbolMini@3x.png",
+      "filename" : "icClockdotPrimary@3x.png",
       "scale" : "3x"
     }
   ],
