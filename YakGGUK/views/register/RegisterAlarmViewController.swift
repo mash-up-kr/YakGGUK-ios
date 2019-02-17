@@ -53,7 +53,7 @@ class RegisterAlarmViewController: UIViewController {
                 weekendLabel.text = "주말"
             } else if selectedDay.count == 5, !selectedDay.contains(.sun), !selectedDay.contains(.sat) {
                 weekendLabel.text = "주중"
-            } else if selectedDay.count == 0 {
+            } else if selectedDay.isEmpty {
                 weekendLabel.text = "미설정"
             } else {
                 var text = ""
@@ -91,7 +91,7 @@ class RegisterAlarmViewController: UIViewController {
                 self?.clockPicker.date = date
                 self?.settedTime = date
             }
-            
+
             intakeStackView.insertArrangedSubview(clockView, at: index)
             intakeAlarmViews.append(clockView)
         }
@@ -148,14 +148,14 @@ extension RegisterAlarmViewController {
     }
     
     @IBAction func unwindeSegueFromDateSettingViewController(_ sender: UIStoryboardSegue) {
-        if let vc = sender.source as? DateSettingViewController {
-            selectedDay = vc.selectedDate
+        if let viewController = sender.source as? DateSettingViewController {
+            selectedDay = viewController.selectedDate
         }
     }
     
     @IBAction func unwindSegueFromSoundSettingViewController(_ sender: UIStoryboardSegue) {
-        if let vc = sender.source as? SoundSettingViewController {
-            soundIndexPath = vc.selectedIndexPath
+        if let viewController = sender.source as? SoundSettingViewController {
+            soundIndexPath = viewController.selectedIndexPath
         }
     }
     

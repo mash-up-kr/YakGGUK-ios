@@ -12,5 +12,6 @@ target 'YakGGUK' do
   pod 'Moya', '~> 11.0'
   pod 'SwiftLint'
   pod "Floaty", "~> 4.1.0"
+  pod 'lottie-ios'
 
 end

@@ -135,22 +135,11 @@ class BarcodeScanViewController: UIViewController {
             print("no matched controller")
             return
         }
-        
-//        present(nextVC, animated: true, completion: nil)
-//        var oldVCs = navigationController?.viewControllers
-//        oldVCs!.removeLast()
-//        oldVCs!.append(nextVC)
-
-        navigationController?.setToolbarHidden(true, animated: false)
-//        navigationController?.setViewControllers(oldVCs!, animated: true)
-        
         navigationController?.pushViewController(nextVC, animated: true)
-        
     }
     
-    @IBAction func dismiss(_ sender: UIBarButtonItem) {
-        navigationController?.addBottomDismissTransition()
-        navigationController?.dismiss(animated: false, completion: nil)
+    @IBAction func dismiss(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
     }
     
 }
@@ -170,22 +159,26 @@ extension BarcodeScanViewController: AVCaptureMetadataOutputObjectsDelegate {
 //            let barCodeObject = videoPreviewLayer?.transformedMetadataObject(for: metadataObj)
 //            overlayFrameView?.frame = barCodeObject!.bounds
             if !alertIsPresented && metadataObj.stringValue != nil {
-                // TODO : 바코드 검색 기능
-                    
-                    let alertVC = UIAlertController(title: "바코드 데이터가 없습니다.\n제품을 검색하시겠습니까?", message: nil, preferredStyle: .alert)
-                    alertVC.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: { [weak self] _ in
-                        self?.alertIsPresented.toggle()
-                        self?.captureSession.startRunning()
-                    }))
-                    alertVC.addAction(UIAlertAction(title: "네", style: .default , handler: { [weak self] _ in
-                        self?.alertIsPresented.toggle()
-                        self?.navigateSearchVC()
-                    }))
-                    alertIsPresented.toggle()
-                    present(alertVC, animated: true) { [weak self] in
-                        self?.captureSession.stopRunning()
-                    }
+//                NetworkProvider.request(<#T##dump: Decodable.Protocol##Decodable.Protocol#>, target: .barcode) { success in
+//                    <#code#>
+//                }
+//
+                
+                let alertVC = UIAlertController(title: "바코드 데이터가 없습니다.\n제품을 검색하시겠습니까?", message: nil, preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "아니요", style: .cancel, handler: { [weak self] _ in
+                    self?.alertIsPresented.toggle()
+                    self?.captureSession.startRunning()
+                }))
+                alertVC.addAction(UIAlertAction(title: "네", style: .default , handler: { [weak self] _ in
+                    self?.alertIsPresented.toggle()
+                    self?.navigateSearchVC()
+                }))
+                alertIsPresented.toggle()
+                present(alertVC, animated: true) { [weak self] in
+                    self?.captureSession.stopRunning()
+                }
             }
+            
         }
     }
     

@@ -89,11 +89,12 @@ extension AlarmViewController {
                 print("[navigation Error]")
                 return
             }
-            let naviVC = UINavigationController(rootViewController: nextVC)
-            naviVC.navigationBar.isTranslucent = true
-            naviVC.view.backgroundColor = UIColor.clear
-            naviVC.addBottomAppearTransition()
-            self.present(naviVC, animated: false, completion: nil)
+//            let naviVC = UINavigationController(rootViewController: nextVC)
+//            naviVC.navigationBar.isTranslucent = true
+//            naviVC.view.backgroundColor = UIColor.clear
+//            naviVC.addBottomAppearTransition()
+//            self.present(naviVC, animated: false, completion: nil)
+            self.navigationController?.pushViewController(nextVC, animated: true)
             self.floaty.close()
         }
         
