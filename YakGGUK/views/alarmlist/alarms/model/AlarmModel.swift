@@ -34,13 +34,13 @@ enum EnumWhen: Int {
 class AlarmModel {
     var eWhen: EnumWhen
     
-    var time: String
+    var alarmTime: AlarmTime
     var medicines: [MedicineModel]
     var isExpand: Bool = false
     
-    init(eWhen: EnumWhen, time: String, medicines: [MedicineModel]) {
+    init(eWhen: EnumWhen, alarmTime: AlarmTime, medicines: [MedicineModel]) {
         self.eWhen = eWhen
-        self.time = time
+        self.alarmTime = alarmTime
         self.medicines = medicines
     }
 }

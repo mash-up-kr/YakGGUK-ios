@@ -15,7 +15,6 @@ class MedicineTableViewCell: UITableViewCell {
     private var medicineImage: UIImageView = {
         var imageView = UIImageView()
         
-        // TODO: 디폴트 이미지로 설정하기
         imageView.image = #imageLiteral(resourceName: "ic_check_box_outline_blank")
         imageView.layer.borderColor = UIColor(named: "veryLightPink")?.cgColor
         imageView.layer.borderWidth = 1.0
@@ -87,7 +86,6 @@ class MedicineTableViewCell: UITableViewCell {
     override func updateConstraints() {
         if !didUpdateConstraints {
             
-            // TODO: 가로 세로 높이 상수로 저장하여, 테두리 반지름을 생성 단계에 지정할 것
             NSLayoutConstraint.activate([
                 medicineImage.topAnchor.constraint(equalTo: self.topAnchor, constant: 20.0),
                 medicineImage.leadingAnchor.constraint(equalTo: self.leadingAnchor, constant: 20.0),

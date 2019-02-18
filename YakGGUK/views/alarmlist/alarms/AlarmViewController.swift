@@ -17,33 +17,9 @@ class AlarmViewController: UIViewController {
         super.viewDidLoad()
         setVerticalGradientLayer()
         
-        alarms.append(AlarmModel(eWhen: .WAKEUP, time: "07 : 00", medicines: [
-            MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
-            MedicineModel(name: "홍삼 골드", description: "1회 100ml 섭취"),
-            MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
-            MedicineModel(name: "홍삼 골드", description: "1회 100ml 섭취")
-        ]))
+        LocalDataCenter.clearAlarmTimes()
         
-        alarms.append(AlarmModel(eWhen: .MORNING, time: "09 : 00", medicines: [
-            MedicineModel(name: "오메가3", description: "1회 1알 섭취"),
-            MedicineModel(name: "단백질 보충제", description: "1회 2알 섭취")
-        ]))
-        
-        alarms.append(AlarmModel(eWhen: .DINNER, time: "19 : 00", medicines: [
-            MedicineModel(name: "단백질 보충제", description: "1회 2알 섭취")]))
-        
-        alarms.append(AlarmModel(eWhen: .NIGHT, time: "23 : 30", medicines: [
-            MedicineModel(name: "수면 유도제", description: "1회 1알 섭취")
-        ]))
-        
-        if alarms.isEmpty {
-            alarmView.isHidden = true
-        } else {
-            noAlarmView.isHidden = true
-        }
-        
-        alarmView.setTableViewProtocol(delegate: self, dataSource: self)
-        alarmView.setTableViewStyle(sepStyle: .none, bgColor: .clear)
+        loadAlarmModel()
         
         view.addSubview(noAlarmView)
         view.addSubview(alarmView)
@@ -51,6 +27,55 @@ class AlarmViewController: UIViewController {
         initFloaty()
         
         view.updateConstraintsIfNeeded()
+    }
+    
+    func checkFirstSetting() {
+        let alarmTimes: [AlarmTime] = LocalDataCenter.loadAlarmTimes()
+        
+        if (alarmTimes.isEmpty) {
+            guard let firstSettingVC = UIStoryboard(name: "FirstSettingViewController", bundle: nil).instantiateViewController(withIdentifier: "FirstSettingView") as? FirstSettingViewController else {
+                return
+            }
+            
+            firstSettingVC.alarmVC = self
+            self.present(firstSettingVC, animated: true)
+        }
+    }
+    
+    func loadAlarmModel() {
+        let alarmTimes: [AlarmTime] = LocalDataCenter.loadAlarmTimes()
+        
+        if (alarmTimes.count == 4) {
+            alarms.append(AlarmModel(eWhen: .WAKEUP, alarmTime: alarmTimes[0], medicines: [
+                MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
+                MedicineModel(name: "홍삼 골드", description: "1회 100ml 섭취"),
+                MedicineModel(name: "오르나민 C", description: "1회 125ml 섭취"),
+                MedicineModel(name: "홍삼 골드", description: "1회 100ml 섭취")
+            ]))
+            
+            alarms.append(AlarmModel(eWhen: .MORNING, alarmTime: alarmTimes[1], medicines: [
+                MedicineModel(name: "오메가3", description: "1회 1알 섭취"),
+                MedicineModel(name: "단백질 보충제", description: "1회 2알 섭취")
+            ]))
+            
+            alarms.append(AlarmModel(eWhen: .DINNER, alarmTime: alarmTimes[2], medicines: [
+                MedicineModel(name: "단백질 보충제", description: "1회 2알 섭취")]))
+            
+            alarms.append(AlarmModel(eWhen: .NIGHT, alarmTime: alarmTimes[3], medicines: [
+                MedicineModel(name: "수면 유도제", description: "1회 1알 섭취")
+            ]))
+            
+            alarmView.setTableViewProtocol(delegate: self, dataSource: self)
+            alarmView.setTableViewStyle(sepStyle: .none, bgColor: .clear)
+        }
+        
+        if alarms.isEmpty {
+            alarmView.isHidden = true
+            noAlarmView.isHidden = false
+        } else {
+            alarmView.isHidden = false
+            noAlarmView.isHidden = true
+        }
     }
     
     override func updateViewConstraints() {
@@ -84,16 +109,16 @@ class AlarmViewController: UIViewController {
 // MARK: - 플로팅 버튼
 extension AlarmViewController {
     func initFloaty() {
+        floaty.addItem(title: "알람 추가하기") { _ in
+            self.checkFirstSetting()
+        }
+        
         floaty.addItem("바코드 촬영하기", icon: #imageLiteral(resourceName: "icCam")) { _ in
             guard let nextVC = UIStoryboard(name: "Search", bundle: nil).instantiateViewController(withIdentifier: "barcode_scan") as? BarcodeScanViewController else {
                 print("[navigation Error]")
                 return
             }
-//            let naviVC = UINavigationController(rootViewController: nextVC)
-//            naviVC.navigationBar.isTranslucent = true
-//            naviVC.view.backgroundColor = UIColor.clear
-//            naviVC.addBottomAppearTransition()
-//            self.present(naviVC, animated: false, completion: nil)
+            
             self.navigationController?.pushViewController(nextVC, animated: true)
             self.floaty.close()
         }

@@ -20,6 +20,8 @@ class FirstSettingViewController: UIViewController {
     @IBOutlet weak var backButton: UIButton!
     @IBOutlet weak var nextButton: UIButton!
     
+    var alarmVC: AlarmViewController!
+    
     var wakeUpIVC: FirstSettingWakeUpIVC!
     var lunchIVC: FirstSettingLunchIVC!
     var dinnerIVC: FirstSettingDinnerIVC!
@@ -93,17 +95,18 @@ class FirstSettingViewController: UIViewController {
         guard let ATDinner = dinnerIVC.mAlarmTime else { return }
         guard let ATSleep = sleepIVC.mAlarmTime else { return }
         
-        print("Wake Up : \(ATWakeUp.mAmpm.rawValue) \(ATWakeUp.mHour)시 \(ATWakeUp.mMinute)분")
-        print("Lunch : \(ATLunch.mAmpm.rawValue) \(ATLunch.mHour)시 \(ATLunch.mMinute)분")
-        print("Dinner : \(ATDinner.mAmpm.rawValue) \(ATDinner.mHour)시 \(ATDinner.mMinute)분")
-        print("Sleep : \(ATSleep.mAmpm.rawValue) \(ATSleep.mHour)시 \(ATSleep.mMinute)분")
-        
         let bSuccess = LocalDataCenter.saveAlarmTimes(alarmTimes: [ATWakeUp, ATLunch, ATDinner, ATSleep])
         
-        if bSuccess {
-            
-        } else {
-            
+        dismiss(animated: true) {
+            if bSuccess {
+                self.alarmVC.loadAlarmModel()
+            } else {
+                let alert = UIAlertController(title: "알 수 없는 오류로 알람 등록을 실패했습니다.", message: "후에 알람 수정이 가능합니다.", preferredStyle: .alert)
+                
+                alert.addAction(UIAlertAction(title: "확인", style: .default, handler: nil))
+                
+                self.present(alert, animated: true)
+            }
         }
     }
         

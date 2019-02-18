@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Foundation
 
 protocol AlarmListActionDelegate: class {
     func collapseAction(_ sender: UIButton, cell: AlarmListTableViewCell)
@@ -283,22 +284,10 @@ class AlarmListTableViewCell: UITableViewCell {
     }
     
     public func setFormattedAlarm(alarm model: AlarmModel) {
-        let dateFormatter = DateFormatter()
-        dateFormatter.dateFormat = "HH : mm"
         
-        let optDate = dateFormatter.date(from: model.time)
-        
-        dateFormatter.dateFormat = "a"
-        dateFormatter.amSymbol = "오전"
-        dateFormatter.pmSymbol = "오후"
-        
-        if let date = optDate {
-            let ampm = dateFormatter.string(from: date)
-            ampmLabel.text = ampm
-        }
-        
+        ampmLabel.text = model.alarmTime.mAmpm.rawValue
         whenLabel.text = model.eWhen.description()
-        timeLabel.text = model.time
+        timeLabel.text = String(format: "%02d : %02d", arguments: [model.alarmTime.mHour, model.alarmTime.mMinute])
         
         medicines = model.medicines
         medicineTableView.reloadData()
