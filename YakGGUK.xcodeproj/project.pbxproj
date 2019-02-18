@@ -25,6 +25,11 @@
 		BE7000E2221582C80049377D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE7000E1221582C70049377D /* Assets.xcassets */; };
 		BE7000E52215A2280049377D /* AlarmTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7000E42215A2280049377D /* AlarmTime.swift */; };
 		BE760AF5221B5A4E0069BB61 /* logo.json in Resources */ = {isa = PBXBuildFile; fileRef = BE760AF4221B5A4E0069BB61 /* logo.json */; };
+		BE760AF9221B69BE0069BB61 /* AlarmViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE760AF8221B69BE0069BB61 /* AlarmViewController.storyboard */; };
+		BE760AFB221B69E40069BB61 /* AlarmViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE760AFA221B69E40069BB61 /* AlarmViewController.swift */; };
+		BE760AFD221B6A180069BB61 /* AlarmPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE760AFC221B6A180069BB61 /* AlarmPageIndicator.swift */; };
+		BE760AFF221B6A5F0069BB61 /* AlarmMedicinePageView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE760AFE221B6A5F0069BB61 /* AlarmMedicinePageView.swift */; };
+		BE760B01221B6A7B0069BB61 /* AlarmMedicinePageView.xib in Resources */ = {isa = PBXBuildFile; fileRef = BE760B00221B6A7B0069BB61 /* AlarmMedicinePageView.xib */; };
 		BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84E70721A954BD00A507FB /* AppDelegate.swift */; };
 		BE84E70A21A954BD00A507FB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE84E70921A954BD00A507FB /* ViewController.swift */; };
 		BE84E71221A954BF00A507FB /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE84E71021A954BF00A507FB /* LaunchScreen.storyboard */; };
@@ -97,6 +102,11 @@
 		BE7000E1221582C70049377D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE7000E42215A2280049377D /* AlarmTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTime.swift; sourceTree = "<group>"; };
 		BE760AF4221B5A4E0069BB61 /* logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = logo.json; sourceTree = "<group>"; };
+		BE760AF8221B69BE0069BB61 /* AlarmViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmViewController.storyboard; sourceTree = "<group>"; };
+		BE760AFA221B69E40069BB61 /* AlarmViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmViewController.swift; sourceTree = "<group>"; };
+		BE760AFC221B6A180069BB61 /* AlarmPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPageIndicator.swift; sourceTree = "<group>"; };
+		BE760AFE221B6A5F0069BB61 /* AlarmMedicinePageView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmMedicinePageView.swift; sourceTree = "<group>"; };
+		BE760B00221B6A7B0069BB61 /* AlarmMedicinePageView.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlarmMedicinePageView.xib; sourceTree = "<group>"; };
 		BE84E70421A954BD00A507FB /* YakGGUK.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = YakGGUK.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		BE84E70721A954BD00A507FB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		BE84E70921A954BD00A507FB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -246,6 +256,26 @@
 			path = lottie;
 			sourceTree = "<group>";
 		};
+		BE760AF6221B69820069BB61 /* alarm */ = {
+			isa = PBXGroup;
+			children = (
+				BE760AF7221B699D0069BB61 /* view */,
+				BE760AF8221B69BE0069BB61 /* AlarmViewController.storyboard */,
+				BE760AFA221B69E40069BB61 /* AlarmViewController.swift */,
+			);
+			path = alarm;
+			sourceTree = "<group>";
+		};
+		BE760AF7221B699D0069BB61 /* view */ = {
+			isa = PBXGroup;
+			children = (
+				BE760AFC221B6A180069BB61 /* AlarmPageIndicator.swift */,
+				BE760AFE221B6A5F0069BB61 /* AlarmMedicinePageView.swift */,
+				BE760B00221B6A7B0069BB61 /* AlarmMedicinePageView.xib */,
+			);
+			path = view;
+			sourceTree = "<group>";
+		};
 		BE84E6FB21A954BD00A507FB = {
 			isa = PBXGroup;
 			children = (
@@ -296,6 +326,7 @@
 		BEE70E8121A98338003EA767 /* views */ = {
 			isa = PBXGroup;
 			children = (
+				BE760AF6221B69820069BB61 /* alarm */,
 				BEFDEDA12216EA2C005F5968 /* splash */,
 				BE69C23521FA829E004AC050 /* firstsetting */,
 				D59F73F821A9885D00D275A0 /* register */,
@@ -545,11 +576,13 @@
 				BE69C23921FA82D3004AC050 /* FirstSettingViewController.storyboard in Resources */,
 				DC31E22A220EF8280038DCE0 /* Temp.xcassets in Resources */,
 				DC22B715220F4330002D6D99 /* AlarmClockView.xib in Resources */,
+				BE760B01221B6A7B0069BB61 /* AlarmMedicinePageView.xib in Resources */,
 				BE7000D5221576170049377D /* SF-Pro-Display-Medium.otf in Resources */,
 				BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */,
 				BE760AF5221B5A4E0069BB61 /* logo.json in Resources */,
 				D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */,
 				D5DA8BD521A9C7AB00F963B0 /* CheckBoxButton.xib in Resources */,
+				BE760AF9221B69BE0069BB61 /* AlarmViewController.storyboard in Resources */,
 				BE69C23121FA709C004AC050 /* Assets.xcassets in Resources */,
 				BE7000D6221576170049377D /* SF-Pro-Display-Light.otf in Resources */,
 			);
@@ -652,6 +685,7 @@
 				D5CCA1462216BB590055D264 /* PillDetailCellType.swift in Sources */,
 				D561E47521E2338900DF5B34 /* UILabel+Spacing.swift in Sources */,
 				BE2CF225220E7F62007ECCB3 /* PageIndicator.swift in Sources */,
+				BE760AFD221B6A180069BB61 /* AlarmPageIndicator.swift in Sources */,
 				D5DA8BD021A9BA9600F963B0 /* CheckBoxButton.swift in Sources */,
 				D59F73EF21A97F5A00D275A0 /* SearchMedicineViewController.swift in Sources */,
 				BE2CF22D220E82DF007ECCB3 /* FirstSettingSleepIVC.swift in Sources */,
@@ -663,6 +697,7 @@
 				BE7000C82215643B0049377D /* TimeView.swift in Sources */,
 				BEC53F8021FC54A400DA6FA6 /* UIView+Color.swift in Sources */,
 				D5378292220AE4D100336646 /* GradientDirection.swift in Sources */,
+				BE760AFF221B6A5F0069BB61 /* AlarmMedicinePageView.swift in Sources */,
 				D5CCA1422216B76B0055D264 /* Pill.swift in Sources */,
 				D56518E521B903C500E8F6C4 /* UIViewController+Color.swift in Sources */,
 				D561E47221E2336500DF5B34 /* NoAlarmView.swift in Sources */,
@@ -683,6 +718,7 @@
 				D56518E321B8EDB400E8F6C4 /* HintSearchBar.swift in Sources */,
 				BED0C479221A0B9E00900AB3 /* SplashViewController.swift in Sources */,
 				D561E47021E2336500DF5B34 /* MedicineTableViewCell.swift in Sources */,
+				BE760AFB221B69E40069BB61 /* AlarmViewController.swift in Sources */,
 				BE84E70821A954BD00A507FB /* AppDelegate.swift in Sources */,
 				D5DA8BD921A9D72000F963B0 /* Alarm.swift in Sources */,
 				D5CCA1442216B7F50055D264 /* PillDetailViewController.swift in Sources */,
