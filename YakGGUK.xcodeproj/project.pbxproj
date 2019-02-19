@@ -12,6 +12,7 @@
 		BE2CF229220E82BC007ECCB3 /* FirstSettingLunchIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF228220E82BC007ECCB3 /* FirstSettingLunchIVC.swift */; };
 		BE2CF22B220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF22A220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift */; };
 		BE2CF22D220E82DF007ECCB3 /* FirstSettingSleepIVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE2CF22C220E82DF007ECCB3 /* FirstSettingSleepIVC.swift */; };
+		BE464886221BE67900622CB1 /* logo.json in Resources */ = {isa = PBXBuildFile; fileRef = BE464885221BE67900622CB1 /* logo.json */; };
 		BE69C23121FA709C004AC050 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE69C23021FA709C004AC050 /* Assets.xcassets */; };
 		BE69C23921FA82D3004AC050 /* FirstSettingViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE69C23821FA82D3004AC050 /* FirstSettingViewController.storyboard */; };
 		BE69C23B21FA82EC004AC050 /* FirstSettingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE69C23A21FA82EC004AC050 /* FirstSettingViewController.swift */; };
@@ -24,7 +25,6 @@
 		BE7000DE22157AB10049377D /* AmPmPickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7000DD22157AB10049377D /* AmPmPickerView.swift */; };
 		BE7000E2221582C80049377D /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = BE7000E1221582C70049377D /* Assets.xcassets */; };
 		BE7000E52215A2280049377D /* AlarmTime.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE7000E42215A2280049377D /* AlarmTime.swift */; };
-		BE760AF5221B5A4E0069BB61 /* logo.json in Resources */ = {isa = PBXBuildFile; fileRef = BE760AF4221B5A4E0069BB61 /* logo.json */; };
 		BE760AF9221B69BE0069BB61 /* AlarmPageViewController.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = BE760AF8221B69BE0069BB61 /* AlarmPageViewController.storyboard */; };
 		BE760AFB221B69E40069BB61 /* AlarmPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE760AFA221B69E40069BB61 /* AlarmPageViewController.swift */; };
 		BE760AFD221B6A180069BB61 /* AlarmPageIndicator.swift in Sources */ = {isa = PBXBuildFile; fileRef = BE760AFC221B6A180069BB61 /* AlarmPageIndicator.swift */; };
@@ -88,6 +88,7 @@
 		BE2CF228220E82BC007ECCB3 /* FirstSettingLunchIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingLunchIVC.swift; sourceTree = "<group>"; };
 		BE2CF22A220E82CE007ECCB3 /* FirstSettingDinnerIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingDinnerIVC.swift; sourceTree = "<group>"; };
 		BE2CF22C220E82DF007ECCB3 /* FirstSettingSleepIVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FirstSettingSleepIVC.swift; sourceTree = "<group>"; };
+		BE464885221BE67900622CB1 /* logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = logo.json; sourceTree = "<group>"; };
 		BE69C22E21FA6E2B004AC050 /* SF-Pro-Display-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SF-Pro-Display-Medium.otf"; sourceTree = "<group>"; };
 		BE69C23021FA709C004AC050 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE69C23821FA82D3004AC050 /* FirstSettingViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = FirstSettingViewController.storyboard; sourceTree = "<group>"; };
@@ -101,7 +102,6 @@
 		BE7000DD22157AB10049377D /* AmPmPickerView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AmPmPickerView.swift; sourceTree = "<group>"; };
 		BE7000E1221582C70049377D /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		BE7000E42215A2280049377D /* AlarmTime.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmTime.swift; sourceTree = "<group>"; };
-		BE760AF4221B5A4E0069BB61 /* logo.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = logo.json; sourceTree = "<group>"; };
 		BE760AF8221B69BE0069BB61 /* AlarmPageViewController.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = AlarmPageViewController.storyboard; sourceTree = "<group>"; };
 		BE760AFA221B69E40069BB61 /* AlarmPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPageViewController.swift; sourceTree = "<group>"; };
 		BE760AFC221B6A180069BB61 /* AlarmPageIndicator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlarmPageIndicator.swift; sourceTree = "<group>"; };
@@ -251,7 +251,7 @@
 		BE760AF3221B5A2D0069BB61 /* lottie */ = {
 			isa = PBXGroup;
 			children = (
-				BE760AF4221B5A4E0069BB61 /* logo.json */,
+				BE464885221BE67900622CB1 /* logo.json */,
 			);
 			path = lottie;
 			sourceTree = "<group>";
@@ -579,10 +579,10 @@
 				BE760B01221B6A7B0069BB61 /* AlarmMedicinePageView.xib in Resources */,
 				BE7000D5221576170049377D /* SF-Pro-Display-Medium.otf in Resources */,
 				BEE70E8B21A9866E003EA767 /* AlarmViewController.storyboard in Resources */,
-				BE760AF5221B5A4E0069BB61 /* logo.json in Resources */,
 				D59F73FA21A9886E00D275A0 /* Search.storyboard in Resources */,
 				D5DA8BD521A9C7AB00F963B0 /* CheckBoxButton.xib in Resources */,
 				BE760AF9221B69BE0069BB61 /* AlarmPageViewController.storyboard in Resources */,
+				BE464886221BE67900622CB1 /* logo.json in Resources */,
 				BE69C23121FA709C004AC050 /* Assets.xcassets in Resources */,
 				BE7000D6221576170049377D /* SF-Pro-Display-Light.otf in Resources */,
 			);
