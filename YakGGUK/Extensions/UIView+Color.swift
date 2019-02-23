@@ -20,6 +20,23 @@ extension UIView {
         layer.insertSublayer(gradient, at: 0)
     }
     
+    func setVerticalBorderGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.frame =  CGRect(origin: CGPoint.zero, size: self.frame.size)
+        gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
+        gradient.startPoint = CGPoint(x: 0, y: 0)
+        gradient.endPoint = CGPoint(x: 0, y: 1)
+        
+        let shape = CAShapeLayer()
+        shape.lineWidth = 1
+        shape.path = UIBezierPath(rect: self.bounds).cgPath
+        shape.strokeColor = UIColor.black.cgColor
+        shape.fillColor = UIColor.clear.cgColor
+        gradient.mask = shape
+        
+        layer.insertSublayer(gradient, at: 0)
+    }
+    
     func setHorizontalGradientLayer() {
         let gradient = CAGradientLayer()
         gradient.frame = bounds
@@ -27,6 +44,23 @@ extension UIView {
         gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
         gradient.startPoint = CGPoint(x: 0, y: 1)
         gradient.endPoint = CGPoint(x: 1, y: 1)
+        
+        layer.insertSublayer(gradient, at: 0)
+    }
+    
+    func setHorizontalBorderGradientLayer() {
+        let gradient = CAGradientLayer()
+        gradient.frame =  CGRect(origin: CGPoint.zero, size: self.frame.size)
+        gradient.colors = [UIColor(named: "gradientLeading")!.cgColor, UIColor(named: "gradientTrailing")!.cgColor]
+        gradient.startPoint = CGPoint(x: 0, y: 1)
+        gradient.endPoint = CGPoint(x: 1, y: 1)
+        
+        let shape = CAShapeLayer()
+        shape.lineWidth = 1
+        shape.path = UIBezierPath(rect: self.bounds).cgPath
+        shape.strokeColor = UIColor.black.cgColor
+        shape.fillColor = UIColor.clear.cgColor
+        gradient.mask = shape
         
         layer.insertSublayer(gradient, at: 0)
     }

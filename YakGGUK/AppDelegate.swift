@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import UserNotifications
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -21,6 +22,23 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         UINavigationBar.appearance().backgroundColor = .clear
         // Set translucent. (Default value is already true, so this can be removed if desired.)
         UINavigationBar.appearance().isTranslucent = true
+        
+        let center = UNUserNotificationCenter.current()
+        
+        center.delegate = self
+        
+        center.requestAuthorization(options: [.alert, .badge, .sound]) { (granted, _) in
+            if granted {
+                DispatchQueue.main.async(execute: {
+                    application.registerForRemoteNotifications()
+                })
+            }
+        }
+        
+        if (launchOptions?[UIApplication.LaunchOptionsKey.remoteNotification] != nil) {
+            
+        }
+        
         return true
     }
 
@@ -46,4 +64,58 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
 
+}
+
+extension AppDelegate: UNUserNotificationCenterDelegate {
+    func createDate(weekday: Int, hour: Int, minute: Int, year: Int)->Date{
+        
+        var components = DateComponents()
+        components.hour = hour
+        components.minute = minute
+        components.year = year
+        components.weekday = weekday // sunday = 1 ... saturday = 7
+        components.weekdayOrdinal = 10
+        components.timeZone = .current
+        
+        let calendar = Calendar(identifier: .gregorian)
+        return calendar.date(from: components)!
+    }
+    
+    func scheduleNotification(at date: Date, body: String, titles: String, identifer: String) {
+        
+        let triggerWeekly = Calendar.current.dateComponents([.weekday,.hour,.minute,.second,], from: date)
+        
+        let trigger = UNCalendarNotificationTrigger(dateMatching: triggerWeekly, repeats: true)
+        
+        let content = UNMutableNotificationContent()
+        content.title = titles
+        content.body = body
+        content.sound = UNNotificationSound.default
+        content.categoryIdentifier = identifer
+        
+        let request = UNNotificationRequest(identifier: "textNotification", content: content, trigger: trigger)
+        
+        UNUserNotificationCenter.current().delegate = self
+        //UNUserNotificationCenter.current().removeAllPendingNotificationRequests()
+        UNUserNotificationCenter.current().add(request) {(error) in
+            if let error = error {
+                print("\(error)")
+            }
+        }
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, willPresent notification: UNNotification, withCompletionHandler completionHandler: @escaping (UNNotificationPresentationOptions) -> Void) {
+        completionHandler([.alert, .badge, .sound])
+    }
+    
+    func userNotificationCenter(_ center: UNUserNotificationCenter, didReceive response: UNNotificationResponse, withCompletionHandler completionHandler: @escaping () -> Void) {
+        
+        guard let alarmPageVC = UIStoryboard(name: "AlarmPageViewController", bundle: nil).instantiateViewController(withIdentifier: "AlarmPageView") as? AlarmPageViewController else {
+            return
+        }
+        
+        self.window?.rootViewController = alarmPageVC
+        
+        completionHandler()
+    }
 }

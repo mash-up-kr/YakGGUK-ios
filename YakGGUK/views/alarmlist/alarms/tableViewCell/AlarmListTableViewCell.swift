@@ -8,6 +8,7 @@
 
 import UIKit
 import Foundation
+import UserNotifications
 
 protocol AlarmListActionDelegate: class {
     func collapseAction(_ sender: UIButton, cell: AlarmListTableViewCell)
@@ -156,6 +157,15 @@ class AlarmListTableViewCell: UITableViewCell {
         
         tableView.translatesAutoresizingMaskIntoConstraints = false
         return tableView
+    }()
+    
+    private var segmentControl: UISwitch = {
+        let switchControl = UISwitch()
+        
+        switchControl.addTarget(self, action: #selector(alarmSwitch), for: .valueChanged)
+        
+        switchControl.translatesAutoresizingMaskIntoConstraints = false
+        return switchControl
     }()
     
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
@@ -358,5 +368,15 @@ extension AlarmListTableViewCell {
         }
         
         return [deleteAction, editAction]
+    }
+}
+
+extension AlarmListTableViewCell {
+    @objc func alarmSwitch(_ sender: UISwitch) {
+        if sender.isOn {
+            
+        } else {
+            
+        }
     }
 }
