@@ -19,7 +19,19 @@ class PillDetailViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         pill = Pill(name: "광동제약품", companyName: "광동", apperance: "물약", content: "코감기, 목감기, 몸살 감기 완화", intake: "1일 2회, 1회 2캡슐", precautions: "식전 식후 주의사항\n알레르기 주의사항\n주의사항 지켜라 주의사항 지켜라", expirationDate: "2019-12-12")
-
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        navigationController?.setNavigationBarHidden(true, animated: false)
+    }
+    
+    override func viewDidLayoutSubviews() {
         setGradient()
     }
     

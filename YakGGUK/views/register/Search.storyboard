@@ -234,7 +234,7 @@
                                                 <constraint firstAttribute="width" constant="24" id="cKf-Ym-If0"/>
                                             </constraints>
                                             <connections>
-                                                <action selector="popViewControllerWithSender:" destination="c1m-gV-gGj" eventType="touchUpInside" id="dBY-We-gHF"/>
+                                                <action selector="didTapBackButton:" destination="DkV-ea-3cS" eventType="touchUpInside" id="exL-dz-Qdz"/>
                                             </connections>
                                         </button>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="광동 본조이 칼슘 프로" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Z39-uX-Gtk">

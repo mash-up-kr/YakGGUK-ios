@@ -75,10 +75,6 @@ class RegisterAlarmViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        medicineInfoView.backgroundColor = horizontalGradientColor(frame: medicineInfoView.frame)
-        registerButton.backgroundColor = horizontalGradientColor(frame: registerButton.frame)
-        clockPickerHeaderView.backgroundColor = horizontalGradientColor(frame: clockPickerHeaderView.frame)
-        
         for (index, time) in IntakeTime.allCases.enumerated() {
             let frame = CGRect(x: 0, y: 0, width: intakeStackView.frame.size.width, height: 126)
             let clockView = AlarmClockView(frame: frame)
@@ -105,6 +101,12 @@ class RegisterAlarmViewController: UIViewController {
         clockPickerView.isHidden = true
         
         refreshView()
+    }
+    
+    override func viewDidLayoutSubviews() {
+        medicineInfoView.backgroundColor = horizontalGradientColor(frame: medicineInfoView.frame)
+        registerButton.backgroundColor = horizontalGradientColor(frame: registerButton.frame)
+        clockPickerHeaderView.backgroundColor = horizontalGradientColor(frame: clockPickerHeaderView.frame)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

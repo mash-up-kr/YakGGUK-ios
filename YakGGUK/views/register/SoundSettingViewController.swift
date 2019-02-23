@@ -26,7 +26,9 @@ class SoundSettingViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+    }
+    
+    override func viewDidLayoutSubviews() {
         completeButton.backgroundColor = horizontalGradientColor(frame: completeButton.frame)
     }
 }
